@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="60dp"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="8dp"
+    tools:theme="@style/ReplyBaseTheme.DayNight">
+
+    <!-- Reply Header -->
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/guide_header_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="first_row" />
+
+    <!-- Reply Header -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_icon_width"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/reply_icon_size" />
+
+    <FrameLayout
+        android:id="@+id/user_avatar_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/first_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/user_avatar_container"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/message">
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_gravity="center_vertical"
+            style="?attr/replyMessageUsernameStyle"
+            tools:text="Branden" />
+
+        <TextView
+            android:id="@+id/time_stamp"
+            android:layout_gravity="center_vertical"
+            style="?attr/replyMessageDateStyle"
+            tools:text="2:05 PM" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/message"
+        style="?attr/replyMessageCommentStyle"
+        app:layout_constraintEnd_toStartOf="@+id/more"
+        app:layout_constraintStart_toStartOf="@+id/first_row"
+        app:layout_constraintTop_toBottomOf="@+id/guide_header_height"
+        tools:text="Lorem ipsum dolor sit amet, an eam utamur aliquid. His ne vidisse legendos reformidans, ne nam inani inimicus argumentum. Ex vim scaevola intellegebat definitione" />
+
+    <ImageView
+        android:id="@+id/more"
+        style="@style/ReplyMessageActionIconStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/message"
+        app:layout_constraintTop_toTopOf="@+id/guide_header_height" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

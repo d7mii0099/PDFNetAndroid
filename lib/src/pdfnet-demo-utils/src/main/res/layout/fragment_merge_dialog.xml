@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/fragment_merge_dialog_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:elevation="@dimen/actionbar_elevation"
+        tools:ignore="UnusedAttribute">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/fragment_merge_dialog_toolbar"
+            android:theme="?attr/pt_toolbar_theme"
+            style="?attr/pt_toolbar_style"
+            app:popupTheme="?attr/pt_toolbar_popup_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--suppress AndroidDomInspection -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/fragment_merge_dialog_cab"
+            android:theme="?attr/pt_toolbar_theme"
+            style="?attr/pt_toolbar_style"
+            app:popupTheme="?attr/pt_toolbar_popup_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+            android:visibility="gone"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.pdftron.pdf.widget.recyclerview.SimpleRecyclerView
+        android:id="@+id/fragment_merge_dialog_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/list_padding_footer"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        android:layout_below="@id/fragment_merge_dialog_toolbar_layout"/>
+
+    <View
+        android:id="@+id/toolbar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_elevation"
+        android:layout_below="@id/fragment_merge_dialog_toolbar_layout"
+        android:background="@drawable/controls_toolbar_dropshadow"/>
+
+    <com.pdftron.pdf.widget.PTFloatingActionButton
+        android:id="@+id/fragment_merge_dialog_folder_fab"
+        style="@style/FloatingActionButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/fab_button_margin"
+        app:srcCompat="@drawable/ic_merge_type_white_24dp"
+        app:fab_size="normal" />
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+mutation LoginAnonymous($userName: String) {
+        loginAnonymous(userName: $userName) {
+         user {
+           id
+           userName
+           type
+           email
+         }
+         token
+       }
+     }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/controls_pdf_layer_view_row_height"
+    android:background="?android:attr/colorBackground"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/tree_view_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tree_view_lock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/controls_pdf_layer_image_view_padding"
+        android:paddingBottom="@dimen/controls_pdf_layer_image_view_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_lock" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tree_view_arrow"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/controls_pdf_layer_image_view_padding"
+        android:paddingBottom="@dimen/controls_outline_image_view_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_up_white_24dp" />
+
+    <TextView
+        android:id="@+id/tree_view_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/padding_xsmall"
+        android:layout_marginEnd="@dimen/padding_xsmall"
+        android:layout_toEndOf="@id/tree_view_arrow"
+        android:layout_toRightOf="@id/tree_view_arrow"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textDirection="locale"
+        android:textSize="@dimen/primary_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tree_view_arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/app_name" />
+
+    <View
+        android:id="@+id/pdf_layer_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

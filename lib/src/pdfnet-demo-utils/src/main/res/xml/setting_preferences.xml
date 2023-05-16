@@ -1,0 +1,52 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    ===============================================================
+                            IMPORTANT
+    ===============================================================
+    The key names and values used here must be conform to what is declared in
+    SettingsManager class. This is because we read these values from that
+    class to be used across the application.
+    -->
+
+    <Preference
+        app:key="search_setting"
+        app:layout="@layout/search_setting_view" />
+
+    <Preference
+        app:fragment="com.pdftron.demo.app.setting.GeneralFragmentBase"
+        app:icon="@drawable/ic_settings"
+        app:key="pref_setting_general"
+        app:title="@string/pref_category_general" />
+
+    <Preference
+        app:fragment="com.pdftron.demo.app.setting.ViewingFragmentBase"
+        app:icon="@drawable/ic_viewing"
+        app:key="pref_setting_viewing"
+        app:title="@string/pref_category_viewing" />
+
+    <Preference
+        app:fragment="com.pdftron.demo.app.setting.TabsFragmentBase"
+        app:icon="@drawable/ic_tabs"
+        app:key="pref_setting_tabs"
+        app:title="@string/pref_category_tabs" />
+
+    <Preference
+        app:fragment="com.pdftron.demo.app.setting.AnnotatingFragmentBase"
+        app:icon="@drawable/ic_annotation_freehand_black_24dp"
+        app:key="pref_setting_annotation"
+        app:title="@string/pref_category_annotating" />
+
+    <Preference
+        app:fragment="com.pdftron.demo.app.setting.StylusFragmentBase"
+        app:icon="@drawable/ic_stylus"
+        app:key="pref_setting_stylus"
+        app:title="@string/pref_category_stylus" />
+
+    <Preference
+        app:fragment="com.pdftron.demo.app.setting.AboutFragmentBase"
+        app:icon="@drawable/ic_info_outline_white_24dp"
+        app:key="pref_setting_about"
+        app:title="@string/pref_category_about" />
+
+</PreferenceScreen>

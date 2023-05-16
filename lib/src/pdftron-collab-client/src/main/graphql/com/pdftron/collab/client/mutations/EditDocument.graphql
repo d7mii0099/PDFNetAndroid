@@ -1,0 +1,7 @@
+mutation EditDocument($id: ID!, $input: EditDocumentInput!) {
+        editDocument(id: $id, input: $input) {
+          id
+          name
+          isPublic
+        }
+     }

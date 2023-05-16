@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fragment_file_picker_dialog_current_folder">#333333</color>
+    <color name="fragment_file_picker_icon_color">#FFFFFF</color>
+
+    <color name="navigation_drawer_sel_bg">#444444</color>
+    <color name="navigation_drawer_separator">@color/gray600</color>
+
+    <color name="empty_textBackground">#151918</color>
+</resources>

@@ -1,0 +1,11 @@
+mutation JoinScrollSyncSession($sessionId: String!) {
+        joinScrollSyncSession(sessionId: $sessionId) {
+          leaderId
+          documentId
+          position {
+            scrollTop
+            scrollHeight
+          }
+          sessionId
+        }
+      }

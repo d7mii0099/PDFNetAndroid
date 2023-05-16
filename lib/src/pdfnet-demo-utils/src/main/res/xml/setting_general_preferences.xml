@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    ===============================================================
+                            IMPORTANT
+    ===============================================================
+    The key names and values used here must be conform to what is declared in
+    SettingsManager class. This is because we read these values from that
+    class to be used across the application.
+    -->
+
+    <PreferenceCategory
+        android:key="pref_category_general"
+        app:iconSpaceReserved="false">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_follow_system_dark_mode"
+            android:summary="@string/pref_follow_system_dark_mode_summary"
+            android:title="@string/pref_follow_system_dark_mode_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_full_screen_mode"
+            android:summary="@string/pref_full_screen_mode_summary"
+            android:title="@string/pref_full_screen_mode_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_screen_stay_lock"
+            android:summary="@string/pref_screen_stay_lock_summary"
+            android:title="@string/pref_screen_stay_lock_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_remember_last_page"
+            android:summary="@string/pref_remember_last_page_summary"
+            android:title="@string/pref_remember_last_page_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_rtl_mode_option"
+            android:summary="@string/pref_rtl_mode_option_summary"
+            android:title="@string/pref_rtl_mode_option_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_enable_javascript"
+            android:summary="@string/pref_enable_javascript_summary"
+            android:title="@string/pref_enable_javascript_name"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

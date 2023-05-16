@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Apryse Software Inc.." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  DigitalSignaturePropertiesDialog - PDFTron API Reference
+
+
+| Apryse Software Inc.
+
+</title>
+<link href="../../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../../assets/");
+</script>
+<script src="../../../../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div class="header">
+  <nav class="nav-bar">
+    
+      <a class="nav-brand" href="https://www.pdftron.com/"><img title="" width="150" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDggNDQiID48cGF0aCBmaWxsPSIjMDBBNUU0IiBkPSJNMzkzLjE3LjRWMzJjMCAuNi0uMjYgMS4xLS43NiAxLjUtLjUyLjMtMS4xMi41LTEuODMuNS0uNTcgMC0xLjEzLS4xLTEuNjgtLjMtLjUzLS4yLS45Ny0uNi0xLjMtMS0xLjE4LTEuNy0zLjA1LTYtNS42LTEyLjgtMi4zLTYuMy00LjczLTEwLjgtNy4yOC0xMy42LTMuODQtNC4yLTguOTctNi4zLTE1LjQtNi4zLTQuODEgMC04Ljc4LjctMTEuODggMi0zLjU3IDEuNy01LjM3IDQtNS4zNyA3LjF2MzMuN2gxNC40MVYxMS4yYzAtLjYuMTctMSAuNTEtMS40LjMzLS4zLjk3LS41IDEuODktLjcgMS4zNy0uMSAzLjEzIDEuNyA1LjI2IDUuNSAxLjUxIDIuNiAzLjMyIDYuNSA1LjQ3IDExLjYgMi4yOSA1LjQgMy41OCA4LjQgMy44NyA4LjkgMS40IDIuOCAzLjgyIDQuOSA3LjIzIDYuNCAzLjAzIDEuMyA2LjQ4IDEuOSAxMC4zNiAxLjkgNC40MyAwIDguMjUtLjggMTEuNDQtMi40IDMuMzgtMS44IDUuMDctNCA1LjA3LTYuN1YuNGgtMTQuNDF6bS03MC44OCAyOS41Yy0yLjA3IDIuNi00LjgyIDMuOS04LjIzIDMuOWgtMTYuNDJjLTMuNDQgMC02LjE5LTEuMy04LjIzLTMuOS0xLjg1LTIuMy0yLjc4LTUuMi0yLjc4LTguNSAwLTMuMi45Mi01LjkgMi43My04LjEgMi4wMi0yLjQgNC43Ny0zLjYgOC4yOC0zLjZoMTYuNDJjMy41NCAwIDYuMzEgMS4yIDguMzMgMy42IDEuODIgMi4yIDIuNzMgNC45IDIuNzMgOC4xIDAgMy4zLS45NCA2LjItMi44MyA4LjV6TTMxNi40NC44aC0yMS4yYy03LjUgMC0xMy40OCAyLjItMTcuOTYgNi43LTIuMTUgMi4yLTMuNzEgNC42LTQuNzEgNy4yLjA0LS40LjA2LS44LjA2LTEuMiAwLTMuNC0xLjQ2LTYuNC00LjQxLTguNy0zLjIyLTIuNy03LjU5LTQtMTMuMTItNGgtODIuODR2OC45aDE0LjYydjMzLjJoMTQuMjFWOS43aDUxLjY0YzEuNjIgMCAyLjkxLjQgMy44MyAxLjIuODIuNyAxLjI1IDEuNiAxLjI1IDIuNnMtLjQzIDEuOC0xLjI1IDIuNWMtLjkyLjgtMi4yMSAxLjEtMy44MyAxLjFoLTE3LjY0Yy01Ljc3IDAtMTAuMTUgMS4yLTEzLjEzIDMuNi0yLjU5IDIuMS0zLjg4IDQuOC0zLjg4IDguMnYxMy45aDE0LjIxVjMyLjNsNDAuODYgMTEuNHYtOS45bC0yNy4wMS03LjZoOC45NmM1LjU2IDAgOS45NS0xLjMgMTMuMTctMy45IDEuNTEtMS4zIDIuNjItMi42IDMuMzQtNC4yLS4yMyAxLjMtLjM1IDIuNy0uMzUgNC4xIDAgNS42IDEuOTcgMTAuNCA1LjkzIDE0LjIgNC40MSA0LjMgMTAuNDMgNi41IDE4LjA1IDYuNWgyMS4yYzcuNjYgMCAxMy42OS0yLjIgMTguMDktNi41IDMuOTQtMy44IDUuOS04LjYgNS45LTE0LjIgMC01LjgtMi4wMi0xMC43LTYuMDMtMTQuN0MzMjkuOTMgMyAzMjMuOTQuOCAzMTYuNDQuOHptLTE5MS42NiAzYy0zLjEyIDEuNy01LjQzIDQuMi02Ljg5IDcuNi0xLjIxIDIuOC0xLjgyIDYuMS0xLjgyIDEwLjF2MjEuNGgxNC40MVYyNi4yaDQwLjR2LTkuMWgtNDAuNGMuMDktLjYuMjEtMS4yLjM0LTEuOS40MS0xLjUgMS4xNC0yLjcgMi4yLTMuNiAxLjQ3LTEuMyAzLjQ3LTEuOSA1Ljk5LTEuOWgzMS44N1YuOGgtMzEuODdjLTUuOSAwLTEwLjY0IDEtMTQuMjMgM3pNOTUuNDQgMjkuOWMtMi4wNyAyLjYtNC44MiAzLjktOC4yMyAzLjlINzIuMjJWOS43aDE0Ljk5YzMuNTQgMCA2LjMyIDEuMiA4LjMzIDMuNiAxLjc5IDIuMiAyLjY4IDQuOSAyLjY4IDguMSAwIDMuNC0uOTMgNi4yLTIuNzggOC41ek04OS42MS44aC0zMS44djQyLjFoMzEuOGM3LjY1IDAgMTMuNjgtMi4yIDE4LjEtNi41IDMuOTItMy44IDUuODgtOC42IDUuODgtMTQuMiAwLTUuOC0yLTEwLjctNi4wMy0xNC43QzEwMy4wOSAzIDk3LjExLjggODkuNjEuOHptLTM5LjQ0IDRjLTMuMjItMi43LTcuNi00LTEzLjEyLTRILjA0djguOWgzNC42MmMxLjY0IDAgMi45Mi40IDMuODQgMS4yLjg0LjcgMS4yNSAxLjYgMS4yNSAyLjZzLS40MSAxLjgtMS4yNSAyLjVjLS45Mi44LTIuMiAxLjEtMy44NCAxLjFIMTcuMDRjLTUuNzggMC0xMC4xNSAxLjItMTMuMTMgMy42QzEuMzIgMjIuOC4wNCAyNS42LjA0IDI4LjkuMDIgMzEuMSAwIDMzLjIgMCAzNS4yVjQwYzAgMS4yLjAyIDIuMi4wNCAyLjloMTQuMTl2LTljLS4wOS0uMS0uMTQtLjMtLjE2LS41LS4wMy0uMS0uMDQtLjQtLjA0LS45IDAtMS42LjUxLTIuOSAxLjU0LTMuOSAxLjUzLTEuNiA0LjA2LTIuNCA3LjYxLTIuNGgxMy44NWM1LjU3IDAgOS45Ny0xLjMgMTMuMTktMy45IDIuOS0yLjQgNC4zNi01LjMgNC4zNi04LjggMC0zLjQtMS40Ny02LjQtNC40MS04Ljd6Ii8+PC9zdmc+" alt=""></a>
+      <ul class="nav-block nav-block-first hidden-xs">
+      <li class="nav-item">
+      <a class="nav-link" href="https://www.pdftron.com/pdf-sdk/">Technology</a>
+      </li>
+      <li class="nav-item active">
+      <a class="nav-link" href="https://www.pdftron.com/documentation/">
+      Documentation
+      </a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://www.pdftron.com/support/">
+      Support
+      </a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://www.pdftron.com/blog/">
+      Blog
+      </a>
+      </li>
+      </ul>
+    
+    
+    <ul class="nav-block nav-block-last hidden-xs">
+    <li class="nav-item nav-form">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="Search API documentation" name="q"
+                      value=""
+                      placeholder="Search"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </li>
+    </ul>
+  </nav>
+</div><!-- header -->
+
+<div class="nav-sub">
+<div class="container">
+<div class="d-flex justify-content-md-center justify-content-lg-start">
+<div class="mr-auto d-none d-lg-block">
+<nav class="nav-breadcrumb breadcrumb">
+<a href="https://www.pdftron.com/documentation/android/" class="breadcrumb-item">
+Documentation
+</a>
+<a href="https://www.pdftron.com/api/android/javadoc/reference/packages.html" class="breadcrumb-item">
+API
+</a>
+<a href="https://www.pdftron.com/api/android/javadoc/reference/packages.html" class="breadcrumb-item">
+PDFTron for Android
+</a>
+</nav>
+</div>
+<div class="ml-lg-auto d-flex">
+<ul class="nav flex-nowrap flex-row-reverse flex-sm-row align-items-center">
+<li class="nav-item">
+<a href="https://www.pdftron.com/documentation/android/" class="nav-link">
+Guides
+</a>
+</li>
+<li class="nav-item">
+<a href="https://www.pdftron.com/api/android/javadoc/reference/packages.html" class="nav-link active">
+API
+</a>
+</li>
+<li class="nav-item border">
+<a href="https://www.pdftron.com/documentation/android/changelog/" class="nav-link">
+Changelog
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/actions/package-summary.html">com.pdftron.actions</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/actions/easypdf/package-summary.html">com.pdftron.actions.easypdf</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/actions/ui/export/package-summary.html">com.pdftron.actions.ui.export</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/package-summary.html">com.pdftron.collab</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/db/package-summary.html">com.pdftron.collab.db</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/db/converter/package-summary.html">com.pdftron.collab.db.converter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/db/dao/package-summary.html">com.pdftron.collab.db.dao</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/db/entity/package-summary.html">com.pdftron.collab.db.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/model/package-summary.html">com.pdftron.collab.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/service/package-summary.html">com.pdftron.collab.service</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/annotlist/package-summary.html">com.pdftron.collab.ui.annotlist</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/annotlist/component/package-summary.html">com.pdftron.collab.ui.annotlist.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/annotlist/component/view/package-summary.html">com.pdftron.collab.ui.annotlist.component.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/annotlist/model/list/package-summary.html">com.pdftron.collab.ui.annotlist.model.list</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/annotlist/model/list/item/package-summary.html">com.pdftron.collab.ui.annotlist.model.list.item</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/base/component/package-summary.html">com.pdftron.collab.ui.base.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/reply/bottomsheet/package-summary.html">com.pdftron.collab.ui.reply.bottomsheet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/reply/bottomsheet/view/package-summary.html">com.pdftron.collab.ui.reply.bottomsheet.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/reply/component/package-summary.html">com.pdftron.collab.ui.reply.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/reply/component/header/package-summary.html">com.pdftron.collab.ui.reply.component.header</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/reply/component/input/package-summary.html">com.pdftron.collab.ui.reply.component.input</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/reply/component/messages/package-summary.html">com.pdftron.collab.ui.reply.component.messages</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/reply/model/package-summary.html">com.pdftron.collab.ui.reply.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/view/package-summary.html">com.pdftron.collab.ui.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/ui/viewer/package-summary.html">com.pdftron.collab.ui.viewer</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/utils/package-summary.html">com.pdftron.collab.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/utils/date/package-summary.html">com.pdftron.collab.utils.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/viewmodel/package-summary.html">com.pdftron.collab.viewmodel</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/collab/webviewerserver/package-summary.html">com.pdftron.collab.webviewerserver</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/common/package-summary.html">com.pdftron.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/crypto/package-summary.html">com.pdftron.crypto</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/app/package-summary.html">com.pdftron.demo.app</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/app/setting/package-summary.html">com.pdftron.demo.app.setting</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/asynctask/package-summary.html">com.pdftron.demo.asynctask</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/browser/db/converter/package-summary.html">com.pdftron.demo.browser.db.converter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/browser/db/file/package-summary.html">com.pdftron.demo.browser.db.file</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/browser/db/folder/package-summary.html">com.pdftron.demo.browser.db.folder</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/browser/db/trash/package-summary.html">com.pdftron.demo.browser.db.trash</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/browser/db/tree/package-summary.html">com.pdftron.demo.browser.db.tree</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/browser/model/package-summary.html">com.pdftron.demo.browser.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/browser/ui/package-summary.html">com.pdftron.demo.browser.ui</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/dialog/package-summary.html">com.pdftron.demo.dialog</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/navigation/package-summary.html">com.pdftron.demo.navigation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/navigation/adapter/package-summary.html">com.pdftron.demo.navigation.adapter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/navigation/adapter/viewholder/package-summary.html">com.pdftron.demo.navigation.adapter.viewholder</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/navigation/callbacks/package-summary.html">com.pdftron.demo.navigation.callbacks</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/navigation/component/html2pdf/package-summary.html">com.pdftron.demo.navigation.component.html2pdf</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/navigation/component/html2pdf/view/package-summary.html">com.pdftron.demo.navigation.component.html2pdf.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/navigation/viewmodel/package-summary.html">com.pdftron.demo.navigation.viewmodel</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/utils/package-summary.html">com.pdftron.demo.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/viewmodel/package-summary.html">com.pdftron.demo.viewmodel</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/widget/package-summary.html">com.pdftron.demo.widget</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/demo/widget/menu/package-summary.html">com.pdftron.demo.widget.menu</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/fdf/package-summary.html">com.pdftron.fdf</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/filters/package-summary.html">com.pdftron.filters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/helpers/package-summary.html">com.pdftron.helpers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/layout/package-summary.html">com.pdftron.layout</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/package-summary.html">com.pdftron.pdf</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/adapter/package-summary.html">com.pdftron.pdf.adapter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/annots/package-summary.html">com.pdftron.pdf.annots</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/asynctask/package-summary.html">com.pdftron.pdf.asynctask</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/config/package-summary.html">com.pdftron.pdf.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/controls/package-summary.html">com.pdftron.pdf.controls</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/package-summary.html">com.pdftron.pdf.dialog</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/annotlist/package-summary.html">com.pdftron.pdf.dialog.annotlist</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/annotlist/model/package-summary.html">com.pdftron.pdf.dialog.annotlist.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/base/package-summary.html">com.pdftron.pdf.dialog.base</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/diffing/package-summary.html">com.pdftron.pdf.dialog.diffing</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/package-summary.html">com.pdftron.pdf.dialog.digitalsignature</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/package-summary.html">com.pdftron.pdf.dialog.digitalsignature.validation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/list/package-summary.html">com.pdftron.pdf.dialog.digitalsignature.validation.list</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/package-summary.html">com.pdftron.pdf.dialog.digitalsignature.validation.properties</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/measure/package-summary.html">com.pdftron.pdf.dialog.measure</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/measurecount/package-summary.html">com.pdftron.pdf.dialog.measurecount</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/menueditor/package-summary.html">com.pdftron.pdf.dialog.menueditor</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/menueditor/model/package-summary.html">com.pdftron.pdf.dialog.menueditor.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/pagelabel/package-summary.html">com.pdftron.pdf.dialog.pagelabel</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/pdflayer/package-summary.html">com.pdftron.pdf.dialog.pdflayer</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/redaction/package-summary.html">com.pdftron.pdf.dialog.redaction</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/reflow/package-summary.html">com.pdftron.pdf.dialog.reflow</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/signature/package-summary.html">com.pdftron.pdf.dialog.signature</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/simpleinput/package-summary.html">com.pdftron.pdf.dialog.simpleinput</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/simplelist/package-summary.html">com.pdftron.pdf.dialog.simplelist</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/tabswitcher/package-summary.html">com.pdftron.pdf.dialog.tabswitcher</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/tabswitcher/model/package-summary.html">com.pdftron.pdf.dialog.tabswitcher.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/toolbarswitcher/package-summary.html">com.pdftron.pdf.dialog.toolbarswitcher</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/toolbarswitcher/button/package-summary.html">com.pdftron.pdf.dialog.toolbarswitcher.button</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/toolbarswitcher/dialog/package-summary.html">com.pdftron.pdf.dialog.toolbarswitcher.dialog</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/toolbarswitcher/model/package-summary.html">com.pdftron.pdf.dialog.toolbarswitcher.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/watermark/package-summary.html">com.pdftron.pdf.dialog.watermark</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/dialog/widgetchoice/package-summary.html">com.pdftron.pdf.dialog.widgetchoice</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/interfaces/package-summary.html">com.pdftron.pdf.interfaces</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/interfaces/builder/package-summary.html">com.pdftron.pdf.interfaces.builder</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/model/package-summary.html">com.pdftron.pdf.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/model/ink/package-summary.html">com.pdftron.pdf.model.ink</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/model/list/package-summary.html">com.pdftron.pdf.model.list</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/ocg/package-summary.html">com.pdftron.pdf.ocg</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/pdfa/package-summary.html">com.pdftron.pdf.pdfa</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/struct/package-summary.html">com.pdftron.pdf.struct</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/tools/package-summary.html">com.pdftron.pdf.tools</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/utils/package-summary.html">com.pdftron.pdf.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/utils/cache/package-summary.html">com.pdftron.pdf.utils.cache</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/viewmodel/package-summary.html">com.pdftron.pdf.viewmodel</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/package-summary.html">com.pdftron.pdf.widget</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/base/package-summary.html">com.pdftron.pdf.widget.base</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/bottombar/builder/package-summary.html">com.pdftron.pdf.widget.bottombar.builder</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/bottombar/component/package-summary.html">com.pdftron.pdf.widget.bottombar.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/bottombar/component/view/package-summary.html">com.pdftron.pdf.widget.bottombar.component.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/preset/component/package-summary.html">com.pdftron.pdf.widget.preset.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/preset/component/model/package-summary.html">com.pdftron.pdf.widget.preset.component.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/preset/component/view/package-summary.html">com.pdftron.pdf.widget.preset.component.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/preset/signature/package-summary.html">com.pdftron.pdf.widget.preset.signature</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/preset/signature/model/package-summary.html">com.pdftron.pdf.widget.preset.signature.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/recyclerview/package-summary.html">com.pdftron.pdf.widget.recyclerview</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/recyclerview/decoration/package-summary.html">com.pdftron.pdf.widget.recyclerview.decoration</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/redaction/package-summary.html">com.pdftron.pdf.widget.redaction</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/richtext/package-summary.html">com.pdftron.pdf.widget.richtext</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/seekbar/package-summary.html">com.pdftron.pdf.widget.seekbar</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/signature/package-summary.html">com.pdftron.pdf.widget.signature</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/toolbar/package-summary.html">com.pdftron.pdf.widget.toolbar</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/toolbar/builder/package-summary.html">com.pdftron.pdf.widget.toolbar.builder</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/toolbar/component/package-summary.html">com.pdftron.pdf.widget.toolbar.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/toolbar/component/view/package-summary.html">com.pdftron.pdf.widget.toolbar.component.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/pdf/widget/toolbar/data/package-summary.html">com.pdftron.pdf.widget.toolbar.data</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/recyclertreeview/package-summary.html">com.pdftron.recyclertreeview</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/pdftron/sdf/package-summary.html">com.pdftron.sdf</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignatureProperties.html">DigitalSignatureProperties</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignaturePropertiesDialog.html">DigitalSignaturePropertiesDialog</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+
+
+  <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>DigitalSignaturePropertiesDialog</h1>
+
+
+
+  
+  
+  
+
+  
+    extends DialogFragment<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+         	
+        <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="2" class="jd-inheritance-class-cell">DialogFragment</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="1" class="jd-inheritance-class-cell">com.pdftron.pdf.dialog.digitalsignature.validation.properties.DigitalSignaturePropertiesDialog</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignaturePropertiesDialog.html#DigitalSignaturePropertiesDialog()">DigitalSignaturePropertiesDialog</a></span>()
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignaturePropertiesDialog.html#bindTextViews()">bindTextViews</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            <a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignaturePropertiesDialog.html">DigitalSignaturePropertiesDialog</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignaturePropertiesDialog.html#newInstance()">newInstance</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            View
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignaturePropertiesDialog.html#onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)">onCreateView</a></span>(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignaturePropertiesDialog.html#onViewCreated(android.view.View, android.os.Bundle)">onViewCreated</a></span>(View view, Bundle savedInstanceState)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignaturePropertiesDialog.html#setDigitalSignatureProperties(com.pdftron.pdf.dialog.digitalsignature.validation.properties.DigitalSignatureProperties)">setDigitalSignatureProperties</a></span>(<a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignatureProperties.html">DigitalSignatureProperties</a> digitalSignatureProperties)
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">equals</span>(Object arg0)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">getClass</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">hashCode</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">notify</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">notifyAll</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">toString</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>(long arg0, int arg1)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>(long arg0)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>()
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<a id="DigitalSignaturePropertiesDialog()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">DigitalSignaturePropertiesDialog</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<a id="bindTextViews()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">bindTextViews</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="newInstance()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignaturePropertiesDialog.html">DigitalSignaturePropertiesDialog</a>
+      </span>
+      <span class="sympad">newInstance</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        View
+      </span>
+      <span class="sympad">onCreateView</span>
+      <span class="normal">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="onViewCreated(android.view.View, android.os.Bundle)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">onViewCreated</span>
+      <span class="normal">(View view, Bundle savedInstanceState)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setDigitalSignatureProperties(com.pdftron.pdf.dialog.digitalsignature.validation.properties.DigitalSignatureProperties)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setDigitalSignatureProperties</span>
+      <span class="normal">(<a href="../../../../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/DigitalSignatureProperties.html">DigitalSignatureProperties</a> digitalSignatureProperties)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<a id="navbar_top"></a>
+
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: 'f9d712e43c1978feb1df68f5e63a868c',
+indexName: 'pdftron',
+inputSelector: '.gsc-input',
+algoliaOptions: { 'facetFilters': ["tags:android"] },
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+description = 'This sample app shows some usages of several PDFNet classes.'
+
+buildscript {
+    ext.kotlinVersion = '1.4.21'
+    repositories {
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        flatDir {
+            dirs '../../../lib/full'
+        }
+    }
+}

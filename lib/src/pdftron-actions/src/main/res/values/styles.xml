@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PTExportFileCompletionDialogTheme">
+        <item name="actionTextColor">@color/action_tint</item>
+        <item name="actionIconColor">@color/action_tint</item>
+        <item name="titleColor">@color/action_title</item>
+    </style>
+
+</resources>

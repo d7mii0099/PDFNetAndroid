@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="bottom_bar_view_mode" type="id" />
+    <item name="bottom_bar_reflow" type="id" />
+    <item name="bottom_bar_addpage" type="id" />
+</resources>

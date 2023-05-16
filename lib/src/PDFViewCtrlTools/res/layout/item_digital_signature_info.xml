@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="?android:attr/colorBackground">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/header_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="header_click_area,header,badge,header_expand" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/details_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="sig_verification,doc_permission_message,trust_result,signature_properties" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/additional_details_header_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="additional_details_header_click_area,additional_signature_details,additional_details_expand" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/additional_details_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="contact_info_title,contact_info,location_title,location,reason_title,reason,signing_time_title,signing_time" />
+
+    <TextView
+        android:id="@+id/dig_sig_unsigned"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/dialog_digital_signature_unsigned"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/header_click_area"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/header_expand"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintEnd_toStartOf="@+id/badge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_keyboard_arrow_right_white_24dp" />
+
+    <ImageView
+        android:id="@+id/badge"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="6dp"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintEnd_toStartOf="@+id/header"
+        app:layout_constraintStart_toEndOf="@+id/header_expand"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_digital_signature_valid" />
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:minHeight="24dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/badge"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Certified by www.pdftron.com" />
+
+    <TextView
+        android:id="@+id/sig_verification"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        tools:text="Certification is valid." />
+
+    <TextView
+        android:id="@+id/doc_permission_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sig_verification"
+        app:layout_constraintTop_toBottomOf="@+id/sig_verification"
+        tools:text="The document has changes that are allowed by the signatures permission settings" />
+
+    <TextView
+        android:id="@+id/disallowed_changes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sig_verification"
+        app:layout_constraintTop_toBottomOf="@+id/doc_permission_message"
+        tools:text="Disallowed Changes:" />
+
+    <TextView
+        android:id="@+id/trust_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sig_verification"
+        app:layout_constraintTop_toBottomOf="@+id/disallowed_changes"
+        tools:text="Trust verification result: Verified" />
+
+    <TextView
+        android:id="@+id/trust_result_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sig_verification"
+        app:layout_constraintTop_toBottomOf="@+id/trust_result"
+        tools:text="Tuesday, January 14, 2020, 12:20 PM" />
+
+    <TextView
+        android:id="@+id/verification_time_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sig_verification"
+        app:layout_constraintTop_toBottomOf="@+id/trust_result_date"
+        tools:text="Verification time is from the clock on the signer's computer" />
+
+    <TextView
+        android:id="@+id/signature_properties"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/dialog_digital_signature_info_properties"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sig_verification"
+        app:layout_constraintTop_toBottomOf="@+id/verification_time_details" />
+
+    <View
+        android:id="@+id/additional_details_header_click_area"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/additional_details_expand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/additional_details_expand" />
+
+    <TextView
+        android:id="@+id/additional_signature_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/dialog_digital_signature_info_details"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sig_verification"
+        app:layout_constraintTop_toBottomOf="@+id/signature_properties" />
+
+    <ImageView
+        android:id="@+id/additional_details_expand"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/additional_signature_details"
+        app:layout_constraintEnd_toStartOf="@+id/additional_signature_details"
+        app:layout_constraintTop_toTopOf="@+id/additional_signature_details"
+        app:srcCompat="@drawable/ic_keyboard_arrow_right_white_24dp" />
+
+    <TextView
+        android:id="@+id/contact_info_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/tools_digitalsignature_contact_info"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/additional_signature_details"
+        app:layout_constraintTop_toBottomOf="@+id/additional_signature_details" />
+
+    <TextView
+        android:id="@+id/contact_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/additional_signature_details"
+        app:layout_constraintTop_toBottomOf="@+id/contact_info_title"
+        tools:text="www.pdftron.com" />
+
+    <TextView
+        android:id="@+id/location_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/tools_digitalsignature_location"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/additional_signature_details"
+        app:layout_constraintTop_toBottomOf="@+id/contact_info" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/additional_signature_details"
+        app:layout_constraintTop_toBottomOf="@+id/location_title"
+        tools:text="Vancouver, BC" />
+
+    <TextView
+        android:id="@+id/reason_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/tools_digitalsignature_reason"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/additional_signature_details"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
+
+    <TextView
+        android:id="@+id/reason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/additional_signature_details"
+        app:layout_constraintTop_toBottomOf="@+id/reason_title"
+        tools:text="Document certification." />
+
+    <TextView
+        android:id="@+id/signing_time_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/tools_digitalsignature_signing_time"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/additional_signature_details"
+        app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+    <TextView
+        android:id="@+id/signing_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/additional_signature_details"
+        app:layout_constraintTop_toBottomOf="@+id/signing_time_title"
+        tools:text="Tuesday, January 14, 2020, 12:20 PM" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

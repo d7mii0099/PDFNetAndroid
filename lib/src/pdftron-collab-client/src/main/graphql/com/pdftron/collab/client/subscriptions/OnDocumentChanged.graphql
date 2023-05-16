@@ -1,0 +1,48 @@
+subscription OnDocumentChanged($userId: ID!, $settings: QuerySettings) {
+        documentChanged(userId: $userId, settings: $settings) {
+          invitedBy
+          document {
+            id
+            name
+            isPublic
+            author {
+              id
+              userName
+              email
+              type
+            }
+            unreadCount
+            updatedAt
+            createdAt
+            annotations {
+              xfdf
+              id
+              annotationId
+              documentId
+              pageNumber
+              annotContents
+              createdAt
+              author {
+                id
+                email
+                userName
+              }
+              membership {
+                id
+                lastRead
+              }
+              inReplyTo
+            }
+            members {
+              id
+              createdAt
+              user {
+                id
+                email
+                userName
+              }
+            }
+          }
+          action
+        }
+      }

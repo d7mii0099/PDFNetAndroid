@@ -1,0 +1,24 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    ===============================================================
+                            IMPORTANT
+    ===============================================================
+    The key names and values used here must be conform to what is declared in
+    SettingsManager class. This is because we read these values from that
+    class to be used across the application.
+    -->
+
+    <PreferenceCategory
+        android:key="pref_category_about"
+        app:iconSpaceReserved="false">
+
+        <com.pdftron.demo.app.AboutDialogPreference
+            style="@style/CustomAppTheme.Preference.DialogPreference"
+            android:key="pref_about"
+            android:title="@string/about" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

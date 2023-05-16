@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="?attr/pt_toolbar_theme"
+        app:popupTheme="?attr/pt_toolbar_popup_theme"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+        style="?attr/pt_toolbar_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/search_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="?attr/pt_toolbar_theme"
+        app:popupTheme="?attr/pt_toolbar_popup_theme"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+        style="?attr/pt_toolbar_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="?attr/colorAccent"
+            style="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                style="Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/select_all_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_toolbar"
+        android:orientation="horizontal">
+
+        <com.pdftron.pdf.widget.InertCheckBox
+            android:id="@+id/select_all_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp" />
+
+        <TextView
+            android:id="@+id/search_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?android:attr/textColorPrimary"
+            android:text="@string/select_all"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/top_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_all_view"/>
+
+    <com.pdftron.pdf.widget.redaction.RedactionSearchResultsView
+        android:id="@+id/search_results_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_divider"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_divider"/>
+
+    <View
+        android:id="@+id/bottom_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_results_view"
+        app:layout_constraintBottom_toTopOf="@+id/redact_btn"/>
+
+    <Button
+        android:id="@+id/redact_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mark_redaction"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        style="?attr/buttonBarButtonStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_divider"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

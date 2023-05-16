@@ -1,0 +1,5 @@
+mutation EditSnapshot($id: ID!, $input: EditSnapshotInput!) {
+          editSnapshot(id: $id, input: $input) {
+            id
+          }
+        }

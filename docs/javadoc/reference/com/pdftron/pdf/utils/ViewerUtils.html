@@ -1,0 +1,4991 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Apryse Software Inc.." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
+<title>
+
+  ViewerUtils - PDFTron API Reference
+
+
+| Apryse Software Inc.
+
+</title>
+<link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../assets/prettify.js" type="text/javascript"></script>
+<script src="../../../../../assets/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../", "../../../../../assets/");
+</script>
+<script src="../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div class="header">
+  <nav class="nav-bar">
+    
+      <a class="nav-brand" href="https://www.pdftron.com/"><img title="" width="150" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDggNDQiID48cGF0aCBmaWxsPSIjMDBBNUU0IiBkPSJNMzkzLjE3LjRWMzJjMCAuNi0uMjYgMS4xLS43NiAxLjUtLjUyLjMtMS4xMi41LTEuODMuNS0uNTcgMC0xLjEzLS4xLTEuNjgtLjMtLjUzLS4yLS45Ny0uNi0xLjMtMS0xLjE4LTEuNy0zLjA1LTYtNS42LTEyLjgtMi4zLTYuMy00LjczLTEwLjgtNy4yOC0xMy42LTMuODQtNC4yLTguOTctNi4zLTE1LjQtNi4zLTQuODEgMC04Ljc4LjctMTEuODggMi0zLjU3IDEuNy01LjM3IDQtNS4zNyA3LjF2MzMuN2gxNC40MVYxMS4yYzAtLjYuMTctMSAuNTEtMS40LjMzLS4zLjk3LS41IDEuODktLjcgMS4zNy0uMSAzLjEzIDEuNyA1LjI2IDUuNSAxLjUxIDIuNiAzLjMyIDYuNSA1LjQ3IDExLjYgMi4yOSA1LjQgMy41OCA4LjQgMy44NyA4LjkgMS40IDIuOCAzLjgyIDQuOSA3LjIzIDYuNCAzLjAzIDEuMyA2LjQ4IDEuOSAxMC4zNiAxLjkgNC40MyAwIDguMjUtLjggMTEuNDQtMi40IDMuMzgtMS44IDUuMDctNCA1LjA3LTYuN1YuNGgtMTQuNDF6bS03MC44OCAyOS41Yy0yLjA3IDIuNi00LjgyIDMuOS04LjIzIDMuOWgtMTYuNDJjLTMuNDQgMC02LjE5LTEuMy04LjIzLTMuOS0xLjg1LTIuMy0yLjc4LTUuMi0yLjc4LTguNSAwLTMuMi45Mi01LjkgMi43My04LjEgMi4wMi0yLjQgNC43Ny0zLjYgOC4yOC0zLjZoMTYuNDJjMy41NCAwIDYuMzEgMS4yIDguMzMgMy42IDEuODIgMi4yIDIuNzMgNC45IDIuNzMgOC4xIDAgMy4zLS45NCA2LjItMi44MyA4LjV6TTMxNi40NC44aC0yMS4yYy03LjUgMC0xMy40OCAyLjItMTcuOTYgNi43LTIuMTUgMi4yLTMuNzEgNC42LTQuNzEgNy4yLjA0LS40LjA2LS44LjA2LTEuMiAwLTMuNC0xLjQ2LTYuNC00LjQxLTguNy0zLjIyLTIuNy03LjU5LTQtMTMuMTItNGgtODIuODR2OC45aDE0LjYydjMzLjJoMTQuMjFWOS43aDUxLjY0YzEuNjIgMCAyLjkxLjQgMy44MyAxLjIuODIuNyAxLjI1IDEuNiAxLjI1IDIuNnMtLjQzIDEuOC0xLjI1IDIuNWMtLjkyLjgtMi4yMSAxLjEtMy44MyAxLjFoLTE3LjY0Yy01Ljc3IDAtMTAuMTUgMS4yLTEzLjEzIDMuNi0yLjU5IDIuMS0zLjg4IDQuOC0zLjg4IDguMnYxMy45aDE0LjIxVjMyLjNsNDAuODYgMTEuNHYtOS45bC0yNy4wMS03LjZoOC45NmM1LjU2IDAgOS45NS0xLjMgMTMuMTctMy45IDEuNTEtMS4zIDIuNjItMi42IDMuMzQtNC4yLS4yMyAxLjMtLjM1IDIuNy0uMzUgNC4xIDAgNS42IDEuOTcgMTAuNCA1LjkzIDE0LjIgNC40MSA0LjMgMTAuNDMgNi41IDE4LjA1IDYuNWgyMS4yYzcuNjYgMCAxMy42OS0yLjIgMTguMDktNi41IDMuOTQtMy44IDUuOS04LjYgNS45LTE0LjIgMC01LjgtMi4wMi0xMC43LTYuMDMtMTQuN0MzMjkuOTMgMyAzMjMuOTQuOCAzMTYuNDQuOHptLTE5MS42NiAzYy0zLjEyIDEuNy01LjQzIDQuMi02Ljg5IDcuNi0xLjIxIDIuOC0xLjgyIDYuMS0xLjgyIDEwLjF2MjEuNGgxNC40MVYyNi4yaDQwLjR2LTkuMWgtNDAuNGMuMDktLjYuMjEtMS4yLjM0LTEuOS40MS0xLjUgMS4xNC0yLjcgMi4yLTMuNiAxLjQ3LTEuMyAzLjQ3LTEuOSA1Ljk5LTEuOWgzMS44N1YuOGgtMzEuODdjLTUuOSAwLTEwLjY0IDEtMTQuMjMgM3pNOTUuNDQgMjkuOWMtMi4wNyAyLjYtNC44MiAzLjktOC4yMyAzLjlINzIuMjJWOS43aDE0Ljk5YzMuNTQgMCA2LjMyIDEuMiA4LjMzIDMuNiAxLjc5IDIuMiAyLjY4IDQuOSAyLjY4IDguMSAwIDMuNC0uOTMgNi4yLTIuNzggOC41ek04OS42MS44aC0zMS44djQyLjFoMzEuOGM3LjY1IDAgMTMuNjgtMi4yIDE4LjEtNi41IDMuOTItMy44IDUuODgtOC42IDUuODgtMTQuMiAwLTUuOC0yLTEwLjctNi4wMy0xNC43QzEwMy4wOSAzIDk3LjExLjggODkuNjEuOHptLTM5LjQ0IDRjLTMuMjItMi43LTcuNi00LTEzLjEyLTRILjA0djguOWgzNC42MmMxLjY0IDAgMi45Mi40IDMuODQgMS4yLjg0LjcgMS4yNSAxLjYgMS4yNSAyLjZzLS40MSAxLjgtMS4yNSAyLjVjLS45Mi44LTIuMiAxLjEtMy44NCAxLjFIMTcuMDRjLTUuNzggMC0xMC4xNSAxLjItMTMuMTMgMy42QzEuMzIgMjIuOC4wNCAyNS42LjA0IDI4LjkuMDIgMzEuMSAwIDMzLjIgMCAzNS4yVjQwYzAgMS4yLjAyIDIuMi4wNCAyLjloMTQuMTl2LTljLS4wOS0uMS0uMTQtLjMtLjE2LS41LS4wMy0uMS0uMDQtLjQtLjA0LS45IDAtMS42LjUxLTIuOSAxLjU0LTMuOSAxLjUzLTEuNiA0LjA2LTIuNCA3LjYxLTIuNGgxMy44NWM1LjU3IDAgOS45Ny0xLjMgMTMuMTktMy45IDIuOS0yLjQgNC4zNi01LjMgNC4zNi04LjggMC0zLjQtMS40Ny02LjQtNC40MS04Ljd6Ii8+PC9zdmc+" alt=""></a>
+      <ul class="nav-block nav-block-first hidden-xs">
+      <li class="nav-item">
+      <a class="nav-link" href="https://www.pdftron.com/pdf-sdk/">Technology</a>
+      </li>
+      <li class="nav-item active">
+      <a class="nav-link" href="https://www.pdftron.com/documentation/">
+      Documentation
+      </a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://www.pdftron.com/support/">
+      Support
+      </a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://www.pdftron.com/blog/">
+      Blog
+      </a>
+      </li>
+      </ul>
+    
+    
+    <ul class="nav-block nav-block-last hidden-xs">
+    <li class="nav-item nav-form">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="Search API documentation" name="q"
+                      value=""
+                      placeholder="Search"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </li>
+    </ul>
+  </nav>
+</div><!-- header -->
+
+<div class="nav-sub">
+<div class="container">
+<div class="d-flex justify-content-md-center justify-content-lg-start">
+<div class="mr-auto d-none d-lg-block">
+<nav class="nav-breadcrumb breadcrumb">
+<a href="https://www.pdftron.com/documentation/android/" class="breadcrumb-item">
+Documentation
+</a>
+<a href="https://www.pdftron.com/api/android/javadoc/reference/packages.html" class="breadcrumb-item">
+API
+</a>
+<a href="https://www.pdftron.com/api/android/javadoc/reference/packages.html" class="breadcrumb-item">
+PDFTron for Android
+</a>
+</nav>
+</div>
+<div class="ml-lg-auto d-flex">
+<ul class="nav flex-nowrap flex-row-reverse flex-sm-row align-items-center">
+<li class="nav-item">
+<a href="https://www.pdftron.com/documentation/android/" class="nav-link">
+Guides
+</a>
+</li>
+<li class="nav-item">
+<a href="https://www.pdftron.com/api/android/javadoc/reference/packages.html" class="nav-link active">
+API
+</a>
+</li>
+<li class="nav-item border">
+<a href="https://www.pdftron.com/documentation/android/changelog/" class="nav-link">
+Changelog
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/actions/package-summary.html">com.pdftron.actions</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/actions/easypdf/package-summary.html">com.pdftron.actions.easypdf</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/actions/ui/export/package-summary.html">com.pdftron.actions.ui.export</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/package-summary.html">com.pdftron.collab</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/db/package-summary.html">com.pdftron.collab.db</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/db/converter/package-summary.html">com.pdftron.collab.db.converter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/db/dao/package-summary.html">com.pdftron.collab.db.dao</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/db/entity/package-summary.html">com.pdftron.collab.db.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/model/package-summary.html">com.pdftron.collab.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/service/package-summary.html">com.pdftron.collab.service</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/annotlist/package-summary.html">com.pdftron.collab.ui.annotlist</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/annotlist/component/package-summary.html">com.pdftron.collab.ui.annotlist.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/annotlist/component/view/package-summary.html">com.pdftron.collab.ui.annotlist.component.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/annotlist/model/list/package-summary.html">com.pdftron.collab.ui.annotlist.model.list</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/annotlist/model/list/item/package-summary.html">com.pdftron.collab.ui.annotlist.model.list.item</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/base/component/package-summary.html">com.pdftron.collab.ui.base.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/reply/bottomsheet/package-summary.html">com.pdftron.collab.ui.reply.bottomsheet</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/reply/bottomsheet/view/package-summary.html">com.pdftron.collab.ui.reply.bottomsheet.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/reply/component/package-summary.html">com.pdftron.collab.ui.reply.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/reply/component/header/package-summary.html">com.pdftron.collab.ui.reply.component.header</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/reply/component/input/package-summary.html">com.pdftron.collab.ui.reply.component.input</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/reply/component/messages/package-summary.html">com.pdftron.collab.ui.reply.component.messages</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/reply/model/package-summary.html">com.pdftron.collab.ui.reply.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/view/package-summary.html">com.pdftron.collab.ui.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/ui/viewer/package-summary.html">com.pdftron.collab.ui.viewer</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/utils/package-summary.html">com.pdftron.collab.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/utils/date/package-summary.html">com.pdftron.collab.utils.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/viewmodel/package-summary.html">com.pdftron.collab.viewmodel</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/collab/webviewerserver/package-summary.html">com.pdftron.collab.webviewerserver</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/common/package-summary.html">com.pdftron.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/crypto/package-summary.html">com.pdftron.crypto</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/app/package-summary.html">com.pdftron.demo.app</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/app/setting/package-summary.html">com.pdftron.demo.app.setting</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/asynctask/package-summary.html">com.pdftron.demo.asynctask</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/browser/db/converter/package-summary.html">com.pdftron.demo.browser.db.converter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/browser/db/file/package-summary.html">com.pdftron.demo.browser.db.file</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/browser/db/folder/package-summary.html">com.pdftron.demo.browser.db.folder</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/browser/db/trash/package-summary.html">com.pdftron.demo.browser.db.trash</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/browser/db/tree/package-summary.html">com.pdftron.demo.browser.db.tree</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/browser/model/package-summary.html">com.pdftron.demo.browser.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/browser/ui/package-summary.html">com.pdftron.demo.browser.ui</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/dialog/package-summary.html">com.pdftron.demo.dialog</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/navigation/package-summary.html">com.pdftron.demo.navigation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/navigation/adapter/package-summary.html">com.pdftron.demo.navigation.adapter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/navigation/adapter/viewholder/package-summary.html">com.pdftron.demo.navigation.adapter.viewholder</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/navigation/callbacks/package-summary.html">com.pdftron.demo.navigation.callbacks</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/navigation/component/html2pdf/package-summary.html">com.pdftron.demo.navigation.component.html2pdf</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/navigation/component/html2pdf/view/package-summary.html">com.pdftron.demo.navigation.component.html2pdf.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/navigation/viewmodel/package-summary.html">com.pdftron.demo.navigation.viewmodel</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/utils/package-summary.html">com.pdftron.demo.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/viewmodel/package-summary.html">com.pdftron.demo.viewmodel</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/widget/package-summary.html">com.pdftron.demo.widget</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/demo/widget/menu/package-summary.html">com.pdftron.demo.widget.menu</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/fdf/package-summary.html">com.pdftron.fdf</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/filters/package-summary.html">com.pdftron.filters</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/helpers/package-summary.html">com.pdftron.helpers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/layout/package-summary.html">com.pdftron.layout</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/package-summary.html">com.pdftron.pdf</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/adapter/package-summary.html">com.pdftron.pdf.adapter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/annots/package-summary.html">com.pdftron.pdf.annots</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/asynctask/package-summary.html">com.pdftron.pdf.asynctask</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/config/package-summary.html">com.pdftron.pdf.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/controls/package-summary.html">com.pdftron.pdf.controls</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/package-summary.html">com.pdftron.pdf.dialog</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/annotlist/package-summary.html">com.pdftron.pdf.dialog.annotlist</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/annotlist/model/package-summary.html">com.pdftron.pdf.dialog.annotlist.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/base/package-summary.html">com.pdftron.pdf.dialog.base</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/diffing/package-summary.html">com.pdftron.pdf.dialog.diffing</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/digitalsignature/package-summary.html">com.pdftron.pdf.dialog.digitalsignature</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/digitalsignature/validation/package-summary.html">com.pdftron.pdf.dialog.digitalsignature.validation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/digitalsignature/validation/list/package-summary.html">com.pdftron.pdf.dialog.digitalsignature.validation.list</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/digitalsignature/validation/properties/package-summary.html">com.pdftron.pdf.dialog.digitalsignature.validation.properties</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/measure/package-summary.html">com.pdftron.pdf.dialog.measure</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/measurecount/package-summary.html">com.pdftron.pdf.dialog.measurecount</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/menueditor/package-summary.html">com.pdftron.pdf.dialog.menueditor</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/menueditor/model/package-summary.html">com.pdftron.pdf.dialog.menueditor.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/pagelabel/package-summary.html">com.pdftron.pdf.dialog.pagelabel</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/pdflayer/package-summary.html">com.pdftron.pdf.dialog.pdflayer</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/redaction/package-summary.html">com.pdftron.pdf.dialog.redaction</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/reflow/package-summary.html">com.pdftron.pdf.dialog.reflow</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/signature/package-summary.html">com.pdftron.pdf.dialog.signature</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/simpleinput/package-summary.html">com.pdftron.pdf.dialog.simpleinput</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/simplelist/package-summary.html">com.pdftron.pdf.dialog.simplelist</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/tabswitcher/package-summary.html">com.pdftron.pdf.dialog.tabswitcher</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/tabswitcher/model/package-summary.html">com.pdftron.pdf.dialog.tabswitcher.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/toolbarswitcher/package-summary.html">com.pdftron.pdf.dialog.toolbarswitcher</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/toolbarswitcher/button/package-summary.html">com.pdftron.pdf.dialog.toolbarswitcher.button</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/toolbarswitcher/dialog/package-summary.html">com.pdftron.pdf.dialog.toolbarswitcher.dialog</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/toolbarswitcher/model/package-summary.html">com.pdftron.pdf.dialog.toolbarswitcher.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/watermark/package-summary.html">com.pdftron.pdf.dialog.watermark</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/dialog/widgetchoice/package-summary.html">com.pdftron.pdf.dialog.widgetchoice</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/interfaces/package-summary.html">com.pdftron.pdf.interfaces</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/interfaces/builder/package-summary.html">com.pdftron.pdf.interfaces.builder</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/model/package-summary.html">com.pdftron.pdf.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/model/ink/package-summary.html">com.pdftron.pdf.model.ink</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/model/list/package-summary.html">com.pdftron.pdf.model.list</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/ocg/package-summary.html">com.pdftron.pdf.ocg</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/pdfa/package-summary.html">com.pdftron.pdf.pdfa</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/struct/package-summary.html">com.pdftron.pdf.struct</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/tools/package-summary.html">com.pdftron.pdf.tools</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../com/pdftron/pdf/utils/package-summary.html">com.pdftron.pdf.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/utils/cache/package-summary.html">com.pdftron.pdf.utils.cache</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/viewmodel/package-summary.html">com.pdftron.pdf.viewmodel</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/package-summary.html">com.pdftron.pdf.widget</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/base/package-summary.html">com.pdftron.pdf.widget.base</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/bottombar/builder/package-summary.html">com.pdftron.pdf.widget.bottombar.builder</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/bottombar/component/package-summary.html">com.pdftron.pdf.widget.bottombar.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/bottombar/component/view/package-summary.html">com.pdftron.pdf.widget.bottombar.component.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/preset/component/package-summary.html">com.pdftron.pdf.widget.preset.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/preset/component/model/package-summary.html">com.pdftron.pdf.widget.preset.component.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/preset/component/view/package-summary.html">com.pdftron.pdf.widget.preset.component.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/preset/signature/package-summary.html">com.pdftron.pdf.widget.preset.signature</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/preset/signature/model/package-summary.html">com.pdftron.pdf.widget.preset.signature.model</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/recyclerview/package-summary.html">com.pdftron.pdf.widget.recyclerview</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/recyclerview/decoration/package-summary.html">com.pdftron.pdf.widget.recyclerview.decoration</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/redaction/package-summary.html">com.pdftron.pdf.widget.redaction</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/richtext/package-summary.html">com.pdftron.pdf.widget.richtext</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/seekbar/package-summary.html">com.pdftron.pdf.widget.seekbar</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/signature/package-summary.html">com.pdftron.pdf.widget.signature</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/toolbar/package-summary.html">com.pdftron.pdf.widget.toolbar</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/toolbar/builder/package-summary.html">com.pdftron.pdf.widget.toolbar.builder</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/toolbar/component/package-summary.html">com.pdftron.pdf.widget.toolbar.component</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/toolbar/component/view/package-summary.html">com.pdftron.pdf.widget.toolbar.component.view</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/pdf/widget/toolbar/data/package-summary.html">com.pdftron.pdf.widget.toolbar.data</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/recyclertreeview/package-summary.html">com.pdftron.recyclertreeview</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/pdftron/sdf/package-summary.html">com.pdftron.sdf</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ActionUtils.ActionInterceptCallback.html">ActionUtils.ActionInterceptCallback</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotationClipboardHelper.OnClipboardTaskListener.html">AnnotationClipboardHelper.OnClipboardTaskListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotationFilterOptionAdapter.OnFilterChangeEventListener.html">AnnotationFilterOptionAdapter.OnFilterChangeEventListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotUtils.AnnotVisitor.html">AnnotUtils.AnnotVisitor</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotUtils.AnnotWithPageVisitor.html">AnnotUtils.AnnotWithPageVisitor</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotUtils.PageVisitor.html">AnnotUtils.PageVisitor</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/BasicHeadRequestTask.BasicHeadRequestTaskListener.html">BasicHeadRequestTask.BasicHeadRequestTaskListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/BasicHTTPDownloadTask.BasicHTTPDownloadTaskListener.html">BasicHTTPDownloadTask.BasicHTTPDownloadTaskListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/CommonToast.CommonToastListener.html">CommonToast.CommonToastListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/DialogGoToPage.DialogGoToPageListener.html">DialogGoToPage.DialogGoToPageListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/EventHandler.EventListener.html">EventHandler.EventListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ExceptionHandlerCallback.html">ExceptionHandlerCallback</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/HTML2PDF.HTML2PDFListener.html">HTML2PDF.HTML2PDFListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/InlineEditText.InlineEditTextListener.html">InlineEditText.InlineEditTextListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ReflowWebView.ReflowWebViewCallback.html">ReflowWebView.ReflowWebViewCallback</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ReflowWebView.TextSelectionCallback.html">ReflowWebView.TextSelectionCallback</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/StampManager.SignatureListener.html">StampManager.SignatureListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ToolbarActionMode.Callback.html">ToolbarActionMode.Callback</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/UserCropUtilities.AutoCropInBackgroundTask.AutoCropTaskListener.html">UserCropUtilities.AutoCropInBackgroundTask.AutoCropTaskListener</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ActionUtils.html">ActionUtils</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnalyticsParam.html">AnalyticsParam</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotationClipboardHelper.html">AnnotationClipboardHelper</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotationFilterOptionAdapter.html">AnnotationFilterOptionAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotationPropertyPreviewView.html">AnnotationPropertyPreviewView</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotSnappingManager.html">AnnotSnappingManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotSnappingManager.SnappingResult.html">AnnotSnappingManager.SnappingResult</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotUtils.html">AnnotUtils</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AppUtils.html">AppUtils</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/BasicHeadRequestTask.html">BasicHeadRequestTask</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/BasicHTTPDownloadTask.html">BasicHTTPDownloadTask</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/BookmarkManager.html">BookmarkManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ColorPickerGridViewAdapter.html">ColorPickerGridViewAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/CommonToast.html">CommonToast</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/CommonToast.CommonToastHandler.html">CommonToast.CommonToastHandler</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/Constants.html">Constants</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/CustomAsyncTask.html">CustomAsyncTask</a>&lt;Params,&nbsp;Progress,&nbsp;Result&gt;</li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/DialogFragmentTab.html">DialogFragmentTab</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/DialogGoToPage.html">DialogGoToPage</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/DrawingUtils.html">DrawingUtils</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/Event.html">Event</a>&lt;T&gt;</li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/EventHandler.html">EventHandler</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/EventHandler.EventType.html">EventHandler.EventType</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ExpandableGridView.html">ExpandableGridView</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/FavoriteFilesManager.html">FavoriteFilesManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/FileInfoManager.html">FileInfoManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/FontAdapter.html">FontAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/FreeTextAlignmentUtils.html">FreeTextAlignmentUtils</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/HTML2PDF.html">HTML2PDF</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/IconPickerGridViewAdapter.html">IconPickerGridViewAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ImageMemoryCache.html">ImageMemoryCache</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/InlineEditText.html">InlineEditText</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/MeasureImpl.html">MeasureImpl</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/MeasureUtils.html">MeasureUtils</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/PageBackButtonInfo.html">PageBackButtonInfo</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/PaneBehavior.html">PaneBehavior</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/PathPool.html">PathPool</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/PdfDocManager.html">PdfDocManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/PdfViewCtrlSettingsManager.html">PdfViewCtrlSettingsManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/PdfViewCtrlTabsManager.html">PdfViewCtrlTabsManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/PointFPool.html">PointFPool</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/PressureInkUtils.html">PressureInkUtils</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/PressureInkUtils.EraserData.html">PressureInkUtils.EraserData</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/RecentFilesManager.html">RecentFilesManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/RedactionManager.html">RedactionManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ReflowWebView.html">ReflowWebView</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/RequestCode.html">RequestCode</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/RotationUtils.html">RotationUtils</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/SegmentedGroup.html">SegmentedGroup</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ShortcutHelper.html">ShortcutHelper</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/SnapUtils.html">SnapUtils</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/SoundManager.html">SoundManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/StampManager.html">StampManager</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/StampStatePopup.html">StampStatePopup</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/StateListDrawableBuilder.html">StateListDrawableBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/StylePickerGridViewAdapter.html">StylePickerGridViewAdapter</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/SwipeDetector.html">SwipeDetector</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ThemeProvider.html">ThemeProvider</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ToolbarActionMode.html">ToolbarActionMode</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/UnitConverter.html">UnitConverter</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/UserCropUtilities.html">UserCropUtilities</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/UserCropUtilities.AutoCropInBackgroundTask.html">UserCropUtilities.AutoCropInBackgroundTask</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/Utils.html">Utils</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/Vec2.html">Vec2</a></li>
+          <li class="selected api apilevel-"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html">ViewerUtils</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotSnappingManager.SnappingGroup.html">AnnotSnappingManager.SnappingGroup</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/AnnotSnappingManager.SnappingType.html">AnnotSnappingManager.SnappingType</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/Logger.html">Logger</a></li>
+          <li class="api apilevel-"><a href="../../../../com/pdftron/pdf/utils/SnapUtils.SnappingMode.html">SnapUtils.SnappingMode</a></li>
+      </ul>
+    </li>
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+  <a href="#constants">Constants</a>
+  
+
+
+
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>ViewerUtils</h1>
+
+
+
+  
+    extends Object<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+         	
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="1" class="jd-inheritance-class-cell">com.pdftron.pdf.utils.ViewerUtils</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>A utility class for pdf viewer
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#IMAGE_DPI_CONVERSION_OPTION">IMAGE_DPI_CONVERSION_OPTION</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#ViewerUtils()">ViewerUtils</a></span>()
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#addPageToBookmark(android.content.Context, boolean, com.pdftron.pdf.PDFViewCtrl, int)">addPageToBookmark</a></span>(Context context, boolean isReadOnly, <a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, int page)
+        
+        <div class="jd-descrdiv">Adds a page bookmark</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#animateScreenRect(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.Rect)">animateScreenRect</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/Rect.html">Rect</a> screenRect)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#animateUndoRedo(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.Rect, int)">animateUndoRedo</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/Rect.html">Rect</a> annotRect, int pageNum)
+        
+        <div class="jd-descrdiv">Animates for showing undo/redo action.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#checkImageIntent(java.util.Map)">checkImageIntent</a></span>(Map imageIntent)
+        
+        <div class="jd-descrdiv">Checks whether the internal image intent map is valid.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            StateListDrawable
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#createBackgroundSelector(android.graphics.drawable.Drawable)">createBackgroundSelector</a></span>(Drawable drawable)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#createFileAttachment(android.app.Activity, android.content.Intent, com.pdftron.pdf.PDFViewCtrl, android.graphics.PointF)">createFileAttachment</a></span>(Activity activity, Intent data, <a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, PointF targetPoint)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#createFileIntent(android.app.Activity, Fragment, java.lang.String, java.lang.String)">createFileIntent</a></span>(Activity activity, Fragment fragment, String fileName, String mimeType)
+        
+        <div class="jd-descrdiv">Send a generic file creation intent
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#createImageSignature(android.app.Activity, android.content.Intent, com.pdftron.pdf.PDFViewCtrl, android.net.Uri, android.graphics.PointF, int, java.lang.Long)">createImageSignature</a></span>(Activity activity, Intent data, <a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, Uri outputFileUri, PointF targetPoint, int targetPage, Long widget)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#createImageStamp(android.app.Activity, android.content.Intent, com.pdftron.pdf.PDFViewCtrl, android.net.Uri, android.graphics.PointF)">createImageStamp</a></span>(Activity activity, Intent data, <a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, Uri outputFileUri, PointF imageStampTargetPoint)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#exportFileAttachment(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.annots.FileAttachment, android.net.Uri)">exportFileAttachment</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/annots/FileAttachment.html">FileAttachment</a> attachment, Uri targetUri)
+        
+        <div class="jd-descrdiv">Export file attachment to target URI, return whether successful.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#exportFileAttachment(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.annots.FileAttachment, java.io.File)">exportFileAttachment</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/annots/FileAttachment.html">FileAttachment</a> attachment, File directory)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#exportFileAttachment(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.annots.FileAttachment)">exportFileAttachment</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/annots/FileAttachment.html">FileAttachment</a> attachment)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#extractFileFromPortfolio(int, android.content.Context, com.pdftron.pdf.PDFDoc, java.lang.String, java.lang.String)">extractFileFromPortfolio</a></span>(int type, Context context, <a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> portfolioDoc, String destFolderPath, String fileName)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#extractFileFromPortfolio(int, android.content.Context, com.pdftron.pdf.PDFDoc, java.lang.String, android.net.Uri, java.lang.String)">extractFileFromPortfolio</a></span>(int type, Context context, <a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> portfolioDoc, String destFolderPath, Uri destFileUri, String fileName)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            <any>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#extractFileFromPortfolioDisposable(int, android.content.Context, com.pdftron.pdf.PDFDoc, java.lang.String, android.net.Uri, java.lang.String)">extractFileFromPortfolioDisposable</a></span>(int type, Context context, <a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> portfolioDoc, String destFolderPath, Uri destFileUri, String fileName)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#flattenDoc(com.pdftron.pdf.PDFDoc)">flattenDoc</a></span>(<a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> doc)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            <a href="../../../../com/pdftron/pdf/Annot.html">Annot</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getAnnotById(com.pdftron.pdf.PDFDoc, java.lang.String, int)">getAnnotById</a></span>(<a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> pdfDoc, String id, int pageNum)
+        
+        <div class="jd-descrdiv">Returns annotation by providing its ID.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            <a href="../../../../com/pdftron/pdf/Annot.html">Annot</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getAnnotById(com.pdftron.pdf.PDFViewCtrl, java.lang.String, int)">getAnnotById</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> ctrl, String id, int pageNum)
+        
+        <div class="jd-descrdiv">Returns annotation by providing its ID.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            BitmapDrawable
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getBitmapDrawable(android.content.Context, int, int, int, int, boolean, boolean)">getBitmapDrawable</a></span>(Context context, int drawableId, int width, int height, int targetColor, boolean roundedCorner, boolean nonWhiteOnly)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            BitmapDrawable
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getBitmapDrawable(android.content.Context, int, int, int, int, boolean)">getBitmapDrawable</a></span>(Context context, int drawableId, int width, int height, int targetColor, boolean roundedCorner)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Intent
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getFileIntent(java.lang.String, java.lang.String)">getFileIntent</a></span>(String fileName, String mimeType)
+        
+        <div class="jd-descrdiv">Send a generic file creation intent
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Bitmap
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getImageBitmap(android.content.Context, java.util.Map)">getImageBitmap</a></span>(Context context, Map imageIntent)
+        
+        <div class="jd-descrdiv">Returns the image bitmap.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getImageFilePath(java.util.Map)">getImageFilePath</a></span>(Map imageIntent)
+        
+        <div class="jd-descrdiv">Returns the image file path.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getImageSignaturePath(android.app.Activity, android.content.Intent, android.net.Uri)">getImageSignaturePath</a></span>(Activity activity, Intent data, Uri outputFileUri)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Uri
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getImageUri(java.util.Map)">getImageUri</a></span>(Map imageIntent)
+        
+        <div class="jd-descrdiv">Returns the image URI</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Uri
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getImageUriFromIntent(android.content.Intent, android.app.Activity, android.net.Uri)">getImageUriFromIntent</a></span>(Intent data, Activity activity, Uri outputFileUri)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getLastHPosForURL(android.content.Context, java.lang.String)">getLastHPosForURL</a></span>(Context context, String url)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getLastPageForURL(android.content.Context, java.lang.String)">getLastPageForURL</a></span>(Context context, String url)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getLastVPosForURL(android.content.Context, java.lang.String)">getLastVPosForURL</a></span>(Context context, String url)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            double
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getLastZoomForURL(android.content.Context, java.lang.String)">getLastZoomForURL</a></span>(Context context, String url)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            ArrayList&lt;<a href="../../../../com/pdftron/pdf/dialog/menueditor/model/MenuEditorItem.html">MenuEditorItem</a>&gt;
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getMenuEditorItemsArray(java.lang.String)">getMenuEditorItemsArray</a></span>(String savedToolbarMenu)
+        
+        <div class="jd-descrdiv">
+      <em>
+  This method is deprecated.
+      No replacement.</em></div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getMenuEditorItemsJSON(java.util.ArrayList<com.pdftron.pdf.dialog.menueditor.model.MenuEditorItem>)">getMenuEditorItemsJSON</a></span>(ArrayList&lt;<a href="../../../../com/pdftron/pdf/dialog/menueditor/model/MenuEditorItem.html">MenuEditorItem</a>&gt; newMenuItems)
+        
+        <div class="jd-descrdiv">
+      <em>
+  This method is deprecated.
+      No replacement.</em></div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            <a href="../../../../com/pdftron/pdf/PageSet.html">PageSet</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getPageSet(android.util.SparseBooleanArray)">getPageSet</a></span>(SparseBooleanArray positions)
+        
+        <div class="jd-descrdiv">Converts page positions to the page set</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getRotationForURL(android.content.Context, java.lang.String)">getRotationForURL</a></span>(Context context, String url)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getSelectedString(com.pdftron.pdf.PDFViewCtrl, boolean)">getSelectedString</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, boolean appendNewLine)
+        
+        <div class="jd-descrdiv">Returns selected text in pdf</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#getSelectedString(com.pdftron.pdf.PDFViewCtrl)">getSelectedString</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)
+        
+        <div class="jd-descrdiv">Returns selected text in pdf</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#imageIntentToPdf(android.content.Context, android.net.Uri, java.lang.String, com.pdftron.pdf.model.ExternalFileInfo)">imageIntentToPdf</a></span>(Context context, Uri imageUri, String imagePath, <a href="../../../../com/pdftron/pdf/model/ExternalFileInfo.html">ExternalFileInfo</a> documentFile)
+        
+        <div class="jd-descrdiv">Converts image to PDF from an image intent</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#imageIntentToPdf(android.content.Context, android.net.Uri, java.lang.String, java.lang.String)">imageIntentToPdf</a></span>(Context context, Uri imageUri, String imagePath, String outputPath)
+        
+        <div class="jd-descrdiv">Converts image to PDF from an image intent</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#importAnnotationCommand(com.pdftron.pdf.PDFViewCtrl, java.lang.String)">importAnnotationCommand</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, String xfdfCommand)
+        
+        <div class="jd-descrdiv">Import annotation XFDF command to the document</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#isContinuousPageMode(com.pdftron.pdf.PDFViewCtrl)">isContinuousPageMode</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)
+        
+        <div class="jd-descrdiv">Checks if the tab is in continuous page mode.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#isImageFromCamera(java.util.Map)">isImageFromCamera</a></span>(Map imageIntent)
+        
+        <div class="jd-descrdiv">Checks whether the image is taken from camera.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#isInFullScreenMode(android.content.Context)">isInFullScreenMode</a></span>(Context context)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#isNonContinuousVerticalPageMode(com.pdftron.pdf.PDFViewCtrl)">isNonContinuousVerticalPageMode</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)
+        
+        <div class="jd-descrdiv">Checks if the tab is in continuous snapping page mode.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#isSinglePageMode(com.pdftron.pdf.PDFViewCtrl)">isSinglePageMode</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)
+        
+        <div class="jd-descrdiv">Checks if the tab is in single page mode.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#isViewerZoomed(com.pdftron.pdf.PDFViewCtrl)">isViewerZoomed</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)
+        
+        <div class="jd-descrdiv">Checks whether the PDFViewCtrl is zoomed.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#jumpToAnnotation(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.Annot, int)">jumpToAnnotation</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/Annot.html">Annot</a> annot, int pageNum)
+        
+        <div class="jd-descrdiv">Jumps to the specified annotation.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#jumpToRect(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.Rect, int)">jumpToRect</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/Rect.html">Rect</a> rect, int pageNum)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#keepOnScreenAfterClick(android.content.Context, android.view.MenuItem)">keepOnScreenAfterClick</a></span>(Context context, MenuItem item)
+        
+        <div class="jd-descrdiv">Prevents menu item from closing its popup menu on click</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Uri
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#openCameraIntent(android.app.Activity, int)">openCameraIntent</a></span>(Activity activity, int requestCode)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#openFileIntent(Fragment)">openFileIntent</a></span>(Fragment fragment)
+        
+        <div class="jd-descrdiv">Send a generic file picker intent</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#openFileIntent(android.app.Activity, Fragment)">openFileIntent</a></span>(Activity activity, Fragment fragment)
+        
+        <div class="jd-descrdiv">Send a generic file picker intent</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#openFileIntent(android.app.Activity)">openFileIntent</a></span>(Activity activity)
+        
+        <div class="jd-descrdiv">Send a generic file picker intent</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Uri
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#openGalleryIntent(android.app.Activity, int)">openGalleryIntent</a></span>(Activity activity, int requestCode)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Uri
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#openGalleryIntent(android.app.Activity, int, boolean)">openGalleryIntent</a></span>(Activity activity, int requestCode, boolean multiSelect)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Uri
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#openImageIntent(android.app.Activity, int)">openImageIntent</a></span>(Activity activity, int requestCode)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Uri
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#openImageIntent(Fragment, int)">openImageIntent</a></span>(Fragment fragment, int requestCode)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Uri
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#openImageIntent(Fragment)">openImageIntent</a></span>(Fragment fragment)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Uri
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#openImageIntent(android.app.Activity)">openImageIntent</a></span>(Activity activity)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#passwordDoc(com.pdftron.pdf.PDFDoc, java.lang.String)">passwordDoc</a></span>(<a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> doc, String password)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            Map
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#readImageIntent(android.content.Intent, android.content.Context, android.net.Uri)">readImageIntent</a></span>(Intent data, Context context, Uri outputFileUri)
+        
+        <div class="jd-descrdiv">Reads an image intent.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#removePageBookmark(android.content.Context, boolean, com.pdftron.pdf.PDFViewCtrl, int)">removePageBookmark</a></span>(Context context, boolean isReadOnly, <a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, int page)
+        
+        <div class="jd-descrdiv">Removes a page bookmark</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#renameAllFields(com.pdftron.pdf.Page)">renameAllFields</a></span>(<a href="../../../../com/pdftron/pdf/Page.html">Page</a> page)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#safeUpdatePageLayout(com.pdftron.pdf.PDFViewCtrl)">safeUpdatePageLayout</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#safeUpdatePageLayout(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.utils.ExceptionHandlerCallback)">safeUpdatePageLayout</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/utils/ExceptionHandlerCallback.html">ExceptionHandlerCallback</a> callback)
+        
+        <div class="jd-descrdiv">Safe version of updatePageLayout, will call readLock before and unlock after this operation
+ as recommended by Core Team
+ <p>
+ Updates the page layout within the view.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            <a href="../../../../com/pdftron/pdf/Rect.html">Rect</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#scrollToAnnotRect(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.Rect, int)">scrollToAnnotRect</a></span>(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/Rect.html">Rect</a> annotRect, int pageNum)
+        
+        <div class="jd-descrdiv">Scroll to annotation rect.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#setLastPageForURL(android.content.Context, java.lang.String, int)">setLastPageForURL</a></span>(Context context, String url, int page)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            static
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#setLastPageStateForURL(android.content.Context, java.lang.String, double, int, int, int)">setLastPageStateForURL</a></span>(Context context, String url, double zoom, int hPos, int vPos, int rotation)
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">equals</span>(Object arg0)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">getClass</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">hashCode</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">notify</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">notifyAll</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            String
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">toString</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>(long arg0, int arg1)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>(long arg0)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>()
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
+
+
+
+
+<a id="IMAGE_DPI_CONVERSION_OPTION"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        String
+      </span>
+        IMAGE_DPI_CONVERSION_OPTION
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "{"DPI": 96.0}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<a id="ViewerUtils()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">ViewerUtils</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<a id="addPageToBookmark(android.content.Context, boolean, com.pdftron.pdf.PDFViewCtrl, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">addPageToBookmark</span>
+      <span class="normal">(Context context, boolean isReadOnly, <a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, int page)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Adds a page bookmark</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>context</th>
+          <td>the context</td>
+        </tr>
+        <tr>
+          <th>isReadOnly</th>
+          <td>whether to edit the original pdf</td>
+        </tr>
+        <tr>
+          <th>pdfViewCtrl</th>
+          <td>the PDFViewCtrl</td>
+        </tr>
+        <tr>
+          <th>page</th>
+          <td>the page to add to bookmark
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="animateScreenRect(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.Rect)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">animateScreenRect</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/Rect.html">Rect</a> screenRect)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="animateUndoRedo(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.Rect, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">animateUndoRedo</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/Rect.html">Rect</a> annotRect, int pageNum)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Animates for showing undo/redo action.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>pdfViewCtrl</th>
+          <td>The PDFViewCtrl</td>
+        </tr>
+        <tr>
+          <th>annotRect</th>
+          <td>The annotation rectangle to be animated</td>
+        </tr>
+        <tr>
+          <th>pageNum</th>
+          <td>The page number
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="checkImageIntent(java.util.Map)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">checkImageIntent</span>
+      <span class="normal">(Map imageIntent)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks whether the internal image intent map is valid.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>imageIntent</th>
+          <td>The internal image intent map obtained from <code><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#readImageIntent(android.content.Intent, android.content.Context, android.net.Uri)">readImageIntent(Intent, Context, Uri)</a></code></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the internal image intent is valid
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="createBackgroundSelector(android.graphics.drawable.Drawable)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        StateListDrawable
+      </span>
+      <span class="sympad">createBackgroundSelector</span>
+      <span class="normal">(Drawable drawable)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="createFileAttachment(android.app.Activity, android.content.Intent, com.pdftron.pdf.PDFViewCtrl, android.graphics.PointF)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">createFileAttachment</span>
+      <span class="normal">(Activity activity, Intent data, <a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, PointF targetPoint)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="createFileIntent(android.app.Activity, Fragment, java.lang.String, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">createFileIntent</span>
+      <span class="normal">(Activity activity, Fragment fragment, String fileName, String mimeType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Send a generic file creation intent
+</p></div>
+
+    </div>
+</div>
+
+
+<a id="createImageSignature(android.app.Activity, android.content.Intent, com.pdftron.pdf.PDFViewCtrl, android.net.Uri, android.graphics.PointF, int, java.lang.Long)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">createImageSignature</span>
+      <span class="normal">(Activity activity, Intent data, <a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, Uri outputFileUri, PointF targetPoint, int targetPage, Long widget)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="createImageStamp(android.app.Activity, android.content.Intent, com.pdftron.pdf.PDFViewCtrl, android.net.Uri, android.graphics.PointF)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">createImageStamp</span>
+      <span class="normal">(Activity activity, Intent data, <a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, Uri outputFileUri, PointF imageStampTargetPoint)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="exportFileAttachment(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.annots.FileAttachment, android.net.Uri)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">exportFileAttachment</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/annots/FileAttachment.html">FileAttachment</a> attachment, Uri targetUri)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Export file attachment to target URI, return whether successful.
+</p></div>
+
+    </div>
+</div>
+
+
+<a id="exportFileAttachment(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.annots.FileAttachment, java.io.File)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">exportFileAttachment</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/annots/FileAttachment.html">FileAttachment</a> attachment, File directory)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="exportFileAttachment(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.annots.FileAttachment)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">exportFileAttachment</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/annots/FileAttachment.html">FileAttachment</a> attachment)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="extractFileFromPortfolio(int, android.content.Context, com.pdftron.pdf.PDFDoc, java.lang.String, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">extractFileFromPortfolio</span>
+      <span class="normal">(int type, Context context, <a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> portfolioDoc, String destFolderPath, String fileName)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="extractFileFromPortfolio(int, android.content.Context, com.pdftron.pdf.PDFDoc, java.lang.String, android.net.Uri, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">extractFileFromPortfolio</span>
+      <span class="normal">(int type, Context context, <a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> portfolioDoc, String destFolderPath, Uri destFileUri, String fileName)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="extractFileFromPortfolioDisposable(int, android.content.Context, com.pdftron.pdf.PDFDoc, java.lang.String, android.net.Uri, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <any>
+      </span>
+      <span class="sympad">extractFileFromPortfolioDisposable</span>
+      <span class="normal">(int type, Context context, <a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> portfolioDoc, String destFolderPath, Uri destFileUri, String fileName)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="flattenDoc(com.pdftron.pdf.PDFDoc)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">flattenDoc</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> doc)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getAnnotById(com.pdftron.pdf.PDFDoc, java.lang.String, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../com/pdftron/pdf/Annot.html">Annot</a>
+      </span>
+      <span class="sympad">getAnnotById</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> pdfDoc, String id, int pageNum)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns annotation by providing its ID.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>pdfDoc</th>
+          <td>The PDFDoc</td>
+        </tr>
+        <tr>
+          <th>id</th>
+          <td>The ID of the annotation</td>
+        </tr>
+        <tr>
+          <th>pageNum</th>
+          <td>The page number</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The annotation having the specified ID
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getAnnotById(com.pdftron.pdf.PDFViewCtrl, java.lang.String, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../com/pdftron/pdf/Annot.html">Annot</a>
+      </span>
+      <span class="sympad">getAnnotById</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> ctrl, String id, int pageNum)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns annotation by providing its ID.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>ctrl</th>
+          <td>The PDFViewCtrl</td>
+        </tr>
+        <tr>
+          <th>id</th>
+          <td>The ID of the annotation</td>
+        </tr>
+        <tr>
+          <th>pageNum</th>
+          <td>The page number</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The annotation having the specified ID
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getBitmapDrawable(android.content.Context, int, int, int, int, boolean, boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        BitmapDrawable
+      </span>
+      <span class="sympad">getBitmapDrawable</span>
+      <span class="normal">(Context context, int drawableId, int width, int height, int targetColor, boolean roundedCorner, boolean nonWhiteOnly)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getBitmapDrawable(android.content.Context, int, int, int, int, boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        BitmapDrawable
+      </span>
+      <span class="sympad">getBitmapDrawable</span>
+      <span class="normal">(Context context, int drawableId, int width, int height, int targetColor, boolean roundedCorner)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getFileIntent(java.lang.String, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Intent
+      </span>
+      <span class="sympad">getFileIntent</span>
+      <span class="normal">(String fileName, String mimeType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Send a generic file creation intent
+</p></div>
+
+    </div>
+</div>
+
+
+<a id="getImageBitmap(android.content.Context, java.util.Map)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Bitmap
+      </span>
+      <span class="sympad">getImageBitmap</span>
+      <span class="normal">(Context context, Map imageIntent)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the image bitmap.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>context</th>
+          <td>The context</td>
+        </tr>
+        <tr>
+          <th>imageIntent</th>
+          <td>The internal image intent map obtained from <code><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#readImageIntent(android.content.Intent, android.content.Context, android.net.Uri)">readImageIntent(Intent, Context, Uri)</a></code></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The image bitmap
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getImageFilePath(java.util.Map)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getImageFilePath</span>
+      <span class="normal">(Map imageIntent)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the image file path.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>imageIntent</th>
+          <td>The internal image intent map obtained from <code><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#readImageIntent(android.content.Intent, android.content.Context, android.net.Uri)">readImageIntent(Intent, Context, Uri)</a></code></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The image file path
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getImageSignaturePath(android.app.Activity, android.content.Intent, android.net.Uri)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getImageSignaturePath</span>
+      <span class="normal">(Activity activity, Intent data, Uri outputFileUri)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getImageUri(java.util.Map)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Uri
+      </span>
+      <span class="sympad">getImageUri</span>
+      <span class="normal">(Map imageIntent)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the image URI</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>imageIntent</th>
+          <td>The internal image intent map obtained from <code><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#readImageIntent(android.content.Intent, android.content.Context, android.net.Uri)">readImageIntent(Intent, Context, Uri)</a></code></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The image URI
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getImageUriFromIntent(android.content.Intent, android.app.Activity, android.net.Uri)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Uri
+      </span>
+      <span class="sympad">getImageUriFromIntent</span>
+      <span class="normal">(Intent data, Activity activity, Uri outputFileUri)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getLastHPosForURL(android.content.Context, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getLastHPosForURL</span>
+      <span class="normal">(Context context, String url)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getLastPageForURL(android.content.Context, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getLastPageForURL</span>
+      <span class="normal">(Context context, String url)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getLastVPosForURL(android.content.Context, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getLastVPosForURL</span>
+      <span class="normal">(Context context, String url)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getLastZoomForURL(android.content.Context, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        double
+      </span>
+      <span class="sympad">getLastZoomForURL</span>
+      <span class="normal">(Context context, String url)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getMenuEditorItemsArray(java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        ArrayList&lt;<a href="../../../../com/pdftron/pdf/dialog/menueditor/model/MenuEditorItem.html">MenuEditorItem</a>&gt;
+      </span>
+      <span class="sympad">getMenuEditorItemsArray</span>
+      <span class="normal">(String savedToolbarMenu)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      <p>
+  <p class="caution">
+      <strong>
+  This method is deprecated.</strong><br/> No replacement.
+  </p>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>JSONException</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getMenuEditorItemsJSON(java.util.ArrayList<com.pdftron.pdf.dialog.menueditor.model.MenuEditorItem>)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getMenuEditorItemsJSON</span>
+      <span class="normal">(ArrayList&lt;<a href="../../../../com/pdftron/pdf/dialog/menueditor/model/MenuEditorItem.html">MenuEditorItem</a>&gt; newMenuItems)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      <p>
+  <p class="caution">
+      <strong>
+  This method is deprecated.</strong><br/> No replacement.
+  </p>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>JSONException</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getPageSet(android.util.SparseBooleanArray)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../com/pdftron/pdf/PageSet.html">PageSet</a>
+      </span>
+      <span class="sympad">getPageSet</span>
+      <span class="normal">(SparseBooleanArray positions)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Converts page positions to the page set</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>positions</th>
+          <td>The page positions as boolean</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The page set
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getRotationForURL(android.content.Context, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getRotationForURL</span>
+      <span class="normal">(Context context, String url)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getSelectedString(com.pdftron.pdf.PDFViewCtrl, boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getSelectedString</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, boolean appendNewLine)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns selected text in pdf</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>pdfViewCtrl</th>
+          <td>The PDFViewCtrl</td>
+        </tr>
+        <tr>
+          <th>appendNewLine</th>
+          <td>Whether to append new line on line break</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The selected text in pdf
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getSelectedString(com.pdftron.pdf.PDFViewCtrl)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getSelectedString</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns selected text in pdf</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>pdfViewCtrl</th>
+          <td>The PDFViewCtrl</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The selected text in pdf
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="imageIntentToPdf(android.content.Context, android.net.Uri, java.lang.String, com.pdftron.pdf.model.ExternalFileInfo)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">imageIntentToPdf</span>
+      <span class="normal">(Context context, Uri imageUri, String imagePath, <a href="../../../../com/pdftron/pdf/model/ExternalFileInfo.html">ExternalFileInfo</a> documentFile)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Converts image to PDF from an image intent</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>context</th>
+          <td>the context</td>
+        </tr>
+        <tr>
+          <th>imageUri</th>
+          <td>the image intent</td>
+        </tr>
+        <tr>
+          <th>imagePath</th>
+          <td>the image path</td>
+        </tr>
+        <tr>
+          <th>documentFile</th>
+          <td>the result file path</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>null if failed, otherwise returns the result file path
+</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../com/pdftron/common/PDFNetException.html">PDFNetException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="imageIntentToPdf(android.content.Context, android.net.Uri, java.lang.String, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">imageIntentToPdf</span>
+      <span class="normal">(Context context, Uri imageUri, String imagePath, String outputPath)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Converts image to PDF from an image intent</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>context</th>
+          <td>the context</td>
+        </tr>
+        <tr>
+          <th>imagePath</th>
+          <td>the image intent</td>
+        </tr>
+        <tr>
+          <th>outputPath</th>
+          <td>the result file path</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>null if failed, otherwise returns the result file path
+</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>FileNotFoundException</td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../com/pdftron/common/PDFNetException.html">PDFNetException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="importAnnotationCommand(com.pdftron.pdf.PDFViewCtrl, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">importAnnotationCommand</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, String xfdfCommand)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Import annotation XFDF command to the document</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>pdfViewCtrl</th>
+          <td>the viewer</td>
+        </tr>
+        <tr>
+          <th>xfdfCommand</th>
+          <td>the XFDF command string</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../com/pdftron/common/PDFNetException.html">PDFNetException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="isContinuousPageMode(com.pdftron.pdf.PDFViewCtrl)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isContinuousPageMode</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks if the tab is in continuous page mode.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the tab is in continuous page mode
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="isImageFromCamera(java.util.Map)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isImageFromCamera</span>
+      <span class="normal">(Map imageIntent)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks whether the image is taken from camera.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>imageIntent</th>
+          <td>The internal image intent map obtained from <code><a href="../../../../com/pdftron/pdf/utils/ViewerUtils.html#readImageIntent(android.content.Intent, android.content.Context, android.net.Uri)">readImageIntent(Intent, Context, Uri)</a></code></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the image is taken from camera
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="isInFullScreenMode(android.content.Context)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isInFullScreenMode</span>
+      <span class="normal">(Context context)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="isNonContinuousVerticalPageMode(com.pdftron.pdf.PDFViewCtrl)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isNonContinuousVerticalPageMode</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks if the tab is in continuous snapping page mode.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the tab is in continuous snapping page mode
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="isSinglePageMode(com.pdftron.pdf.PDFViewCtrl)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isSinglePageMode</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks if the tab is in single page mode.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the tab is in single page mode
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="isViewerZoomed(com.pdftron.pdf.PDFViewCtrl)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isViewerZoomed</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Checks whether the PDFViewCtrl is zoomed.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>pdfViewCtrl</th>
+          <td>The PDFViewCtrl</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the PDFViewCtrl is zoomed
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="jumpToAnnotation(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.Annot, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">jumpToAnnotation</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/Annot.html">Annot</a> annot, int pageNum)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Jumps to the specified annotation.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>pdfViewCtrl</th>
+          <td>The PDFViewCtrl</td>
+        </tr>
+        <tr>
+          <th>annot</th>
+          <td>The annotation</td>
+        </tr>
+        <tr>
+          <th>pageNum</th>
+          <td>The page number where the annotation is on
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="jumpToRect(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.Rect, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">jumpToRect</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/Rect.html">Rect</a> rect, int pageNum)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="keepOnScreenAfterClick(android.content.Context, android.view.MenuItem)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">keepOnScreenAfterClick</span>
+      <span class="normal">(Context context, MenuItem item)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Prevents menu item from closing its popup menu on click</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>item</th>
+          <td>menu item to prevent from closing menu
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="openCameraIntent(android.app.Activity, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Uri
+      </span>
+      <span class="sympad">openCameraIntent</span>
+      <span class="normal">(Activity activity, int requestCode)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="openFileIntent(Fragment)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">openFileIntent</span>
+      <span class="normal">(Fragment fragment)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Send a generic file picker intent</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>fragment</th>
+          <td>the fragment
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="openFileIntent(android.app.Activity, Fragment)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">openFileIntent</span>
+      <span class="normal">(Activity activity, Fragment fragment)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Send a generic file picker intent</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>activity</th>
+          <td>the activity</td>
+        </tr>
+        <tr>
+          <th>fragment</th>
+          <td>the fragment
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="openFileIntent(android.app.Activity)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">openFileIntent</span>
+      <span class="normal">(Activity activity)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Send a generic file picker intent</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>activity</th>
+          <td>the activity
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="openGalleryIntent(android.app.Activity, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Uri
+      </span>
+      <span class="sympad">openGalleryIntent</span>
+      <span class="normal">(Activity activity, int requestCode)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="openGalleryIntent(android.app.Activity, int, boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Uri
+      </span>
+      <span class="sympad">openGalleryIntent</span>
+      <span class="normal">(Activity activity, int requestCode, boolean multiSelect)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="openImageIntent(android.app.Activity, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Uri
+      </span>
+      <span class="sympad">openImageIntent</span>
+      <span class="normal">(Activity activity, int requestCode)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>activity</th>
+          <td>the activity in which you can expect onActivityResult will be called
+                    with given request code</td>
+        </tr>
+        <tr>
+          <th>requestCode</th>
+          <td>the request code to returned in onActivityResult</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the output file Uri
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="openImageIntent(Fragment, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Uri
+      </span>
+      <span class="sympad">openImageIntent</span>
+      <span class="normal">(Fragment fragment, int requestCode)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>fragment</th>
+          <td>the fragment in which you can expect onActivityResult will be called
+                    with given request code</td>
+        </tr>
+        <tr>
+          <th>requestCode</th>
+          <td>the request code to returned in onActivityResult</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the output file Uri
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="openImageIntent(Fragment)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Uri
+      </span>
+      <span class="sympad">openImageIntent</span>
+      <span class="normal">(Fragment fragment)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>fragment</th>
+          <td>the fragment in which you can expect onActivityResult will be called
+                 with request code <code><a href="../../../../com/pdftron/pdf/utils/RequestCode.html#PICK_PHOTO_CAM">PICK_PHOTO_CAM</a></code></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the output file Uri
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="openImageIntent(android.app.Activity)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Uri
+      </span>
+      <span class="sympad">openImageIntent</span>
+      <span class="normal">(Activity activity)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>activity</th>
+          <td>the activity in which you can expect onActivityResult will be called
+                 with request code <code><a href="../../../../com/pdftron/pdf/utils/RequestCode.html#PICK_PHOTO_CAM">PICK_PHOTO_CAM</a></code></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the output file Uri
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="passwordDoc(com.pdftron.pdf.PDFDoc, java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">passwordDoc</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFDoc.html">PDFDoc</a> doc, String password)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="readImageIntent(android.content.Intent, android.content.Context, android.net.Uri)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        Map
+      </span>
+      <span class="sympad">readImageIntent</span>
+      <span class="normal">(Intent data, Context context, Uri outputFileUri)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Reads an image intent.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>data</th>
+          <td>The intent</td>
+        </tr>
+        <tr>
+          <th>context</th>
+          <td>The context</td>
+        </tr>
+        <tr>
+          <th>outputFileUri</th>
+          <td>The output URI</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The internal image intent map</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>FileNotFoundException</td>
+            <td>FileNotFound exception
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="removePageBookmark(android.content.Context, boolean, com.pdftron.pdf.PDFViewCtrl, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">removePageBookmark</span>
+      <span class="normal">(Context context, boolean isReadOnly, <a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, int page)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Removes a page bookmark</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>context</th>
+          <td>the context</td>
+        </tr>
+        <tr>
+          <th>isReadOnly</th>
+          <td>whether to edit the original pdf</td>
+        </tr>
+        <tr>
+          <th>pdfViewCtrl</th>
+          <td>the PDFViewCtrl</td>
+        </tr>
+        <tr>
+          <th>page</th>
+          <td>the page to remove from bookmark
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="renameAllFields(com.pdftron.pdf.Page)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">renameAllFields</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/Page.html">Page</a> page)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../com/pdftron/common/PDFNetException.html">PDFNetException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="safeUpdatePageLayout(com.pdftron.pdf.PDFViewCtrl)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">safeUpdatePageLayout</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="safeUpdatePageLayout(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.utils.ExceptionHandlerCallback)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">safeUpdatePageLayout</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/utils/ExceptionHandlerCallback.html">ExceptionHandlerCallback</a> callback)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Safe version of updatePageLayout, will call readLock before and unlock after this operation
+ as recommended by Core Team
+ <p>
+ Updates the page layout within the view. This function must be called
+ after document page sequence is modified (such as when a page is being
+ added to or removed from a document) or after changes to page dimensions
+ (e.g. after a page is rotated or resized).</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>pdfViewCtrl</th>
+          <td>the PDFViewCtrl</td>
+        </tr>
+        <tr>
+          <th>callback</th>
+          <td>Callback object to provide exception handling, can be null
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="scrollToAnnotRect(com.pdftron.pdf.PDFViewCtrl, com.pdftron.pdf.Rect, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../com/pdftron/pdf/Rect.html">Rect</a>
+      </span>
+      <span class="sympad">scrollToAnnotRect</span>
+      <span class="normal">(<a href="../../../../com/pdftron/pdf/PDFViewCtrl.html">PDFViewCtrl</a> pdfViewCtrl, <a href="../../../../com/pdftron/pdf/Rect.html">Rect</a> annotRect, int pageNum)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Scroll to annotation rect.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>pdfViewCtrl</th>
+          <td>the PDFViewCtrl</td>
+        </tr>
+        <tr>
+          <th>annotRect</th>
+          <td>the annot rect</td>
+        </tr>
+        <tr>
+          <th>pageNum</th>
+          <td>the annot page number</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>final rect in client space after scrolling</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../com/pdftron/common/PDFNetException.html">PDFNetException</a></td>
+            <td>PDFNet exception
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setLastPageForURL(android.content.Context, java.lang.String, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setLastPageForURL</span>
+      <span class="normal">(Context context, String url, int page)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setLastPageStateForURL(android.content.Context, java.lang.String, double, int, int, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setLastPageStateForURL</span>
+      <span class="normal">(Context context, String url, double zoom, int hPos, int vPos, int rotation)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<a id="navbar_top"></a>
+
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: 'f9d712e43c1978feb1df68f5e63a868c',
+indexName: 'pdftron',
+inputSelector: '.gsc-input',
+algoliaOptions: { 'facetFilters': ["tags:android"] },
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    ===============================================================
+                            IMPORTANT
+    ===============================================================
+    The key names and values used here must be conform to what is declared in
+    SettingsManager class. This is because we read these values from that
+    class to be used across the application.
+    -->
+
+    <PreferenceCategory
+        android:key="pref_category_annotating"
+        app:iconSpaceReserved="false">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_cont_annot_edit"
+            android:summary="@string/pref_cont_annot_edit_summary"
+            android:title="@string/pref_cont_annot_edit_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_show_quick_menu"
+            android:summary="@string/pref_show_quick_menu_summary"
+            android:title="@string/pref_show_quick_menu_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_copy_annotated_text_to_note"
+            android:summary="@string/pref_copy_annotated_text_to_note_summary"
+            android:title="@string/pref_copy_annotated_text_to_note_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_ink_smoothing"
+            android:summary="@string/pref_ink_smoothing_summary"
+            android:title="@string/pref_ink_smoothing_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_free_highlighter_smoothing"
+            android:summary="@string/pref_free_highlighter_smoothing_summary"
+            android:title="@string/pref_free_highlighter_smoothing_title"
+            app:iconSpaceReserved="false" />
+
+        <PreferenceCategory
+            android:title="@string/pref_category_annotation_author"
+            app:iconSpaceReserved="false">
+
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="pref_annot_list_show_author"
+                android:summary="@string/pref_annot_list_show_author_summary"
+                android:title="@string/pref_annot_list_show_author_title"
+                app:iconSpaceReserved="false" />
+
+            <EditTextPreference
+                android:defaultValue=""
+                android:dialogTitle="@string/pref_author_name_title"
+                android:key="pref_author_name"
+                android:summary="@string/pref_author_name_summary"
+                android:title="@string/pref_author_name_title"
+                app:iconSpaceReserved="false"
+                app:useSimpleSummaryProvider="true" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/pref_category_fonts"
+            app:iconSpaceReserved="false">
+
+            <com.pdftron.demo.widget.FontMultiSelectListPreference
+                android:key="pref_free_text_fonts"
+                android:summary="@string/pref_free_text_font_summary"
+                android:title="@string/pref_free_text_font_title"
+                app:iconSpaceReserved="false" />
+
+        </PreferenceCategory>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,10 @@
+mutation AddDocumentMember($input: NewDocumentMemberInput!) {
+        addDocumentMember(input: $input) {
+          id
+          user {
+            id
+          }
+          documentId
+          lastRead
+        }
+      }

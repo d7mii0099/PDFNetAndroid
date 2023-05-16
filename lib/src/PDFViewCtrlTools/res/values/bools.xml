@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <bool name="isPhone">true</bool>
+    <bool name="isTablet">false</bool>
+    <bool name="isLargeTablet">false</bool>
+    <bool name="useDeviceNightMode">true</bool>
+
+</resources>

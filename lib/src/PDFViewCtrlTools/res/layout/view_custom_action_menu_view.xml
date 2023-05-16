@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/overflow_button"
+        android:background="?selectableItemBackgroundBorderless"
+        android:visibility="gone"
+        android:layout_gravity="center_vertical"
+        android:layout_width="@dimen/toolbar_icon_size"
+        android:layout_height="@dimen/toolbar_icon_size"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="@dimen/toolbar_icon_horizontal_padding"
+        android:layout_marginBottom="@dimen/toolbar_icon_horizontal_padding"
+        tools:visibility="visible"
+        app:srcCompat="@drawable/ic_overflow_white_24dp"/>
+
+</LinearLayout>

@@ -1,0 +1,6 @@
+mutation DeleteAnnotationMember($input:DeleteAnnotationMemberInput!) {
+        deleteAnnotationMember(input: $input) {
+         id
+         successful
+       }
+     }

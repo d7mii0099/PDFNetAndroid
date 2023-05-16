@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/toolbar_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/colorBackground"
+            android:elevation="@dimen/actionbar_elevation">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+                style="?attr/pt_toolbar_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/pt_toolbar_theme"
+                app:navigationContentDescription="@string/tools_misc_close"
+                app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+                app:popupTheme="?attr/pt_toolbar_popup_theme" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/thumbnail_border"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/badge"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:padding="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/validity_summary_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/badge"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Digital signature is valid." />
+
+                <TextView
+                    android:id="@+id/signer_summary_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/badge"
+                    app:layout_constraintTop_toBottomOf="@+id/validity_summary_box"
+                    tools:text="Signed by Signer." />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/document_integrity_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/dialog_digital_signature_info_properties_doc_integrity"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/permission_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/permission_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/annot_toolbar_divider"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/identities_and_trust_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/dialog_digital_signature_info_properties_identities_and_trust"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/trust_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/trust_verification_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/annot_toolbar_divider"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/general_error_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/dialog_digital_signature_info_properties_general_errors"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/error_report"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/annot_toolbar_divider"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/digest_status_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="4dp"
+                android:text="@string/dialog_digital_signature_info_properties_digest_status"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/digest_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/digest_algorithm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

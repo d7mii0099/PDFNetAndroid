@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/actionbar_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/stamp_dialog_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/pt_toolbar_theme"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            style="?attr/pt_toolbar_style"
+            app:popupTheme="?attr/pt_toolbar_popup_theme"
+            app:navigationContentDescription="@string/tools_misc_close"
+            app:navigationIcon="@drawable/ic_close_white_24dp"
+            app:title="@string/annot_stamp_plural" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/stamp_dialog_toolbar_cab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:visibility="gone"
+            android:theme="?attr/pt_toolbar_theme"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            style="?attr/pt_toolbar_style"
+            app:popupTheme="?attr/pt_toolbar_popup_theme"
+            app:navigationContentDescription="@string/tools_misc_close"
+            app:navigationIcon="@drawable/ic_close_white_24dp" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/stamp_dialog_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/actionbar_elevation"
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+        style="?attr/pt_stamp_tab_layout_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_container" />
+
+    <com.pdftron.pdf.widget.CustomViewPager
+        android:id="@+id/stamp_dialog_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stamp_dialog_tab_layout" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

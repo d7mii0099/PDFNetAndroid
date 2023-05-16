@@ -1,0 +1,17 @@
+mutation UpdateAnnotationMemberLastRead($annotationId: ID!, $userId: ID!) {
+          updateAnnotationMemberLastRead(annotationId:$annotationId, userId: $userId) {
+            ...on AnnotationMember {
+              id
+              annotationId
+              lastRead
+            }
+            ...on AnnotationNotFound {
+              message
+              annotationId
+            }
+            ...on IgnoreMembership {
+              message
+              annotationId
+            }
+          }
+        }

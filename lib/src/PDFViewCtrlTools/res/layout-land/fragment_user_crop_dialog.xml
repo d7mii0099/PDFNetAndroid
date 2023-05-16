@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="?attr/pt_toolbar_theme"
+            style="?attr/pt_toolbar_style"
+            app:title="@string/pref_viewmode_user_crop"
+            app:menu="@menu/fragment_crop"
+            app:navigationIcon="@drawable/ic_arrow_back_white_24dp" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/center_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <RelativeLayout
+        android:id="@+id/crop_region_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/center_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <include
+            layout="@layout/fragment_user_crop_crop_region"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="36dp"
+        app:cardBackgroundColor="@color/pt_subtle_utility_color"
+        app:cardElevation="0dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/apply_button"
+        app:layout_constraintEnd_toEndOf="@+id/apply_button"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
+        app:layout_constraintBottom_toTopOf="@+id/crop_label">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/prev_button"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:tint="@color/pt_secondary_color"
+                style="@style/transparent_button"
+                app:srcCompat="@drawable/ic_chevron_left_black_24dp"/>
+
+            <TextView
+                android:id="@+id/page_num_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:textSize="14sp"
+                android:minWidth="54dp"
+                android:textColor="@color/pt_body_text_color"
+                tools:text="1/7"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/next_button"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:tint="@color/pt_secondary_color"
+                style="@style/transparent_button"
+                app:srcCompat="@drawable/ic_chevron_right_black_24dp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/crop_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_crop_manual_crop_apply_crop_to"
+        android:textColor="@color/pt_body_text_color"
+        android:paddingVertical="12dp"
+        app:layout_constraintStart_toStartOf="@+id/apply_button"
+        app:layout_constraintEnd_toEndOf="@+id/apply_button"
+        app:layout_constraintTop_toBottomOf="@+id/card_view"
+        app:layout_constraintBottom_toTopOf="@+id/all_pages_button" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/all_pages_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="32dp"
+        android:text="@string/user_crop_manual_crop_all_pages"
+        android:textColor="?attr/colorAccent"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="4dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="?attr/colorAccent"
+        app:cornerRadius="32dp"
+        app:layout_constraintStart_toStartOf="@+id/apply_button"
+        app:layout_constraintEnd_toStartOf="@+id/odd_even_pages_button"
+        app:layout_constraintTop_toBottomOf="@+id/crop_label"
+        app:layout_constraintBottom_toTopOf="@+id/apply_button"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/odd_even_pages_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="32dp"
+        android:text="@string/user_crop_manual_crop_odd_pages"
+        android:textColor="?attr/colorAccent"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:layout_marginStart="4dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="?attr/colorAccent"
+        app:cornerRadius="32dp"
+        app:layout_constraintStart_toEndOf="@+id/all_pages_button"
+        app:layout_constraintEnd_toEndOf="@+id/apply_button"
+        app:layout_constraintTop_toTopOf="@+id/all_pages_button"
+        app:layout_constraintBottom_toBottomOf="@+id/all_pages_button"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/apply_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:elevation="0dp"
+        android:layout_marginVertical="@dimen/user_crop_apply_button_vertical_margin"
+        android:layout_marginHorizontal="@dimen/user_crop_apply_button_horizontal_margin"
+        android:text="@string/tools_qm_crop"
+        android:backgroundTint="?attr/colorAccent"
+        android:textColor="?android:attr/colorBackground"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:cornerRadius="36dp"
+        app:layout_constraintStart_toEndOf="@+id/center_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/all_pages_button"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

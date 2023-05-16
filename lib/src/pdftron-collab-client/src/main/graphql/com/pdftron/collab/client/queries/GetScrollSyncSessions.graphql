@@ -1,0 +1,11 @@
+query GetAvailableScrollSyncSessions($documentId: ID!) {
+        getAvailableScrollSyncSessions(documentId: $documentId) {
+          leaderId
+          documentId
+          position {
+            scrollTop
+            scrollHeight
+          }
+          sessionId
+        }
+      }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="system_bars_enter_exit_duration">250</integer>
+    <integer name="view_pager_rotation_y">0</integer>
+
+    <integer name="reflow_disabled_button_alpha">150</integer>
+</resources>

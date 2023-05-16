@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/menu_editor_background_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="@dimen/actionbar_elevation"
+        android:theme="?attr/pt_toolbar_theme"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+        style="?attr/pt_toolbar_style"
+        app:popupTheme="?attr/pt_toolbar_popup_theme"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:navigationContentDescription="@string/tools_misc_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/pinned_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/menu_editor_pinned_background_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingBottom="24dp"
+            android:background="@drawable/dotted_border" />
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:gravity="center"
+            android:text="@string/menu_editor_rearrange_title"
+            android:textColor="@color/menu_editor_icon_tint_dark" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,6 @@
+query GetConnectedDocUsers($documentId: ID!) {
+        connectedDocUsers(documentId: $documentId) {
+          userId
+          currentPage
+        }
+      }

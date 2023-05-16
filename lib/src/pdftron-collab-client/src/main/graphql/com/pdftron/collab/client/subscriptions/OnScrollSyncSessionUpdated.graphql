@@ -1,0 +1,14 @@
+subscription ScrollSyncSessionUpdated($docId: ID!) {
+        scrollSyncSessionUpdated(docId: $docId) {
+          session {
+            leaderId
+            documentId
+            position {
+              scrollTop
+              scrollHeight
+            }
+            sessionId
+          }
+          action
+        }
+      }

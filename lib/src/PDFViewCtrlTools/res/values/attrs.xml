@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="pt_toolbar_theme" format="reference" />
+    <attr name="pt_toolbar_popup_theme" format="reference" />
+    <attr name="pt_toolbar_style" format="reference" />
+    <attr name="quick_menu_item" format="reference" />
+    <attr name="search_toolbar" format="reference" />
+    <attr name="colorBackgroundLight" format="color" />
+    <attr name="preset_colors_style" format="reference" />
+    <attr name="preset_styles_style" format="reference" />
+    <attr name="color_picker_style" format="reference" />
+    <attr name="custom_bookmarks_tab_layout" format="reference" />
+    <attr name="thumbnail_browser" format="reference" />
+    <attr name="pt_stamp_tab_layout_style" format="reference" />
+    <attr name="pt_pdf_tab_layout_style" format="reference" />
+    <attr name="pt_floating_nav_style" format="reference" />
+    <attr name="pt_sound_dialog_style" format="reference" />
+    <attr name="pt_sound_annot_view_style" format="reference" />
+
+    <declare-styleable name="CustomAppTheme">
+        <attr name="pt_toolbar_theme" />
+        <attr name="pt_toolbar_popup_theme" />
+        <attr name="pt_toolbar_style" />
+        <attr name="quick_menu_item" />
+        <attr name="thumbnail_slider" format="reference" />
+        <attr name="annotation_toolbar" format="reference" />
+        <attr name="edit_toolbar" format="reference" />
+        <attr name="form_toolbar" format="reference" />
+        <attr name="search_toolbar" />
+        <attr name="colorBackgroundLight" />
+        <attr name="preset_colors_style" />
+        <attr name="preset_styles_style" />
+        <attr name="color_picker_style" />
+        <attr name="custom_bookmarks_tab_layout" />
+        <attr name="thumbnail_browser" />
+        <attr name="pt_stamp_tab_layout_style" />
+        <attr name="pt_pdf_tab_layout_style" />
+        <attr name="pt_floating_nav_style" />
+        <attr name="pt_sound_dialog_style" />
+        <attr name="pt_sound_annot_view_style" />
+    </declare-styleable>
+
+    <declare-styleable name="PDFTronAppTheme">
+        <attr name="pt_toolbar_theme" />
+        <attr name="pt_toolbar_popup_theme" />
+        <attr name="pt_toolbar_style" />
+        <attr name="quick_menu_item" />
+        <attr name="search_toolbar" />
+        <attr name="colorBackgroundLight" />
+        <attr name="preset_colors_style" />
+        <attr name="preset_styles_style" />
+        <attr name="color_picker_style" />
+        <attr name="custom_bookmarks_tab_layout" />
+        <attr name="thumbnail_browser" />
+        <attr name="pt_stamp_tab_layout_style" />
+        <attr name="pt_bottom_bar_style" format="reference" />
+        <attr name="pt_preset_bar_style" format="reference" />
+        <attr name="pt_annotation_toolbar_style" format="reference" />
+        <attr name="pt_toolbar_switcher_dialog_style" format="reference" />
+        <attr name="pt_toolbar_switcher_button_style" format="reference" />
+        <attr name="pt_toolbar_tab_action_button_style" format="reference" />
+        <attr name="pt_document_slider_style" format="reference" />
+        <attr name="pt_pdf_tab_layout_style" />
+        <attr name="pt_floating_nav_style" />
+        <attr name="pt_sound_dialog_style" />
+        <attr name="pt_sound_annot_view_style" />
+        <attr name="pt_page_indicator_style" format="reference" />
+        <attr name="pt_sticky_note_dialog" format="reference" />
+        <attr name="pt_annot_note_dialog_style" format="reference" />
+        <attr name="pt_create_signature_dialog_style" format="reference" />
+        <attr name="pt_saved_signature_picker_dialog_style" format="reference" />
+        <attr name="pt_menu_editor_dialog_style" format="reference" />
+        <attr name="pt_annot_style_dialog_style" format="reference" />
+        <attr name="pt_annotation_filter_dialog_style" format="reference" />
+        <attr name="pt_thumbnails_view_style" format="reference" />
+        <attr name="pt_create_stamp_dialog_style" format="reference" />
+        <attr name="pt_add_page_dialog_style" format="reference" />
+        <attr name="pt_tab_switcher_dialog_style" format="reference" />
+        <attr name="pt_outline_dialog_style" format="reference" />
+        <attr name="pt_pdf_layer_dialog_style" format="reference" />
+        <attr name="pt_settings_style" format="reference" />
+        <attr name="pt_search_result_style" format="reference" />
+        <attr name="pt_count_preset_dialog_style" format="reference" />
+        <attr name="pt_count_tool_dialog_style" format="reference" />
+        <attr name="pt_crop_dialog_style" format="reference" />
+        <attr name="pt_password_dialog_style" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="StatusBarView">
+        <!-- Allow setting fitsSystemWindows to true by default. -->
+        <attr name="android:fitsSystemWindows" />
+        <!-- Allow settings background to colorPrimaryDark by default. -->
+        <attr name="android:background" />
+    </declare-styleable>
+
+    <declare-styleable name="DispatchFairInsets">
+        <!-- Flag indicating whether to fully consume the system window insets. -->
+        <attr name="consumeInsets" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="DispatchFairInsetsRelativeLayout">
+        <attr name="consumeInsets" />
+    </declare-styleable>
+
+    <declare-styleable name="DispatchFairInsetsFrameLayout">
+        <attr name="consumeInsets" />
+    </declare-styleable>
+
+    <declare-styleable name="DispatchFairInsetsLinearLayout">
+        <attr name="consumeInsets" />
+    </declare-styleable>
+
+    <declare-styleable name="ForegroundCoordinatorLayout">
+        <attr name="android:foreground" />
+        <attr name="android:foregroundGravity" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomRelativeLayout">
+        <attr name="posX" format="float" />
+        <attr name="posY" format="float" />
+        <attr name="pageNum" format="integer" />
+        <attr name="zoomWithParent" format="boolean" />
+    </declare-styleable>
+
+    <attr name="pdfviewctrlId" format="reference" />
+    <attr name="seekbarColor" format="color" />
+    <attr name="colorBackground" format="color" />
+
+    <declare-styleable name="ThumbnailSlider">
+        <attr name="pdfviewctrlId" />
+        <attr name="leftMenuItemDrawable" format="reference" />
+        <attr name="rightMenuItemDrawable" format="reference" />
+        <attr name="leftMenuItemColor" format="color" />
+        <attr name="rightMenuItemColor" format="color" />
+        <attr name="seekbarColor" />
+        <attr name="leftMenuItemContentDescription" format="string" />
+        <attr name="rightMenuItemContentDescription" format="string" />
+        <attr name="colorBackground" />
+        <attr name="shadowEnabled" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="DocumentSlider">
+        <attr name="pdfviewctrlId" />
+        <attr name="seekbarColor" />
+        <attr name="colorBackground" />
+        <attr name="android:orientation" />
+    </declare-styleable>
+
+    <attr name="colorToolBackground" format="color" />
+    <attr name="colorToolIcon" format="color" />
+    <attr name="colorCloseIcon" format="color" />
+
+    <declare-styleable name="AnnotationToolbar">
+        <attr name="colorBackground" />
+        <attr name="colorToolBackground" />
+        <attr name="colorToolIcon" />
+        <attr name="colorCloseIcon" />
+    </declare-styleable>
+
+    <declare-styleable name="EditToolbar">
+        <attr name="colorBackground" />
+        <attr name="colorToolBackground" />
+        <attr name="colorToolIcon" />
+        <attr name="colorCloseIcon" />
+    </declare-styleable>
+
+    <declare-styleable name="FormToolbar">
+        <attr name="colorBackground" />
+        <attr name="colorToolBackground" />
+        <attr name="colorToolIcon" />
+        <attr name="colorCloseIcon" />
+    </declare-styleable>
+
+    <declare-styleable name="SearchToolbar">
+        <attr name="showListAll" format="boolean" />
+        <attr name="showMatchCase" format="boolean" />
+        <attr name="showWholeWord" format="boolean" />
+        <attr name="showSearchWeb" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="BookmarksTabLayout">
+        <attr name="tabTintColorDialog" format="color" />
+        <attr name="tabTintColorSheet" format="color" />
+        <attr name="tabTintSelectedColorDialog" format="color" />
+        <attr name="tabTintSelectedColorSheet" format="color" />
+        <attr name="tabBackgroundSheet" format="color" />
+        <attr name="tabBackgroundDialog" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ThumbnailBrowser">
+        <attr name="showFilterMenuItem" format="boolean" />
+        <attr name="showFilterAnnotated" format="boolean" />
+        <attr name="showFilterBookmarked" format="boolean" />
+        <attr name="showAddBookmarkMenuItem" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SoundDialog">
+        <attr name="iconTint" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SoundAnnotViewTheme">
+        <attr name="iconColor" />
+        <attr name="disabledIconColor" />
+        <attr name="secondaryTextColor" />
+    </declare-styleable>
+
+    <attr name="searchResultsPopupWindowStyle" format="reference" />
+
+    <declare-styleable name="SwatchView">
+        <attr name="radialMargin" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableGridView">
+        <attr name="expanded" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorPicker">
+        <attr name="colorpicker_selectNoneButtonText" format="string" />
+        <attr name="colorpicker_noneSelectedSummaryText" format="string" />
+        <attr name="colorpicker_defaultColor" format="color" />
+        <attr name="colorpicker_showAlpha" format="boolean" />
+        <attr name="colorpicker_showHex" format="boolean" />
+        <attr name="colorpicker_selectedColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ToolStyle">
+        <attr name="annot_color" format="color" />
+        <attr name="annot_text_color" format="color" />
+        <attr name="annot_font_size" format="float" />
+        <attr name="annot_fill_color" format="color" />
+        <attr name="annot_thickness" format="float" />
+        <attr name="annot_thickness_min" format="float" />
+        <attr name="annot_thickness_max" format="float" />
+        <attr name="annot_text_size_min" format="float" />
+        <attr name="annot_text_size_max" format="float" />
+        <attr name="annot_font" format="string" />
+        <attr name="annot_opacity" format="float" />
+        <attr name="annot_icon" format="string" />
+        <attr name="annot_date_format" format="string" />
+        <attr name="ruler_base_value" format="float" />
+        <attr name="ruler_base_unit" format="string" />
+        <attr name="ruler_translate_value" format="float" />
+        <attr name="ruler_translate_unit" format="string" />
+        <attr name="ruler_precision" format="integer" />
+        <attr name="ink_pressure" format="boolean" />
+        <attr name="annot_line_style" format="string" />
+        <attr name="annot_border_style" format="string" />
+        <attr name="annot_line_start_style" format="string" />
+        <attr name="annot_line_end_style" format="string" />
+        <attr name="annot_horizontal_alignment" format="integer" />
+        <attr name="annot_vertical_alignment" format="integer" />
+        <!-- default style attrs -->
+        <attr name="highlight_default_style" format="reference" />
+        <attr name="sticky_note_default_style" format="reference" />
+        <attr name="count_measurement_default_style" format="reference" />
+        <attr name="underline_default_style" format="reference" />
+        <attr name="squiggly_default_style" format="reference" />
+        <attr name="strikeout_default_style" format="reference" />
+        <attr name="free_highlighter_default_style" format="reference" />
+        <attr name="freehand_default_style" format="reference" />
+        <attr name="free_text_default_style" format="reference" />
+        <attr name="free_date_text_default_style" format="reference" />
+        <attr name="line_default_style" format="reference" />
+        <attr name="arrow_default_style" format="reference" />
+        <attr name="ruler_default_style" format="reference" />
+        <attr name="polyline_default_style" format="reference" />
+        <attr name="rect_default_style" format="reference" />
+        <attr name="oval_default_style" format="reference" />
+        <attr name="polygon_default_style" format="reference" />
+        <attr name="cloud_default_style" format="reference" />
+        <attr name="signature_default_style" format="reference" />
+        <attr name="link_default_style" format="reference" />
+        <attr name="rect_group_annot_edit_style" format="reference" />
+        <attr name="other_default_style" format="reference" />
+        <attr name="widget_default_style" format="reference" />
+
+        <!-- presets reference to array -->
+        <attr name="highlight_presets" format="reference" />
+        <attr name="sticky_note_presets" format="reference" />
+        <attr name="count_measurement_presets" format="reference" />
+        <attr name="underline_presets" format="reference" />
+        <attr name="squiggly_presets" format="reference" />
+        <attr name="strikeout_presets" format="reference" />
+        <attr name="freehand_presets" format="reference" />
+        <attr name="free_highlighter_presets" format="reference" />
+        <attr name="free_text_presets" format="reference" />
+        <attr name="callout_presets" format="reference" />
+        <attr name="free_date_text_presets" format="reference" />
+        <attr name="line_presets" format="reference" />
+        <attr name="arrow_presets" format="reference" />
+        <attr name="ruler_presets" format="reference" />
+        <attr name="polyline_presets" format="reference" />
+        <attr name="rect_presets" format="reference" />
+        <attr name="oval_presets" format="reference" />
+        <attr name="polygon_presets" format="reference" />
+        <attr name="cloud_presets" format="reference" />
+        <attr name="signature_presets" format="reference" />
+        <attr name="link_presets" format="reference" />
+        <attr name="widget_presets" format="reference" />
+        <attr name="other_presets" format="reference" />
+        <!-- icons reference to array -->
+        <attr name="sticky_note_icons" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ToolManager">
+        <!-- whether editing ink annotation should open the annotation toolbar -->
+        <attr name="edit_ink_annots" format="boolean" />
+        <!-- whether to enable image stamper tool -->
+        <attr name="add_image_stamper_tool" format="boolean" />
+        <!-- whether ink tool will open annotation toolbar -->
+        <attr name="open_toolbar_on_pan_ink_selected" format="boolean" />
+        <!-- whether to use/show the built-in page number indicator -->
+        <attr name="build_in_page_number_indicator" format="boolean" />
+        <!-- whether to check annotation author permission -->
+        <attr name="annot_permission_check" format="boolean" />
+        <!-- whether to show author dialog the first time when user annotates -->
+        <attr name="show_author_dialog" format="boolean" />
+        <!-- whether the TextMarkup annotations are compatible with Adobe
+        (Adobe's quads don't follow the specification, but they don't handle quads that do)
+        -->
+        <attr name="text_markup_adobe_hack" format="boolean" />
+        <!-- whether to copy annotated text to note -->
+        <attr name="copy_annotated_text_to_note" format="boolean" />
+        <!-- whether to use stylus to draw without entering ink tool -->
+        <attr name="stylus_as_pen" format="boolean" />
+        <!-- whether to smooth ink annotation -->
+        <attr name="ink_smoothing_enabled" format="boolean" />
+        <!-- whether auto select annotation after annotation is created -->
+        <attr name="auto_select_annotation" format="boolean" />
+        <!-- whether disable showing quick menu -->
+        <attr name="quick_menu_disable" format="boolean" />
+        <!-- whether can double tap to zoom -->
+        <attr name="double_tap_to_zoom" format="boolean" />
+        <!-- whether can auto resize free text when editing -->
+        <attr name="auto_resize_freetext" format="boolean" />
+        <!-- whether annotation editing is real time -->
+        <attr name="realtime_annot_edit" format="boolean" />
+        <!-- whether can edit freetext on tap -->
+        <attr name="edit_freetext_on_tap" format="boolean" />
+        <!-- whether to show the freetext inline toggle button -->
+        <attr name="freeText_inline_toggle_enabled" format="boolean" />
+        <!-- whether to show the rich content switch for freetext -->
+        <attr name="freeText_show_rich_content_switch" format="boolean" />
+        <!-- whether can show saved signatures in signature dialog -->
+        <attr name="show_saved_signatures" format="boolean" />
+        <!-- whether "Store signature" setting in the CreateSignatureFragment dialog should be enabled or disabled by default. -->
+        <attr name="default_store_new_signature" format="boolean" />
+        <!-- whether to use the user's last set "Store signature" setting in the CreateSignatureFragment dialog.-->
+        <attr name="persist_store_signature_setting" format="boolean" />
+        <!-- whether can signature presets are shown in signature dialog -->
+        <attr name="show_signature_presets" format="boolean" />
+        <!-- whether can show pick from image button in signature dialog -->
+        <attr name="show_signature_from_image" format="boolean" />
+        <!-- whether can show the typed signature button in signature dialog -->
+        <attr name="show_typed_signature" format="boolean" />
+        <!-- whether can show indicator for annotations with comments -->
+        <attr name="show_annot_indicator" format="boolean" />
+        <!-- whether has separate annotation layer -->
+        <attr name="annotation_layer_enabled" format="boolean" />
+        <!-- whether use digital signature when signing -->
+        <attr name="use_digital_signature" format="boolean" />
+        <!-- file path for the digital signature keystore file -->
+        <attr name="digital_signature_keystore_path" format="string" />
+        <!-- password for the digital signature keystore file -->
+        <attr name="digital_signature_keystore_password" format="string" />
+        <!-- array of tools to disable -->
+        <attr name="disable_tool_modes" format="reference" />
+        <!-- array of annot types to disable editing -->
+        <attr name="disable_annot_editing_by_types" format="reference" />
+        <!-- whether to use pressure sensitive signatures -->
+        <attr name="use_pressure_sensitive_signatures" format="boolean" />
+        <!-- type of eraser -->
+        <attr name="eraser_type" format="string" />
+        <!-- whether to show undo/redo buttons in the toolbar-->
+        <attr name="show_undo_redo" format="boolean" />
+        <!-- whether to show rotate handle when annotation selected-->
+        <attr name="show_rotate_handle" format="boolean" />
+        <!-- whether to enable multi-stroke for ink tool-->
+        <attr name="ink_multi_stroke_enabled" format="boolean" />
+        <!--the margin between selection box and annotation bounding box in dp-->
+        <attr name="selection_box_margin" format="integer" />
+        <!--whether to show option to edit original PDF content-->
+        <attr name="pdf_content_editing_enabled" format="integer" />
+        <!--whether to restrict annotation creation on tap-->
+        <attr name="restricted_tap_annot_creation" format="boolean" />
+        <!--the half width of tap to create shape in dp-->
+        <attr name="tap_to_create_half_width" format="integer" />
+        <!--whether moving annotations between pages is allowed-->
+        <attr name="move_annot_between_pages" format="boolean" />
+        <!--sets whether free hand annotations are saved on a timer basis-->
+        <attr name="free_hand_timer_enabled" format="boolean" />
+        <!--sets how wide the range would be for auto smoothing vertical and horizontal strokes-->
+        <attr name="free_highlighter_auto_smooth_range" format="float" />
+        <!--sets if magnifying loupe is enabled when using text markup annotations-->
+        <attr name="loupe_enabled" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="QuickMenuItem">
+        <attr name="android:tint" />
+        <attr name="icon_alpha" format="float" />
+        <attr name="text_alpha" format="float" />
+        <attr name="android:background" />
+        <attr name="android:textAllCaps" />
+    </declare-styleable>
+
+    <declare-styleable name="PresetColorGridView">
+        <attr name="color_list" format="reference" />
+        <attr name="highlight_color_list" format="reference" />
+        <attr name="android:columnWidth" />
+        <attr name="android:gravity" />
+        <attr name="android:horizontalSpacing" />
+        <attr name="android:numColumns" />
+        <attr name="android:verticalSpacing" />
+        <attr name="android:stretchMode" />
+    </declare-styleable>
+
+    <declare-styleable name="PresetStyleGridView">
+        <attr name="android:columnWidth" />
+        <attr name="android:gravity" />
+        <attr name="android:horizontalSpacing" />
+        <attr name="android:numColumns" />
+        <attr name="android:verticalSpacing" />
+        <attr name="android:stretchMode" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorHuePickerWheel">
+        <attr name="wheel_width" format="dimension" />
+        <attr name="value_pointer_radius" format="dimension" />
+        <attr name="ring_color" format="color" />
+        <attr name="ring_shadow_radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorSatValuePickerBoard">
+        <attr name="value_pointer_radius" />
+        <attr name="ring_color" />
+        <attr name="ring_shadow_radius" />
+    </declare-styleable>
+
+    <declare-styleable name="AnnotationPropertyPreviewView">
+        <!-- whether to show transparent patten as background if there is transparency -->
+        <attr name="transparent_background" format="boolean" />
+        <!-- parent view background color, show border if the stroke color is the same as the background -->
+        <attr name="parent_background" format="color" />
+        <!-- inner and outer stroke color -->
+        <attr name="stroke_color" format="color" />
+        <!-- whether to draw inner and outer stroke if color is the same as the background color -->
+        <attr name="draw_stroke" format="boolean" />
+        <!-- the text to display for preview if the annotation is a free text annotation or text markup annotation -->
+        <attr name="preview_text" format="string" />
+        <!-- minimum text size for preview -->
+        <attr name="min_text_size" format="dimension" />
+        <!-- whether to use stroke ratio for drawing preview -->
+        <attr name="use_stroke_ratio" format="boolean" />
+    </declare-styleable>
+
+    <!-- RectGroupAnnotEdit tool draw style attributes -->
+    <declare-styleable name="RectGroupAnnotEdit">
+        <attr name="fillColor" format="color" />
+        <attr name="fillOpacity" format="float" />
+        <attr name="lassoColor" format="color" />
+        <attr name="lassoOpacity" format="float" />
+        <attr name="lassoThickness" format="float" />
+    </declare-styleable>
+
+    <!-- SignatureInfoView attributes-->
+    <declare-styleable name="SignatureInfoView">
+        <attr name="info_label" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="PTFloatingActionButton">
+        <attr name="srcCompat" format="reference" />
+        <attr name="android:tint" />
+    </declare-styleable>
+
+    <declare-styleable name="PTFloatingActionMenu">
+        <attr name="android:tint" />
+    </declare-styleable>
+
+    <declare-styleable name="DialogStickyNote">
+        <attr name="showStyleIcon" format="boolean" />
+        <!-- Dialog background color -->
+        <attr name="backgroundColor"/>
+        <!-- Background color of the text editor area-->
+        <attr name="editTextBackgroundColor"/>
+        <!-- If true, then the edit text background color will follow editTextBackgroundColor. Otherwise
+             it will follow the sticky note color (light mode only). -->
+        <attr name="forceEditTextBackgroundColor"/>
+    </declare-styleable>
+
+    <declare-styleable name="DialogAnnotNote">
+        <!-- Dialog background color -->
+        <attr name="backgroundColor"/>
+        <!-- Background color of the text editor area-->
+        <attr name="editTextBackgroundColor"/>
+        <!-- Color of the text buttons-->
+        <attr name="textButtonColor"/>
+    </declare-styleable>
+
+    <attr name="colorBackgroundSecondary" format="color" />
+    <attr name="selectedBackgroundColor" format="color" />
+    <attr name="selectedBackgroundColorSecondary" format="color" />
+    <attr name="selectedIconColor" format="color" />
+    <attr name="highlightedIconColor" format="color" />
+    <attr name="disabledIconColor" format="color" />
+    <attr name="disabledTextColor" format="color" />
+    <attr name="iconColor" format="color" />
+    <attr name="itemBackgroundColor" format="color" />
+    <attr name="textColor" format="color" />
+    <attr name="presetTextColor" format="color" />
+    <attr name="backgroundColor" format="color" />
+    <attr name="selectedItemBackgroundColor" format="color" />
+    <attr name="dividerColor" format="color" />
+    <attr name="expandIconColor" format="color" />
+    <attr name="accentColor" format="color" />
+    <attr name="editTextBackgroundColor" format="color" />
+    <attr name="forceEditTextBackgroundColor" format="boolean" />
+    <attr name="textButtonColor" format="color" />
+    <attr name="backgroundColorCompact" format="color" />
+    <attr name="activeTextColor" format="color" />
+    <attr name="activeBackgroundColor" format="color" />
+    <attr name="pageNumTextColor" format="color" />
+    <attr name="selectedTextForegroundColor" format="color" />
+    <attr name="selectedTextBackgroundColor" format="color" />
+
+    <declare-styleable name="AnnotationToolbarTheme">
+        <!-- Annotation toolbar background color-->
+        <attr name="colorBackground" />
+        <!-- Background color of a selected button -->
+        <attr name="selectedBackgroundColor" />
+        <!-- Icon color for the icon of a selected button -->
+        <attr name="selectedIconColor" />
+        <!-- Icon color for an accented button, if style accenting is disabled-->
+        <attr name="highlightedIconColor" />
+        <!-- Icon color for a disabled button -->
+        <attr name="disabledIconColor" />
+        <!-- Default icon color for a button -->
+        <attr name="iconColor" />
+        <!-- Color of text in the annotation toolbar -->
+        <attr name="textColor" />
+        <!-- Color of divider in the annotation toolbar -->
+        <attr name="dividerColor" />
+        <!-- Color of tool region background in compact mode -->
+        <attr name="backgroundColorCompact" />
+
+        <!--   Tablet related attributes    -->
+
+        <!-- Color of text in the preset section of the annotation toolbar for tablets-->
+        <attr name="presetTextColor" />
+        <!-- Background color of empty presets section in tablet annotation toolbar-->
+        <attr name="colorBackgroundSecondary" />
+    </declare-styleable>
+
+    <declare-styleable name="PresetBarTheme">
+        <!-- Background color of the preset bar -->
+        <attr name="colorBackground" />
+        <!-- Background color of a selected button -->
+        <attr name="selectedBackgroundColor" />
+        <!-- Secondary background color of a selected button. Used for tablet layouts.-->
+        <attr name="selectedBackgroundColorSecondary" />
+        <!-- Icon color for the icon of a selected button -->
+        <attr name="selectedIconColor" />
+        <!-- Icon color for a disabled button -->
+        <attr name="disabledIconColor" />
+        <!-- Default icon color for a button -->
+        <attr name="iconColor" />
+        <!-- Default icon color for the expand annot style icon -->
+        <attr name="expandIconColor" />
+        <!-- Accent color used in preset bar-->
+        <attr name="accentColor" />
+    </declare-styleable>
+
+    <declare-styleable name="BottomBarTheme">
+        <!-- Background color of the bottom bar -->
+        <attr name="colorBackground" />
+        <!-- Background color of a selected button -->
+        <attr name="selectedBackgroundColor" />
+        <!-- Icon color for the icon of a selected button -->
+        <attr name="selectedIconColor" />
+        <!-- Icon color for a disabled button -->
+        <attr name="disabledIconColor" />
+        <!-- Default icon color for a button -->
+        <attr name="iconColor" />
+    </declare-styleable>
+
+    <declare-styleable name="ToolbarSwitcherButtonTheme">
+        <!-- Text color for toolbar switcher button -->
+        <attr name="textColor" />
+        <!-- Icon color for toolbar switcher button -->
+        <attr name="iconColor" />
+        <!-- Background color of compact toolbar switcher button -->
+        <attr name="backgroundColorCompact" />
+    </declare-styleable>
+
+    <declare-styleable name="TabActionButtonTheme">
+        <!-- Text color for tab action button -->
+        <attr name="textColor" />
+        <!-- Icon color for tab action button -->
+        <attr name="iconColor" />
+    </declare-styleable>
+
+    <declare-styleable name="ToolbarSwitcherDialogTheme">
+        <!-- Text color of items in the toolbar switcher dialog -->
+        <attr name="textColor" />
+        <!-- Icon color of items in the toolbar switcher dialog -->
+        <attr name="iconColor" />
+        <!-- Background color of the toolbar switcher dialog -->
+        <attr name="backgroundColor" />
+        <!-- Background color of selected item in the toolbar switcher dialog -->
+        <attr name="selectedItemBackgroundColor" />
+        <!-- Color of icon of selected item -->
+        <attr name="selectedIconColor" />
+    </declare-styleable>
+
+    <declare-styleable name="PageIndicatorTheme">
+        <!-- Background color for page indicator layout -->
+        <attr name="backgroundColor" />
+        <!-- Text color for page indicator layout -->
+        <attr name="textColor" />
+        <!-- Outline color for page indicator layout -->
+        <attr name="outlineColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CreateSignatureDialogTheme">
+        <!-- Color used for add image signature button -->
+        <attr name="iconColor" />
+        <!-- Background color of a selected button -->
+        <attr name="selectedBackgroundColor" />
+        <!-- Icon color for the icon of a selected button -->
+        <attr name="selectedIconColor" />
+    </declare-styleable>
+
+    <declare-styleable name="SavedSignaturePickerDialogTheme">
+        <!-- Color used for setting the signature item background color -->
+        <attr name="itemBackgroundColor" />
+    </declare-styleable>
+
+    <attr name="headerColor" format="color" />
+    <attr name="pinnedBackgroundColor" format="color" />
+    <attr name="dottedLineColor" format="color" />
+    <attr name="dottedLineActiveColor" format="color" />
+
+    <declare-styleable name="MenuEditorDialogTheme">
+        <!-- Background Color-->
+        <attr name="backgroundColor" />
+        <!-- Header Text Color -->
+        <attr name="headerColor" />
+        <!-- Icon Color -->
+        <attr name="iconColor" />
+        <!-- Text Color -->
+        <attr name="textColor" />
+        <!-- Pinned Area Background Color -->
+        <attr name="pinnedBackgroundColor" />
+        <!-- Dotted line color-->
+        <attr name="dottedLineColor" />
+        <!-- Dotted line active color-->
+        <attr name="dottedLineActiveColor" />
+    </declare-styleable>
+
+    <attr name="annotPreviewBackgroundColor" format="color" />
+    <attr name="presetIconColor" format="color" />
+    <attr name="selectedPresetIconColor" format="color" />
+    <attr name="selectedPresetBackgroundColor" format="color" />
+
+    <declare-styleable name="AnnotStyleDialogTheme">
+        <!-- Background color-->
+        <attr name="backgroundColor" />
+        <!-- Background color of annotation preview-->
+        <attr name="annotPreviewBackgroundColor" />
+        <!-- Text color -->
+        <attr name="textColor" />
+        <!-- Icon color -->
+        <attr name="iconColor" />
+        <!-- Selected icon background color -->
+        <attr name="selectedBackgroundColor" />
+        <!-- Preset icon color -->
+        <attr name="presetIconColor" />
+        <!-- Selected preset icon color -->
+        <attr name="selectedPresetIconColor" />
+        <!-- Selected preset background color -->
+        <attr name="selectedPresetBackgroundColor" />
+        <!-- Tab indicator color -->
+        <attr name="tabIndicatorColor" />
+        <!-- Tab text color -->
+        <attr name="tabTextColor" />
+        <!-- Tab selected text color -->
+        <attr name="tabSelectedTextColor" />
+    </declare-styleable>
+
+    <declare-styleable name="CountPresetDialogTheme">
+        <!-- Background color-->
+        <attr name="backgroundColor" />
+        <!-- Text color -->
+        <attr name="textColor" />
+        <!-- Icon color -->
+        <attr name="iconColor" />
+    </declare-styleable>
+
+    <declare-styleable name="CountToolDialogTheme">
+        <!-- Background color-->
+        <attr name="backgroundColor" />
+        <!-- Text color -->
+        <attr name="textColor" />
+        <!-- Icon color -->
+        <attr name="iconColor" />
+    </declare-styleable>
+
+    <declare-styleable name="CreateStampDialogTheme">
+        <!-- Icon color -->
+        <attr name="iconColor" />
+        <!-- Selected background color -->
+        <attr name="selectedBackgroundColor" />
+    </declare-styleable>
+
+    <attr name="headerTextColor" format="color" />
+    <attr name="secondaryBackgroundColor" format="color" />
+    <declare-styleable name="AnnotationFilterDialogTheme">
+        <!-- Background color -->
+        <attr name="colorBackground" />
+        <!-- Secondary background color -->
+        <attr name="secondaryBackgroundColor" />
+        <!-- Default icon color for a button -->
+        <attr name="iconColor" />
+        <!-- Color of text in the annotation filter dialog -->
+        <attr name="textColor" />
+        <!-- Color of header text in the annotation filter dialog -->
+        <attr name="headerTextColor" />
+    </declare-styleable>
+
+    <declare-styleable name="ThumbnailsViewTheme">
+        <!-- Text color in the thumbnails view -->
+        <attr name="textColor" />
+        <!-- Background color in the thumbnails view-->
+        <attr name="backgroundColor" />
+        <!-- Active page text color in the thumbnails view-->
+        <attr name="activeTextColor" />
+        <!-- Active page background color in the thumbnails view-->
+        <attr name="activeBackgroundColor" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingsTheme">
+        <!-- Icon color in the settings fragment -->
+        <attr name="iconColor" />
+    </declare-styleable>
+
+    <attr name="selectedDotColor" format="color" />
+    <attr name="dotColor" format="color" />
+    <declare-styleable name="AddPageDialogTheme">
+        <!-- Color of selected dot -->
+        <attr name="selectedDotColor" />
+        <!-- Color of unselected dot -->
+        <attr name="dotColor" />
+    </declare-styleable>
+
+    <attr name="selectedBorderColor" format="color" />
+    <declare-styleable name="TabSwitcherDialogTheme">
+        <!-- Tab switcher card background color-->
+        <attr name="backgroundColor" />
+        <!-- Icon Color -->
+        <attr name="iconColor" />
+        <!-- Text Color -->
+        <attr name="textColor" />
+        <!-- Selected card border color-->
+        <attr name="selectedBorderColor" />
+    </declare-styleable>
+
+    <declare-styleable name="CropDialogTheme">
+        <attr name="chipBackgroundColor" format="color" />
+        <attr name="iconColor" />
+        <attr name="textColor" />
+    </declare-styleable>
+
+    <attr name="secondaryTextColor" format="color" />
+    <declare-styleable name="OutlineDialogTheme">
+        <!-- Header text color -->
+        <attr name="headerTextColor" />
+        <!-- Background Color of header -->
+        <attr name="headerBackgroundColor" format="color"/>
+        <!-- Text Color -->
+        <attr name="textColor" />
+        <!-- Icon Color -->
+        <attr name="iconColor" />
+        <!-- Disabled Icon Color -->
+        <attr name="disabledIconColor" />
+        <!-- Secondary Text Color -->
+        <attr name="secondaryTextColor" />
+        <!-- Selected Background Color -->
+        <attr name="selectedBackgroundColor" />
+        <!-- Background Color -->
+        <attr name="backgroundColor" />
+    </declare-styleable>
+
+    <declare-styleable name="FloatingNavTheme">
+        <attr name="iconTint" />
+        <attr name="backgroundTint" />
+        <attr name="dividerColor" />
+        <attr name="disabledIconColor" />
+    </declare-styleable>
+        
+    <declare-styleable name="PdfLayerDialogTheme">
+        <!-- Text Color -->
+        <attr name="textColor" />
+        <!-- Disabled Text Color -->
+        <attr name="disabledTextColor" />
+        <!-- Secondary Text Color -->
+        <attr name="secondaryTextColor" />
+        <!-- CheckBox Color -->
+        <attr name="checkBoxColor" format="color" />
+        <!-- Disabled CheckBox Color -->
+        <attr name="disabledCheckBoxColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable  name="SearchResultTheme">
+        <!-- Page number text color -->
+        <attr name="pageNumTextColor" />
+        <!-- selected text foreground color-->
+        <attr name="selectedTextForegroundColor" />
+        <!-- selected text background color-->
+        <attr name="selectedTextBackgroundColor" />
+    </declare-styleable>
+
+    <attr name="disabledButtonColor" format="color" />
+    <attr name="inputTextColor" format="color" />
+    <attr name="hintTextColor" format="color" />
+    <attr name="titleColor" format="color" />
+    <attr name="messageColor" format="color" />
+    <attr name="endIconColor" format="color" />
+    <declare-styleable name="PasswordDialogTheme">
+        <attr name="disabledButtonColor" />
+        <attr name="inputTextColor" />
+        <attr name="hintTextColor" />
+        <attr name="titleColor" />
+        <attr name="messageColor" />
+        <attr name="endIconColor" />
+    </declare-styleable>
+
+</resources>

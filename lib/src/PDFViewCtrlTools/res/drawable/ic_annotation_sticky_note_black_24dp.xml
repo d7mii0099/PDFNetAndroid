@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:id="@id/colored_section"
+      android:drawable="@drawable/ic_annotation_sticky_note_colored_section_24dp" />
+  <item
+      android:id="@id/uncolored_section"
+      android:drawable="@drawable/ic_annotation_sticky_note_uncolored_section_24dp" />
+</layer-list>

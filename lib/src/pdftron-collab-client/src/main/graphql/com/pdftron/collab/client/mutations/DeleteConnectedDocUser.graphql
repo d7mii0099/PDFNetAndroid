@@ -1,0 +1,5 @@
+mutation DeleteConnectedDocUser($input: DeleteConnectedDocUserInput!) {
+        deleteConnectedDocUser(input: $input) {
+          successful
+        }
+      }

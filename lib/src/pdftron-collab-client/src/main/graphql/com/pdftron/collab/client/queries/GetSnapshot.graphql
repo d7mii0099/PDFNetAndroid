@@ -1,0 +1,15 @@
+query GetSnapshotByIdQuery($id: ID!) {
+          snapshot(id: $id) {
+            id
+            author {
+              id
+              email
+              userName
+            }
+            documentId
+            xfdf
+            name
+            createdAt
+            updatedAt
+          }
+        }

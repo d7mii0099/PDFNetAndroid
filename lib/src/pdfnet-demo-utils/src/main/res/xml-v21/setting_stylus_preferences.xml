@@ -1,0 +1,45 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    ===============================================================
+                            IMPORTANT
+    ===============================================================
+    The key names and values used here must be conform to what is declared in
+    SettingsManager class. This is because we read these values from that
+    class to be used across the application.
+    -->
+
+    <PreferenceCategory
+        android:key="pref_category_stylus"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_stylus_as_pen"
+            android:summary="@string/pref_stylus_as_pen_summary"
+            android:title="@string/pref_stylus_as_pen_title"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_draw_with_finger"
+            android:summary="@string/pref_draw_with_finger_summary"
+            android:title="@string/pref_draw_with_finger_title"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:defaultValue="7"
+            android:dialogTitle="@string/choose_an_option_please"
+            android:entries="@array/default_stylus_tool_modes"
+            android:entryValues="@array/default_stylus_tool_mode_values"
+            android:key="default_stylus_tool_mode"
+            android:layoutDirection="locale"
+            android:summary="@string/default_stylus_summary"
+            android:textDirection="locale"
+            android:title="@string/default_stylus_tool"
+            app:iconSpaceReserved="false" /><!--defaultValue 7 is for freehand (INK_CREATE)-->
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

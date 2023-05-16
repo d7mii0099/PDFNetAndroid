@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root_view">
+    <com.pdftron.pdf.utils.AnnotationPropertyPreviewView
+        android:id="@+id/preview"
+        android:layout_width="@dimen/preview_width"
+        android:layout_height="@dimen/preview_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/preview_padding"
+        android:layout_marginTop="@dimen/preview_padding"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone"
+        app:preview_text="@string/tools_annot_style_preview_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:id="@+id/first_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_picker_view_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/count_tool_create_preset_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            tools:text="Add group"/>
+        <LinearLayout
+            android:id="@+id/count_tool_create_preset_fill_color_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/preference_thumbnail_size"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/padding_large"
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingEnd="@dimen/item_padding_right"
+            android:paddingRight="@dimen/item_padding_right"
+            android:layout_below="@+id/count_tool_create_preset_title">
+
+            <TextView
+                android:id="@+id/count_tool_create_preset_fill_color_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:alpha="0.54"
+                android:text="@string/tools_qm_color"
+                android:textAppearance="?android:attr/textAppearance"
+                android:textSize="@dimen/label_text_size" />
+
+            <com.pdftron.pdf.utils.AnnotationPropertyPreviewView
+                android:id="@+id/count_tool_create_preset_fill_preview"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                app:stroke_color="@color/tools_eraser_gray" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/count_tool_create_preset_fill_color_expand_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/action_button_min_padding"
+                android:layout_marginRight="@dimen/action_button_min_padding"
+                android:alpha="0.54"
+                android:tint="?android:attr/colorForeground"
+                app:srcCompat="@drawable/ic_chevron_right_black_24dp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/count_tool_create_preset_group_label_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/count_tool_create_preset_fill_color_layout"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/count_tool_create_preset_group_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/count_measurement_group_label" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:id="@+id/count_tool_create_preset_button_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/count_tool_create_preset_group_label_layout">
+
+            <Button
+                android:id="@+id/count_tool_create_preset_button_positive"
+                style="@style/transparent_dialog_annotation_note_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="@dimen/dialog_button_default_margin_padding"
+                android:layout_marginLeft="@dimen/dialog_button_default_margin_padding"
+                android:layout_marginEnd="@dimen/dialog_button_default_margin_padding"
+                android:layout_marginRight="@dimen/dialog_button_default_margin_padding"
+                android:text="@string/add" />
+
+            <Button
+                android:id="@+id/count_tool_create_preset_button_negative"
+                style="@style/transparent_dialog_annotation_note_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dialog_button_default_margin_padding"
+                android:layout_marginLeft="@dimen/dialog_button_default_margin_padding"
+                android:layout_toStartOf="@id/count_tool_create_preset_button_positive"
+                android:layout_toLeftOf="@id/count_tool_create_preset_button_positive"
+                android:text="@string/cancel" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.pdftron.pdf.controls.ColorPickerView
+        android:id="@+id/color_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

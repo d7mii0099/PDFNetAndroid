@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:elevation="@dimen/card_elevation"
+    android:focusable="true"
+    android:layoutDirection="locale"
+    android:minHeight="72dp"
+    android:paddingStart="16dp"
+    android:paddingLeft="16dp"
+    tools:ignore="UnusedAttribute">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/activatedBackgroundIndicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/thumbnail_container"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginVertical="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/file_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.pdftron.demo.widget.ImageViewTopCrop
+                android:id="@+id/file_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/imageview_icon_file_type_description"
+                android:scaleType="matrix"
+                fresco:placeholderImage="@drawable/white_square" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/file_lock_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="top|end"
+                android:scaleType="fitCenter"
+                android:visibility="gone"
+                app:srcCompat="@drawable/thumbnail_lock"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/docTextPlaceHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/list_thumbnail_horizontal_margin"
+                android:layout_marginTop="@dimen/list_thumbnail_vertical_margin"
+                android:layout_marginEnd="@dimen/list_thumbnail_horizontal_margin"
+                android:layout_marginBottom="@dimen/list_thumbnail_vertical_margin"
+                android:text=".doc"
+                android:textAlignment="center"
+                android:textColor="#8A000000"
+                android:textSize="16sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/file_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/primary_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/file_info"
+            app:layout_constraintEnd_toStartOf="@+id/end_button_barrier"
+            app:layout_constraintStart_toEndOf="@+id/thumbnail_container"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:ignore="Deprecated" />
+
+        <TextView
+            android:id="@+id/file_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?android:attr/textColorTertiary"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/file_name"
+            app:layout_constraintStart_toStartOf="@+id/file_name"
+            app:layout_constraintTop_toBottomOf="@+id/file_name" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/end_button_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="info_button,drag_icon" />
+
+        <FrameLayout
+            android:id="@+id/info_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/actionBarItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.pdftron.pdf.widget.InertCheckBox
+                android:id="@+id/check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/info_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:srcCompat="@drawable/ic_dots_horizontal"
+                app:tint="?android:attr/textColorPrimary" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/drag_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_drag"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="@color/browser_divider_color"
+        android:fitsSystemWindows="false"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

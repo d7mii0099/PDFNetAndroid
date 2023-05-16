@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Complete Reader</string>
+    <string name="simple_reader_title">Document Reader</string>
+    <string name="simple_reader_msg">Display and annotate documents on Android</string>
+
+    <string name="diff_title">Compare files</string>
+    <string name="diff_msg">Quickly spot differences between pages</string>
+</resources>

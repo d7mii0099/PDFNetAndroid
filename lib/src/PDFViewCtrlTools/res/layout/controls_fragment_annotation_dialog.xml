@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:orientation="vertical"
+    android:rotationY="@integer/view_pager_rotation_y">
+
+    <RelativeLayout
+        android:id="@+id/annotation_filter_indicator_container"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/annotation_filter_indicator_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/padding_large"
+            android:text="@string/annotation_filter_indicator"
+            android:textAppearance="?android:attr/textAppearanceSmallPopupMenu" />
+
+        <TextView
+            android:id="@+id/annotation_filter_indicator_edit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="@dimen/padding_large"
+            android:text="@string/annotation_filter_indicator_edit"
+            android:textAppearance="?android:attr/textAppearanceSmallPopupMenu"
+            android:textColor="?attr/colorAccent" />
+
+        <View
+            android:id="@+id/annotation_filter_indicator_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="?android:attr/listDivider" />
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_control_annotation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/annotation_filter_indicator_container"
+        android:descendantFocusability="afterDescendants" />
+
+    <TextView
+        android:id="@+id/control_annotation_textview_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/controls_annotation_dialog_empty"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <com.pdftron.pdf.widget.PTFloatingActionButton
+        android:id="@+id/export_annotations_button"
+        style="@style/FloatingActionButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/fab_button_margin"
+        fab:fab_size="normal"
+        fab:srcCompat="@drawable/ic_download" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_view"
+        style="@style/MaterialProgressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

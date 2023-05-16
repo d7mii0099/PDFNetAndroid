@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/background"
+    android:background="@color/menu_editor_background_color"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="@dimen/actionbar_elevation"
+        android:theme="?attr/pt_toolbar_theme"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+        style="?attr/pt_toolbar_style"
+        app:popupTheme="?attr/pt_toolbar_popup_theme"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:navigationContentDescription="@string/tools_misc_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/pinned_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/menu_editor_pinned_background_color"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <com.pdftron.pdf.widget.TouchAwareRecyclerView
+            android:id="@+id/pinned_container"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_margin="10dp"
+            android:paddingBottom="1dp"
+            android:clipChildren="true"
+            android:clipToPadding="true"
+            android:background="@drawable/dotted_border" />
+
+        <TextView
+            android:id="@+id/pinned_label"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:gravity="center"
+            android:text="@string/menu_editor_add_title"
+            android:textColor="@color/menu_editor_icon_tint_dark" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/all_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pinned_layout"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    
+    <FrameLayout
+        android:id="@+id/trash_area"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/dotted_border"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pinned_layout"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/trash_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:tint="@color/menu_editor_icon_tint"
+            app:srcCompat="@drawable/ic_delete_white_24dp" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

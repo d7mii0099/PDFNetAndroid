@@ -1,0 +1,21 @@
+description = 'This sample app shows some usages of several PDFNet classes.'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        flatDir {
+            dirs '../../../lib/full'
+        }
+    }
+}

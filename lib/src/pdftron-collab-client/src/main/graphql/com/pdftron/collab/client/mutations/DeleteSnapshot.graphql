@@ -1,0 +1,5 @@
+mutation DeleteSnapshot($id: ID!) {
+          deleteSnapshot(id: $id) {
+            id
+          }
+        }

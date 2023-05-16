@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/top_reserve"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tools_dialog_floating_sig_signature_host" />
+
+    <View
+        android:id="@+id/bottom_reserve"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintTop_toBottomOf="@+id/tools_dialog_floating_sig_signature_host"
+        app:layout_constraintBottom_toTopOf="@+id/btn_store_signature" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/tools_dialog_floating_sig_box_background"
+        app:layout_constraintTop_toBottomOf="@+id/top_reserve"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_reserve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/tools_dialog_floating_sig_signature_host"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingVertical="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/top_reserve"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_reserve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/tools_dialog_floating_sig_signature_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/tools_dialog_floating_sig_box_background" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tools_dialog_floating_sig_text_signature_host"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingVertical="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/top_reserve"
+        app:layout_constraintBottom_toTopOf="@+id/tools_dialog_floating_sig_signhere_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/tools_dialog_signature_typed_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tools_dialog_floating_typed_signature_textview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLines="1"
+                android:textSize="48sp"
+                android:gravity="bottom|center_horizontal"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="16sp"
+                app:autoSizeMaxTextSize="64sp"
+                app:autoSizeStepGranularity="2sp"
+                android:visibility="invisible" />
+
+            <EditText
+                android:id="@+id/tools_dialog_floating_typed_signature_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/annot_signature"
+                android:autofillHints="name"
+                android:background="@color/tools_dialog_floating_sig_box_background"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="textPersonName|textCapWords"
+                tools:text="Lolly" />
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/tools_dialog_floating_sig_signhere_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_xxsmall"
+        android:layout_marginHorizontal="24dp"
+        android:background="@color/tools_dialog_floating_sig_signhere_text_color"
+        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintBottom_toBottomOf="@+id/tools_dialog_floating_sig_signature_host"
+        app:layout_constraintEnd_toEndOf="@+id/tools_dialog_floating_sig_signature_host"
+        app:layout_constraintStart_toStartOf="@+id/tools_dialog_floating_sig_signature_host"
+        app:layout_constraintTop_toTopOf="@+id/tools_dialog_floating_sig_signature_host" />
+
+    <TextView
+        android:id="@+id/tools_dialog_floating_sig_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="12dp"
+        android:text="x"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/tools_dialog_floating_sig_signhere_text_color"
+        app:layout_constraintStart_toStartOf="@+id/tools_dialog_floating_sig_signature_host"
+        app:layout_constraintBottom_toTopOf="@+id/tools_dialog_floating_sig_signhere_line" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/btn_store_signature"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:text="@string/tools_signature_create_dialog_save"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/tools_dialog_floating_sig_button_image"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:layout_width="@dimen/action_button_min_width"
+        android:layout_height="@dimen/action_button_min_width"
+        android:tint="@color/tools_dialog_floating_sig_add_image_color"
+        app:srcCompat="@drawable/ic_add_image_white"
+        app:layout_constraintTop_toBottomOf="@+id/tools_dialog_floating_sig_signature_host"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.pdftron.pdf.widget.toolbar.component.view.ActionButton
+        android:id="@+id/tools_dialog_floating_sig_typed_signature_toggle"
+        android:layout_width="@dimen/action_button_min_width"
+        android:layout_height="@dimen/action_button_min_width"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toTopOf="@+id/tools_dialog_floating_sig_button_image"
+        app:layout_constraintEnd_toStartOf="@+id/tools_dialog_floating_sig_button_image"/>
+
+    <Button
+        android:id="@+id/tools_dialog_floating_sig_button_clear"
+        style="@style/transparent_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/clear"
+        android:textColor="@color/tools_dialog_floating_sig_color_clear_color"
+        app:layout_constraintEnd_toEndOf="@+id/tools_dialog_floating_sig_signature_host"
+        app:layout_constraintTop_toTopOf="@+id/tools_dialog_floating_sig_signature_host"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/color1"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/layer_floating_sig_style_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tools_dialog_floating_sig_signature_host" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/color2"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/layer_floating_sig_style_bg"
+        app:layout_constraintStart_toEndOf="@+id/color1"
+        app:layout_constraintTop_toBottomOf="@+id/tools_dialog_floating_sig_signature_host" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/color3"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/layer_floating_sig_style_bg"
+        app:layout_constraintStart_toEndOf="@+id/color2"
+        app:layout_constraintTop_toBottomOf="@+id/tools_dialog_floating_sig_signature_host" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

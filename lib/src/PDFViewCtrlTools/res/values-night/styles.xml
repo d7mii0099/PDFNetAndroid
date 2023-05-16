@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PDFTronThemeBase" parent="Theme.MaterialComponents.NoActionBar.Bridge">
+    </style>
+
+    <style name="CustomAppTheme" parent="CustomAppThemeBase">
+        <item name="colorPrimary">@color/app_color_primary_night</item>
+        <item name="colorPrimaryDark">@color/app_color_primary_dark_night</item>
+        <item name="colorAccent">@color/app_color_accent_legacy</item>
+        <item name="android:colorBackground">@color/app_color_primary_night</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+
+    <style name="ThumbnailSliderStyle" parent="BaseThumbnailSliderStyle">
+        <item name="leftMenuItemColor">@android:color/white</item>
+        <item name="rightMenuItemColor">@android:color/white</item>
+        <item name="seekbarColor">@android:color/white</item>
+    </style>
+
+    <style name="ToolbarPopupTheme" parent="ThemeOverlay.AppCompat.Dark" />
+
+    <style name="FloatingButtonNavStyle" parent="BaseFloatingButtonNavStyle">
+        <item name="tint">@android:color/white</item>
+    </style>
+
+    <style name="DigitalSignatureTextViewStyle" parent="TextAppearance.MaterialComponents.Subtitle1" >
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

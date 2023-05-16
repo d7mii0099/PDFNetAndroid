@@ -1,0 +1,13 @@
+mutation MarkAllAsRead($documentId: ID!) {
+        markAllAsRead(documentId: $documentId) {
+          id
+          annotations {
+            id
+            annotationId
+            membership {
+              id
+              lastRead
+            }
+          }
+        }
+      }

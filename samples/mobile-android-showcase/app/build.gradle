@@ -1,0 +1,101 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+// crashlytics
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdkVersion myCompileSdkVersion
+    defaultConfig {
+        applicationId "com.pdftron.showcase"
+        multiDexEnabled true
+        minSdkVersion 23
+        targetSdkVersion myTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [pdftronLicenseKey:PDFTRON_LICENSE_KEY]
+
+        ndk {
+            // Tells Gradle to build outputs for the following ABIs and package
+            // them into your APK.
+            abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        debug {
+            resValue("bool", "firebase_analytics_deactivated", "true")
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue("bool", "firebase_analytics_deactivated", "false")
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':PDFViewCtrlTools')
+    implementation project(':pdftron-collab')
+    implementation project(':pdftron-collab-wvs')
+    implementation project(':pdftron-actions')
+    implementation project(path: ':pdftron-collab-client')
+
+    pdfnetGroup dependencies
+    supportLibGroup dependencies
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.0-alpha03'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.0-alpha03'
+    implementation 'androidx.navigation:navigation-fragment:2.2.0-alpha03'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+
+    // room
+    implementation "androidx.room:room-runtime:$myRoomVersion"
+    annotationProcessor "androidx.room:room-compiler:$myRoomVersion"
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:$myRoomVersion"
+
+    // okhttp
+    implementation "com.squareup.okhttp3:okhttp:3.14.9"
+
+    // barcode scanner
+    implementation "me.dm7.barcodescanner:zxing:1.9.13"
+
+    // Third-party dependencies
+    implementation 'com.pddstudio:highlightjs-android:1.5.0'
+    implementation "androidx.exifinterface:exifinterface:1.3.3"
+    implementation "com.squareup.picasso:picasso:2.71828"
+    implementation "org.ccil.cowan.tagsoup:tagsoup:1.2.1"
+    implementation platform('com.google.firebase:firebase-bom:27.1.0')
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-config-ktx:21.0.1'
+
+    // collaboration
+//    implementation 'net.datafaker:datafaker:1.8.0' // sample disabled at the moment
+    implementation 'com.aventrix.jnanoid:jnanoid:2.0.0'
+}
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+apply plugin: 'com.google.gms.google-services'

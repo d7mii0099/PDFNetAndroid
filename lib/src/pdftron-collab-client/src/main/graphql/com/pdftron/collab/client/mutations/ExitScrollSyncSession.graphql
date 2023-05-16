@@ -1,0 +1,3 @@
+mutation ExitScrollSyncSession($sessionId: String!) {
+        exitScrollSyncSession(sessionId: $sessionId)
+      }

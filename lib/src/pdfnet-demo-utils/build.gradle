@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion myCompileSdkVersion
+    buildToolsVersion myBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion myMinSdkVersion
+        targetSdkVersion myTargetSdkVersion
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'proguard-fresco.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':PDFViewCtrlTools')
+    pdfnetGroup dependencies
+    supportLibGroup dependencies
+
+    // room
+    implementation "androidx.room:room-runtime:$myRoomVersion"
+    annotationProcessor "androidx.room:room-compiler:$myRoomVersion"
+    implementation "androidx.room:room-rxjava2:$myRoomVersion"
+
+    // image
+    implementation('com.facebook.fresco:fresco:2.6.0') {
+        exclude group: 'com.facebook.soloader', module: 'soloader'
+        exclude group: 'com.facebook.fresco', module: 'soloader'
+        exclude group: 'com.facebook.fresco', module: 'nativeimagefilters'
+        exclude group: 'com.facebook.fresco', module: 'nativeimagetranscoder'
+        exclude group: 'com.facebook.fresco', module: 'memory-type-native'
+        exclude group: 'com.facebook.fresco', module: 'imagepipeline-native'
+    }
+    implementation "com.google.code.findbugs:jsr305:3.0.2"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+}
+

@@ -1,0 +1,5 @@
+mutation LeaveDocument($input: DeleteDocumentMemberInput!) {
+        deleteDocumentMember(input: $input) {
+          successful
+        }
+     }

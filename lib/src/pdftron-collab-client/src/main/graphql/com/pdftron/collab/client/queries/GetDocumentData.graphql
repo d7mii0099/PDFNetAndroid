@@ -1,0 +1,16 @@
+query GetDocumentMetadataByIdQuery($id: ID!) {
+        document(id: $id) {
+          id
+          name
+          isPublic
+          author {
+            id
+            userName
+            email
+            type
+          }
+          createdAt
+          updatedAt
+          unreadCount
+        }
+      }

@@ -1,0 +1,26 @@
+query GetSnapshotsFiltered(
+          $documentId: ID!
+          $limit: Int!
+          $before: Date
+          $orderBy: OrderTypes
+          $orderDirection: OrderDirections
+        ) {
+          snapshots(
+            documentId: $documentId
+            limit: $limit
+            before: $before
+            orderBy: $orderBy
+            orderDirection: $orderDirection
+          ) {
+            id
+            author {
+              id
+              email
+              userName
+            }
+            documentId
+            name
+            createdAt
+            updatedAt
+          }
+        }

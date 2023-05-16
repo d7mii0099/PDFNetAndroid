@@ -1,0 +1,15 @@
+mutation AddSnapshot($addSnapshotInput: NewSnapshotInput!) {
+          addSnapshot(input: $addSnapshotInput) {
+            id
+            author {
+              id
+              email
+              userName
+            }
+            documentId
+            xfdf
+            name
+            createdAt
+            updatedAt
+          }
+        }

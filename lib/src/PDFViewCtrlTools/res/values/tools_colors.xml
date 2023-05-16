@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tools_colors_white">#FFFFFFFF</color>
+
+    <color name="tools_link_stroke">#E37014</color>
+    <color name="tools_link_fill">#80E37014</color>
+
+    <color name="tools_pageindicator_background">#C84B4B4B</color>
+    <color name="tools_pageindicator_text">#FFFFFFFF</color>
+    <color name="tools_pageindicator_number">#485056</color>
+
+    <color name="tools_selection_control_point">#ff2eb6e6</color>
+    <color name="tools_selection_control_point_border">#ff2eb6e6</color>
+
+    <color name="tools_annot_edit_line_shadow">#ff2eb6e6</color>
+    <color name="tools_annot_edit_line_shadow_no_permission">#FFF44336</color>
+    <color name="tools_annot_edit_rotate_guideline">#eb5c56</color>
+
+    <color name="tools_quickmenu_background">#FF222222</color>
+    <color name="tools_quickmenu_text">#FFFFFFFF</color>
+    <color name="tools_quickmenu_separator">#FFFFFFFF</color>
+    <color name="tools_quickmenu_button_pressed">#FFC8C8C8</color>
+
+    <color name="tools_dialog_floating_sig_signhere_color">#e1e1e3</color>
+    <color name="tools_dialog_floating_sig_signhere_text_color">#808e98</color>
+    <color name="tools_dialog_floating_sig_add_image_color">#868e96</color>
+    <color name="tools_dialog_floating_sig_color_clear_color">#485056</color>
+    <color name="tools_dialog_floating_sig_box_background">#f4f6f8</color>
+
+    <color name="tools_dialog_annotation_popup_background">#F5F5F5</color>
+    <color name="tools_dialog_annotation_popup_textbox_background">#FFFFFF</color>
+    <color name="tools_dialog_sticky_note_textbox_background">#FFF9C4</color>
+    <color name="tools_dialog_sticky_note_style_options_background">#ECEFF1</color>
+
+    <color name="tools_eraser_gray">#FFCCCCCC</color>
+
+    <color name="tools_annotation_button_select">@color/gray300</color>
+
+    <color name="tools_light_gray">#fff3f3f3</color>
+    <color name="tools_dark_gray">#ff444444</color>
+    <color name="tools_gray">#919190</color>
+
+    <color name="tools_radio_button_selected_color">#ff33b5e5</color>
+    <color name="tools_radio_button_unselected_color">@android:color/transparent</color>
+
+    <color name="tools_text_select_color">#ffcccccc</color>
+    <color name="tools_text_select_color_dark">#333333</color>
+
+    <color name="tools_text_highlighter_selection_color">@color/orange</color>
+    <color name="tools_text_highlighter_selection_color_inverse">#a68033</color>
+    <color name="tools_text_highlighter_highlight_color">@color/yellow</color>
+    <color name="tools_text_highlighter_highlight_color_inverse">#4040a6</color>
+
+    <color name="tools_free_text_toggle_button_bgd">#CCCCCCCC</color>
+    <color name="tools_free_text_toggle_button_transparent_bgd">#77CCCCCC</color>
+    <color name="tools_snap_mode_icon">#0000FF</color>
+
+    <color name="red">#FF0000</color>
+    <color name="orange">#FFAA00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#00FF00</color>
+    <color name="teal">#00FFFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="violet">#FF00FF</color>
+    <color name="purple">#800080</color>
+    <color name="brown">#964B00</color>
+    <color name="gray">#BBBBBB</color>
+    <color name="turquoise">#40E0D0</color>
+    <color name="gray97">#F7F7F7</color>
+    <color name="gray200">#EEEEEE</color>
+    <color name="gray300">#E0E0E0</color>
+    <color name="gray400">#BDBDBD</color>
+    <color name="gray600">#757575</color>
+    <color name="gray850">#303030</color>
+
+    <color name="fab_light_blue">#33b5e5</color>
+    <color name="fab_dark_blue">#1a9bcb</color>
+
+    <color name="tab_selected">#FFFFFF</color>
+    <color name="tab_unselected">#B3ffffff</color> <!-- 70% -->
+
+    <color name="page_number_indicator_bg">#FAFAFA</color>
+    <color name="page_number_indicator_outline">#FAFAFA</color>
+
+    <color name="thumbnail_slider_thumbview_bg">#C84B4B4B</color>
+
+    <color name="dark_gray">#ff444444</color> <!-- 75% black -->
+    <color name="light_gray">#ffcccccc</color> <!-- 20% black -->
+
+    <color name="light_gray_border">#54000000</color>
+
+    <color name="action_bar_bg">#202020</color>
+    <color name="tab_widget_hover">#0d0d0d</color>
+
+    <color name="rotation_handle_bg">@color/tools_colors_white</color>
+
+    <!--  Theme colors  -->
+    <color name="pt_background_color">#F8F9FA</color>
+    <color name="pt_heading_color">#00A5E4</color>
+    <color name="pt_body_text_color">#485056</color>
+    <color name="pt_secondary_color">#868E96</color>
+    <color name="pt_accent_color">#00A5E4</color>
+    <color name="pt_utility_variant_color">#E7EBEE</color>
+    <color name="pt_subtle_utility_color">#EEF1F3</color>
+    <color name="pt_disabled_state_color">#CFD4DA</color>
+
+    <!-- App colors-->
+    <color name="toolbar_icon">@color/pt_body_text_color</color>
+    <color name="toolbar_icon_ripple">@color/ripple_material_light</color>
+    <color name="toolbar_background">@color/pt_background_color</color>
+
+    <!-- Annotation Toolbar Colors -->
+    <color name="annot_toolbar_background_primary">@color/pt_background_color</color>
+    <color name="annot_toolbar_background_secondary">@color/pt_utility_variant_color</color>
+    <color name="annot_toolbar_icon">@color/pt_body_text_color</color>
+    <color name="annot_toolbar_selected_icon">@color/pt_body_text_color</color>
+    <color name="annot_toolbar_accent_icon">@color/pt_accent_color</color>
+    <color name="annot_toolbar_disabled_icon">@color/pt_disabled_state_color</color>
+    <color name="annot_toolbar_selected_background">@color/pt_utility_variant_color</color>
+    <color name="annot_toolbar_divider">@color/pt_utility_variant_color</color>
+    <color name="annot_toolbar_preset_text">@color/pt_secondary_color</color>
+    <color name="annot_toolbar_text">@color/pt_body_text_color</color>
+    <color name="annot_toolbar_background_compact">@color/pt_subtle_utility_color</color>
+
+    <!-- Bottom Bar Colors -->
+    <color name="bottombar_background">@color/pt_background_color</color>
+    <color name="bottombar_icon">@color/pt_body_text_color</color>
+    <color name="bottombar_selected_icon">@color/pt_accent_color</color>
+    <color name="bottombar_selected_background">@color/pt_utility_variant_color</color>
+    <color name="bottombar_disabled_icon">@color/pt_disabled_state_color</color>
+
+    <!-- Preset Bar Colors  -->
+    <color name="presetbar_icon">@color/pt_secondary_color</color>
+    <color name="presetbar_background">@color/pt_background_color</color>
+    <color name="presetbar_disabled_icon">@color/pt_disabled_state_color</color>
+    <color name="presetbar_selected_icon">@color/pt_body_text_color</color>
+    <color name="presetbar_selected_background">@color/pt_utility_variant_color</color>
+    <color name="presetbar_selected_background_secondary">@color/pt_background_color</color>
+    <color name="presetbar_accent_color">@color/pt_accent_color</color>
+
+    <!-- Toolbar Switcher Dialog Colors -->
+    <color name="toolbar_switcher_dialog_background">@color/pt_background_color</color>
+    <color name="toolbar_switcher_item_dialog_selected_background">@color/pt_utility_variant_color</color>
+    <color name="toolbar_switcher_item_dialog_text">@color/pt_body_text_color</color>
+    <color name="toolbar_switcher_item_dialog_icon">@color/pt_secondary_color</color>
+    <color name="toolbar_switcher_item_selected_icon">@color/pt_accent_color</color>
+
+    <!--  Toolbar Switcher Button Colors  -->
+    <color name="toolbar_switcher_button_background">@color/pt_background_color</color>
+    <color name="toolbar_switcher_button_text">@color/toolbar_icon</color>
+    <color name="toolbar_switcher_button_icon">@color/toolbar_icon</color>
+    <color name="toolbar_switcher_background_compact">@color/pt_subtle_utility_color</color>
+
+    <!--  Toolbar Tab Action Button Colors  -->
+    <color name="toolbar_tab_action_button_text">@color/toolbar_icon</color>
+    <color name="toolbar_tab_action_button_icon">@color/toolbar_icon</color>
+
+    <color name="annotation_filter_item_background">@color/pt_utility_variant_color</color>
+
+    <color name="add_page_dialog_dot">#A1A1A1</color>
+
+    <!-- Visualizer Colors -->
+    <color name="sound_visualizer_red">#D50000</color>
+    <color name="sound_visualizer_blue">#00A5E4</color>
+
+</resources>

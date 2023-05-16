@@ -1,0 +1,6 @@
+mutation EditAnnotation($id: ID!, $input: EditAnnotationInput!) {
+        editAnnotation(id: $id, input: $input) {
+         id
+         xfdf
+       }
+     }

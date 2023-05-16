@@ -1,0 +1,55 @@
+query GetDocumentByIdQuery($id: ID!) {
+        document(id: $id) {
+          id
+          name
+          isPublic
+          unreadCount
+          createdAt
+          updatedAt
+          author {
+            id
+            userName
+            email
+            type
+          }
+          annotations {
+            id
+            xfdf
+            annotationId
+            documentId
+            annotContents
+            author {
+              id
+            }
+            createdAt
+            updatedAt
+            inReplyTo
+            pageNumber
+            membership {
+              id
+              lastRead
+            }
+            mentions {
+              id
+              annotationId
+              documentId
+              createdAt
+              updatedAt
+              mentionedUser {
+                id
+                userName
+                email
+              }
+            }
+          }
+          members {
+            id
+            createdAt
+            user {
+              id
+              userName
+              email
+            }
+          }
+        }
+      }

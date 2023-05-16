@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            style="?attr/pt_toolbar_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/pt_toolbar_theme"
+            app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+            app:popupTheme="?attr/pt_toolbar_popup_theme" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.pdftron.pdf.controls.BookmarksTabLayout
+        android:id="@+id/tabhost"
+        style="?attr/custom_bookmarks_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/actionbar_elevation" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:rotationY="@integer/view_pager_rotation_y" />
+
+</LinearLayout>

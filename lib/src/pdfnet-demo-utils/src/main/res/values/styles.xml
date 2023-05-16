@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/annot_toolbar_icon</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">@dimen/first_keyline</item>
+    </style>
+
+    <!-- Theme overlay for fragments embedding their own toolbar and app bar. -->
+    <style name="ThemeOverlay.Fragment" parent="">
+        <item name="fragmentAppBarStyle">@style/FragmentAppBarStyle</item>
+        <item name="fragmentToolbarStyle">@style/FragmentToolbarStyle</item>
+    </style>
+
+    <!-- Theme overlay for fragments embedding their own toolbar but not app bar. -->
+    <style name="ThemeOverlay.Fragment.NoAppBar">
+        <item name="fragmentToolbarStyle">@style/FragmentToolbarStyle.NoAppBar</item>
+    </style>
+
+    <!-- Base style for embedded toolbars in fragments. -->
+    <style name="Base.FragmentToolbarStyle" parent="ToolbarStyle">
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="navigationIcon">@drawable/ic_menu_white_24dp</item>
+    </style>
+
+    <!-- Base style for embedded toolbars in fragments with an app bar. -->
+    <style name="Base.FragmentToolbarStyle.NoAppBar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="titleTextColor">@color/annot_toolbar_icon</item>
+    </style>
+
+    <!-- Base style for app bars in fragments. -->
+    <style name="Base.FragmentAppBarStyle" parent="">
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <!-- toolbars in fragments -->
+    <style name="FragmentToolbarTheme" parent="ToolbarTheme"/>
+    <style name="FragmentToolbarPopupTheme" parent="ToolbarPopupTheme"/>
+
+    <!-- Version-specific styles. -->
+    <!-- Override in values-vXX/styles.xml -->
+    <style name="FragmentToolbarStyle" parent="Base.FragmentToolbarStyle" />
+
+    <style name="FragmentToolbarStyle.NoAppBar" parent="Base.FragmentToolbarStyle.NoAppBar" />
+
+    <style name="FragmentAppBarStyle" parent="Base.FragmentAppBarStyle" />
+
+    <style name="NavigationViewStyle">
+        <item name="listPreferredItemPaddingLeft">@dimen/navigation_drawer_horizontal_margin</item>
+        <item name="listPreferredItemPaddingRight">@dimen/navigation_drawer_horizontal_margin</item>
+        <item name="listPreferredItemHeightSmall">@dimen/navigation_drawer_list_item_height</item>
+
+        <!-- Use a light separator and highlight colour on the dark background -->
+        <item name="android:listDivider">@color/navigation_drawer_separator</item>
+        <item name="colorControlHighlight">#66ffffff</item>
+
+<!--        <item name="itemBackground">@drawable/drawer_item_background</item>-->
+        <item name="itemTextColor">@color/selector_color_drawer_text</item>
+
+    </style>
+
+    <style name="CustomAppTheme.Preference.DialogPreference" parent="Preference.DialogPreference.Material">
+        <item name="iconSpaceReserved">false</item>
+    </style>
+
+    <style name="PTAllDocumentFileBrowserTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Color for header background -->
+        <item name="headerBackgroundColor">@color/recyclerview_header_bg</item>
+        <!-- Color for header text -->
+        <item name="headerTextColor">?android:attr/textColorTertiary</item>
+        <!-- Color of header chevron icon -->
+        <item name="headerChevronColor">?android:attr/textColorTertiary</item>
+        <!-- Color of background of empty list text caption -->
+        <item name="emptyTextBackground">@color/empty_textBackground</item>
+        <!-- Color of the body text (i.e. filename) -->
+        <item name="contentBodyTextColor">?android:attr/textColorPrimary</item>
+        <!-- Color of the secondary text (i.e. file size, date, path) -->
+        <item name="contentSecondaryTextColor">?android:attr/textColorSecondary</item>
+        <!-- Color of the icons -->
+        <item name="iconColor">?android:attr/textColorPrimary</item>
+        <!-- Color of the item divider -->
+        <item name="itemDividerColor">@color/browser_divider_color</item>
+    </style>
+
+    <style name="FileInfoStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="toolbarNavigationButtonStyle">@style/FileInfoToolbarButtonNavigationStyle</item>
+    </style>
+
+    <!-- For file info drawer, we want to force navigation button color to white-->
+    <style name="FileInfoToolbarButtonNavigationStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:tint">@android:color/white</item>
+    </style>
+
+    <style name="PTFilePickerDialogTheme">
+        <!-- Bread crumb background Color -->
+        <item name="breadCrumbBackgroundColor">@color/fragment_file_picker_dialog_current_folder</item>
+        <!-- Icon Color-->
+        <item name="iconColor">@color/fragment_file_picker_icon_color</item>
+    </style>
+
+</resources>

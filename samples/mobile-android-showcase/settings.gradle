@@ -1,0 +1,12 @@
+include ':PDFViewCtrlTools'
+project(':PDFViewCtrlTools').projectDir = new File(rootProject.projectDir, '../../lib/src/PDFViewCtrlTools')
+include ':pdftron-collab'
+project(':pdftron-collab').projectDir = new File(rootProject.projectDir, '../../lib/src/pdftron-collab')
+include ':pdftron-collab-client'
+project(':pdftron-collab-client').projectDir = new File(rootProject.projectDir, '../../lib/src/pdftron-collab-client')
+include ':pdftron-collab-wvs'
+project(':pdftron-collab-wvs').projectDir = new File(rootProject.projectDir, '../../lib/src/pdftron-collab-wvs')
+include ':pdftron-actions'
+project(':pdftron-actions').projectDir = new File(rootProject.projectDir, '../../lib/src/pdftron-actions')
+
+include ':app'

@@ -1,0 +1,11 @@
+mutation UpdateScrollSyncSession($sessionId: String!, $position: ScrollSyncPositionInput!) {
+        updateScrollSyncSession(sessionId: $sessionId, position: $position) {
+          leaderId
+          documentId
+          position {
+            scrollTop
+            scrollHeight
+          }
+          sessionId
+        }
+      }

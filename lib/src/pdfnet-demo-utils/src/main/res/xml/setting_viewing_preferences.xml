@@ -1,0 +1,131 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    ===============================================================
+                            IMPORTANT
+    ===============================================================
+    The key names and values used here must be conform to what is declared in
+    SettingsManager class. This is because we read these values from that
+    class to be used across the application.
+    -->
+
+    <PreferenceCategory
+        android:key="pref_category_viewing"
+        app:iconSpaceReserved="false">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_vertical_page_snapping"
+            android:summary="@string/pref_vertical_page_snapping_summary"
+            android:title="@string/pref_vertical_page_snapping_name"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_scrollbar_guideline"
+            android:summary="@string/pref_scrollbar_guideline_summary"
+            android:title="@string/pref_scrollbar_guideline"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:defaultValue="@string/num_0"
+            android:entries="@array/pref_page_view_mode_entries"
+            android:entryValues="@array/pref_page_view_mode_values"
+            android:key="pref_page_view_mode"
+            android:summary="@string/pref_page_view_mode_summary"
+            android:title="@string/pref_page_view_mode_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_maintain_zoom_option"
+            android:summary="@string/pref_maintain_zoom_option_summary"
+            android:title="@string/pref_maintain_zoom_option_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_enable_desktop_ui"
+            android:summary="@string/pref_enable_desktop_ui_summary"
+            android:title="@string/pref_enable_desktop_ui_name"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_new_ui_show_status_bar"
+            android:summary="@string/pref_new_ui_show_status_bar_summary"
+            android:title="@string/pref_new_ui_show_status_bar_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_new_ui_show_navigation_bar"
+            android:summary="@string/pref_new_ui_show_navigation_bar_summary"
+            android:title="@string/pref_new_ui_show_navigation_bar_title"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_quick_bookmark_creation"
+            android:summary="@string/pref_quick_bookmark_creation_summary"
+            android:title="@string/pref_quick_bookmark_creation_title"
+            app:iconSpaceReserved="false" />
+
+        <PreferenceCategory
+            android:title="@string/pref_category_turning_page"
+            app:iconSpaceReserved="false">
+
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="pref_allow_page_change_on_tap"
+                android:summary="@string/pref_allow_page_change_on_tap_summary"
+                android:title="@string/pref_allow_page_change_on_tap"
+                app:iconSpaceReserved="false" />
+
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="pref_page_change_animation"
+                android:summary="@string/pref_page_change_animation_summary"
+                android:title="@string/pref_page_change_animation"
+                app:iconSpaceReserved="false" />
+
+        </PreferenceCategory>
+
+
+        <PreferenceCategory
+            android:title="@string/pref_category_visual_enhancement"
+            app:iconSpaceReserved="false">
+
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="pref_image_smoothing"
+                android:summary="@string/pref_image_smoothing_summary"
+                android:title="@string/pref_image_smoothing_title"
+                app:iconSpaceReserved="false" />
+
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="pref_color_management"
+                android:summary="@string/pref_enable_color_management_summary"
+                android:title="@string/pref_enable_color_management_title"
+                app:iconSpaceReserved="false" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/pref_category_comments"
+            app:iconSpaceReserved="false">
+
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="pref_show_annot_indicator"
+                android:summary="@string/pref_show_annot_indicator_summary"
+                android:title="@string/pref_show_annot_indicator_title"
+                app:iconSpaceReserved="false" />
+
+        </PreferenceCategory>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

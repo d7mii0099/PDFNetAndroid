@@ -1,0 +1,8 @@
+subscription OnScrollPositionChanged($sessionId: ID!) {
+        scrollPositionChanged(sessionId: $sessionId) {
+          position {
+            scrollHeight
+            scrollTop
+          }
+        }
+      }

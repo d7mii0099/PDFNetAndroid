@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recently_deleted_view_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.Fragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/fragment_toolbar"
+            style="?attr/pt_toolbar_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/FragmentToolbarTheme"
+            app:navigationContentDescription="@string/tools_misc_close"
+            app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+            app:popupTheme="@style/FragmentToolbarPopupTheme" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.pdftron.pdf.widget.ForegroundCoordinatorLayout
+        android:id="@+id/fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/text_trash_duration_message"
+            layout="@layout/text_trash_duration_message"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="top" />
+
+        <com.pdftron.pdf.widget.recyclerview.SimpleRecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/list_padding_footer"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbarThumbVertical="@android:color/transparent"
+            android:scrollbars="vertical" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/empty_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/empty_icon"
+                android:layout_width="36dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/ic_delete_black_24dp"
+                android:tint="@color/pt_disabled_state_color" />
+
+            <TextView
+                android:id="@+id/empty_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/trash_bin_empty_header"
+                android:textColor="@color/pt_body_text_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/empty_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:gravity="center_horizontal"
+                android:text="@string/trash_bin_empty_description"
+                android:textColor="@color/pt_secondary_color"
+                android:textSize="14sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.pdftron.pdf.widget.ForegroundCoordinatorLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

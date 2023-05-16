@@ -1,0 +1,18 @@
+subscription OnSnapshotChanged($userId: ID!, $docId: ID!) {
+        snapshotChanged(userId: $userId, docId: $docId) {
+          snapshot {
+            id
+            author {
+              id
+              email
+              userName
+            }
+            documentId
+            xfdf
+            name
+            createdAt
+            updatedAt
+          }
+          action
+        }
+      }

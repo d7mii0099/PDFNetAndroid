@@ -1,0 +1,7 @@
+mutation ConnectUserToDocument($documentId: ID!, $userId: ID!, $pageNumber: Int) {
+            connectUserToDocument(documentId: $documentId, userId: $userId, pageNumber: $pageNumber) {
+            userId
+            documentId
+            successful
+          }
+        }

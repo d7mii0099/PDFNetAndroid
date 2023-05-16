@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="description_body">@color/annot_toolbar_icon</color>
+    <color name="open_button">@color/app_color_accent</color>
+</resources>

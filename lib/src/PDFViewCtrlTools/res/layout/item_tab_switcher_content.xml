@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_medium"
+    app:strokeWidth="@dimen/tab_switcher_selected_border"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/tab_header"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tab_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_medium"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/close_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/close_btn"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/close_btn"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                app:srcCompat="@drawable/ic_close_black_24dp"
+                app:layout_constraintStart_toEndOf="@+id/tab_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </LinearLayout>
+
+        <com.pdftron.pdf.widget.TopCropImageView
+            android:id="@+id/tab_preview"
+            android:layout_width="match_parent"
+            android:layout_height="136dp"
+            android:scaleType="matrix"
+            app:layout_constraintTop_toBottomOf="@id/tab_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

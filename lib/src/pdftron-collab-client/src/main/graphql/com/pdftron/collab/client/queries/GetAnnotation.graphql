@@ -1,0 +1,30 @@
+query GetAnnotationById($id: ID!) {
+          annotation(id: $id) {
+            id
+            xfdf
+            pageNumber
+            annotationId
+            createdAt
+            updatedAt
+            annotContents
+            mentions {
+              id
+              annotationId
+              documentId
+              mentionedUser {
+                id
+                userName
+                email
+              }
+            }
+            author {
+              id
+            }
+            documentId 
+            membership {
+              id
+              lastRead
+            }
+            inReplyTo
+          }
+        }

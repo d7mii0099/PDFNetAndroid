@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/local_file_view_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground"
+    android:theme="@style/ThemeOverlay.Fragment.NoAppBar">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/fragment_toolbar"
+        style="?attr/fragmentToolbarStyle"
+        android:theme="@style/FragmentToolbarTheme"
+        app:popupTheme="@style/FragmentToolbarPopupTheme"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+    <com.pdftron.pdf.widget.ForegroundCoordinatorLayout
+        android:id="@+id/fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:toolbarId="@+id/toolbar"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <FrameLayout
+                android:id="@+id/upgrade_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fragment_toolbar"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            </FrameLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <FrameLayout
+                android:id="@+id/backup_banner"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#facf00">
+
+                <TextView
+                    android:textColor="#3e3e3e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="@string/internal_cache_warning"/>
+
+            </FrameLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.pdftron.demo.browser.ui.StickyRecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:elevation="0dp"
+            android:paddingBottom="@dimen/list_padding_footer"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbarThumbVertical="@android:color/transparent"
+            android:scrollbars="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:targetApi="lollipop"/>
+        <com.pdftron.demo.browser.ui.StickyHeader
+            android:id="@+id/sticky_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <TextView
+            android:id="@+id/empty_text_view_for_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@color/empty_textBackground"
+            android:gravity="center"
+            android:paddingStart="42dp"
+            android:paddingTop="32dp"
+            android:paddingEnd="42dp"
+            android:paddingBottom="32dp"
+            android:text="@string/loading_files_wait"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/empty_view_text_size"
+            android:visibility="gone"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <TextView
+            android:id="@+id/empty_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:visibility="gone"
+            android:text="@string/loading_files_wait"
+            android:textSize="@dimen/empty_view_text_size"
+            android:textColor="?android:attr/textColorPrimary"
+            android:gravity="center" />
+
+        <com.pdftron.pdf.widget.PTFloatingActionMenu
+            android:id="@+id/fab_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="@dimen/fab_button_margin"
+            android:paddingLeft="@dimen/fab_button_margin"
+            android:paddingRight="@dimen/fab_button_margin"
+            style="@style/FloatingActionMenuStyle"
+            app:menu_backgroundColor="@color/fab_menu_background"
+            app:menu_colorNormal="?attr/colorAccent"
+            app:menu_colorPressed="?attr/colorAccent"
+            app:menu_labels_style="@style/fabMenuLabelStyle"
+            app:menu_openDirection="up">
+
+            <include layout="@layout/fab_btn_blank_pdf" />
+
+            <include layout="@layout/fab_btn_image_pdf" />
+
+            <include layout="@layout/fab_btn_office_pdf" />
+
+        </com.pdftron.pdf.widget.PTFloatingActionMenu>
+
+        <ProgressBar
+            android:id="@+id/progress_bar_view"
+            style="@style/MaterialProgressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    </com.pdftron.pdf.widget.ForegroundCoordinatorLayout>
+
+</LinearLayout>

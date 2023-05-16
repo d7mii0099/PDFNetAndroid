@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion myCompileSdkVersion
+    defaultConfig {
+        applicationId "com.pdftron.completereader"
+        minSdkVersion myMinSdkVersion
+        targetSdkVersion myTargetSdkVersion
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        manifestPlaceholders = [pdftronLicenseKey:PDFTRON_LICENSE_KEY]
+
+        ndk {
+            // Tells Gradle to build outputs for the following ABIs and package
+            // them into your APK.
+            abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    lintOptions {
+        abortOnError false
+    }
+    configurations.all {
+        resolutionStrategy.force "androidx.appcompat:appcompat:$mySupportVersion"
+        resolutionStrategy.force "androidx.legacy:legacy-support-v4:1.0.0"
+        resolutionStrategy.force "androidx.lifecycle:runtime:$myLifeCycleVersion"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':PDFViewCtrlTools')
+    implementation project(':pdfnet-demo-utils')
+
+    pdfnetGroup dependencies
+    supportLibGroup dependencies
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+}
+
+task appStart(type: Exec, dependsOn: [clean, 'installDebug']) {
+    commandLine 'adb', 'shell', 'am', 'start', '-n', 'com.pdftron.completereader/.MainActivity'
+}

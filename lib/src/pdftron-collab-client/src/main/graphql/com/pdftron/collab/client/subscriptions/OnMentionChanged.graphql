@@ -1,0 +1,15 @@
+subscription OnMentionChanged($userId: ID!) {
+        mentionChanged(userId: $userId) {
+          mention {
+            id
+            annotationId
+            documentId  
+            mentionedUser {
+              id
+              userName
+              email
+            }
+          }
+          action
+        }
+      }

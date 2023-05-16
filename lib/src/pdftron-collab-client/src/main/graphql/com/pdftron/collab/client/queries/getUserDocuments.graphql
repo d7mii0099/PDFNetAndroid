@@ -1,0 +1,18 @@
+query getUserDocuments($id: ID!) {
+        user(id: $id) {
+          id
+          documents {
+            id 
+            unreadCount
+            author {
+              id
+              userName
+              email
+              type
+            }
+            name
+            createdAt
+            updatedAt
+          }
+        }
+      }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/trash_duration_message"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@color/recyclerview_header_bg"
+    android:gravity="center_vertical"
+    android:paddingStart="@dimen/padding_large"
+    android:paddingTop="@dimen/padding_medium"
+    android:paddingEnd="@dimen/padding_large"
+    android:paddingBottom="@dimen/padding_medium"
+    android:text="@string/trash_duration_message"
+    android:textSize="14sp" />

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/chip_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="6dp"
+        app:cardCornerRadius="@dimen/document_seek_bar_chip_radius"
+        app:cardBackgroundColor="@color/document_slider_chip_background"
+        app:cardElevation="@dimen/document_seek_bar_chip_elevation">
+
+        <ImageView
+            android:id="@+id/chip_icon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_navigation_drag"
+            app:tint="@color/document_slider_chip_tint" />
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

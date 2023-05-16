@@ -1,0 +1,18 @@
+mutation AddAnnotation($input: NewAnnotationInput!) {
+       addAnnotation(input: $input) {
+          id
+          xfdf
+          pageNumber
+          annotationId
+          createdAt
+          author {
+            id
+          }
+          documentId 
+          membership {
+            id
+            lastRead
+          }
+          inReplyTo
+       }
+     }

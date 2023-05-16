@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/empty"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/empty_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/empty_textBackground"
+            android:gravity="center"
+            android:paddingStart="42dp"
+            android:paddingTop="24dp"
+            android:paddingEnd="42dp"
+            android:paddingBottom="24dp"
+            android:text="@string/loading_files_wait"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/empty_view_text_size" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/empty_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_margin="24dp"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="24dp"
+            app:strokeWidth="4dp"
+            app:strokeColor="?attr/colorAccent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/storage_access_allow" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

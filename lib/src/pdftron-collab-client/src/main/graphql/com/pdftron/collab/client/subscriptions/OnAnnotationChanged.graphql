@@ -1,0 +1,30 @@
+subscription OnAnnotationChanged($userId: ID!, $settings: QuerySettings) {
+        annotationChanged(userId: $userId, settings: $settings) {
+          document {
+            id
+            name
+            updatedAt
+            createdAt
+          }
+          annotation{
+            xfdf
+            id
+            annotationId
+            documentId
+            createdAt
+            pageNumber
+            annotContents
+            author {
+              id
+              email
+              userName
+            }
+            membership {
+              id
+              lastRead
+            }
+            inReplyTo
+          }
+          action
+        }
+      }

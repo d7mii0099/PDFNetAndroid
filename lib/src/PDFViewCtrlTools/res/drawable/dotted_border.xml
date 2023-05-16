@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke
+        android:width="@dimen/menu_editor_dash_stroke_width"
+        android:color="@color/menu_editor_icon_tint_light"
+        android:dashWidth="@dimen/menu_editor_dash_width"
+        android:dashGap="@dimen/menu_editor_dash_gap"/>
+    <corners android:radius="6dp" />
+</shape>

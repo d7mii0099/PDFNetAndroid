@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.pdftron.pdf.widget.AnnotDrawingView
+        android:id="@+id/drawing_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.pdftron.pdf.widget.PTCropImageView
+        android:id="@+id/image_crop_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/image_crop_border"
+        android:padding="@dimen/corner_thickness"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+</FrameLayout>

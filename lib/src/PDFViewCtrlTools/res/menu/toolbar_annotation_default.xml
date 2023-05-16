@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/controls_annotation_toolbar_tool_multi_select"
+        android:checkable="true"
+        android:icon="@drawable/ic_select_rectangular_black_24dp"
+        android:title="@string/controls_annotation_toolbar_tool_description_multi_select"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/controls_annotation_toolbar_tool_text_highlight"
+        android:checkable="true"
+        android:icon="@drawable/ic_annotation_highlight_black_24dp"
+        android:title="@string/controls_annotation_toolbar_tool_description_text_highlight"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/controls_annotation_toolbar_tool_text_underline"
+        android:checkable="true"
+        android:icon="@drawable/ic_annotation_underline_black_24dp"
+        android:title="@string/controls_annotation_toolbar_tool_description_text_underline"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/controls_annotation_toolbar_tool_text_strikeout"
+        android:checkable="true"
+        android:icon="@drawable/ic_annotation_strikeout_black_24dp"
+        android:title="@string/controls_annotation_toolbar_tool_description_text_strikeout"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/controls_annotation_toolbar_tool_text_squiggly"
+        android:checkable="true"
+        android:icon="@drawable/ic_annotation_squiggly_black_24dp"
+        android:title="@string/controls_annotation_toolbar_tool_description_text_squiggly"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/controls_annotation_toolbar_tool_freetext"
+        android:checkable="true"
+        android:icon="@drawable/ic_annotation_freetext_black_24dp"
+        android:title="@string/controls_annotation_toolbar_tool_description_freetext"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/controls_annotation_toolbar_tool_freehand"
+        android:checkable="true"
+        android:icon="@drawable/ic_annotation_freehand_black_24dp"
+        android:title="@string/controls_annotation_toolbar_tool_description_freehand"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/controls_annotation_toolbar_tool_free_highlighter"
+        android:checkable="true"
+        android:icon="@drawable/ic_annotation_free_highlight_black_24dp"
+        android:title="@string/controls_annotation_toolbar_tool_description_free_highlighter"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/controls_annotation_toolbar_tool_eraser"
+        android:checkable="true"
+        android:icon="@drawable/ic_annotation_eraser_black_24dp"
+        android:title="@string/controls_annotation_toolbar_tool_description_eraser"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/controls_thumbnails_view_action_undo"
+        android:checkable="false"
+        android:icon="@drawable/ic_undo_white_24dp"
+        android:title="@string/undo"
+        app:showAsAction="ifRoom" />
+
+    <!--    <item-->
+    <!--        android:id="@+id/controls_annotation_toolbar_tool_freehand"-->
+    <!--        android:icon="@drawable/ic_annotation_freehand_black_24dp"-->
+    <!--        android:title="@string/controls_annotation_toolbar_tool_description_freehand"-->
+    <!--        android:checkable="true"-->
+    <!--        app:showAsAction="ifRoom" />-->
+
+
+</menu>

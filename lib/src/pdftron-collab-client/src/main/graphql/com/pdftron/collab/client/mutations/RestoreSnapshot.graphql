@@ -1,0 +1,13 @@
+mutation RestoreSnapshot($restoreSnapshotInput: RestoreSnapshotInput!) {
+          restoreSnapshot(input: $restoreSnapshotInput) {
+            id
+            successful
+            message
+            annotations {
+              id
+              annotationId
+              documentId
+              xfdf
+            }
+          }
+        }

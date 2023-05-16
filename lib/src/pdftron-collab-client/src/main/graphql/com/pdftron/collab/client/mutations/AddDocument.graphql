@@ -1,0 +1,40 @@
+mutation AddDocument($document: NewDocumentInput!, $annotations: [NewAnnotationInput!]) {
+        addDocument(document: $document, annotations: $annotations) {
+          author {
+            id
+            userName
+            email
+            type
+          }
+          createdAt
+          id
+          name
+          isPublic
+          annotations {
+            id
+            xfdf
+            annotationId
+            documentId
+            author {
+              id
+            }
+            createdAt
+            inReplyTo
+            pageNumber
+            membership {
+              id
+              lastRead
+            }
+          }
+          members {
+            id
+            createdAt
+            user {
+              id
+              userName
+              email
+              createdAt
+            }
+          }
+        }
+      }

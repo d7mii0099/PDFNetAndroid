@@ -1,0 +1,11 @@
+mutation CreateScrollSyncSession($documentId: ID!, $position: ScrollSyncPositionInput!) {
+        createScrollSyncSession(documentId: $documentId, position: $position) {
+          leaderId
+          documentId
+          position {
+            scrollTop
+            scrollHeight
+          }
+          sessionId
+        }
+      }

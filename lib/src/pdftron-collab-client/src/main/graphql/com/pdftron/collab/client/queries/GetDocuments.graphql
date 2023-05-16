@@ -1,0 +1,16 @@
+query GetDocumentsFiltered($userId: ID!, $limit: Int!, $before: Date, $orderBy: OrderTypes, $orderDirection: OrderDirections) {
+        documents(userId: $userId, limit: $limit, before: $before, orderBy: $orderBy, orderDirection: $orderDirection) {
+          id
+          name
+          isPublic
+          author {
+            id
+            userName
+            email
+            type
+          }
+          createdAt
+          updatedAt
+          unreadCount
+        }
+      }

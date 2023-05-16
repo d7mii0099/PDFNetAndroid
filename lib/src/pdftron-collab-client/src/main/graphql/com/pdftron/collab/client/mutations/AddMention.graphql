@@ -1,0 +1,11 @@
+mutation AddMention($input: NewMentionInput!) {
+        addMention(input: $input) {
+          id
+          annotationId
+          mentionedUser {
+            id
+            userName
+            email
+          }
+        }
+      }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="pt_export_file_completion_dialog_style" format="reference" />
+
+    <declare-styleable name="ExportFileCompletionDialogTheme">
+        <!-- Text color of action button in the export file completion dialog -->
+        <attr name="actionIconColor" format="color" />
+        <!-- Icon color of action button in the export file completion dialog -->
+        <attr name="actionTextColor" format="color" />
+        <!-- Title color of export file completion dialog -->
+        <attr name="titleColor" format="color" />
+    </declare-styleable>
+
+</resources>

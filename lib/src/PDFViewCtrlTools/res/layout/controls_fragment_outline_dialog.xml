@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.view.DispatchFairInsetsRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:orientation="vertical"
+    android:rotationY="@integer/view_pager_rotation_y">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_control_outline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_container"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:descendantFocusability="afterDescendants" />
+
+    <TextView
+        android:id="@+id/control_outline_textview_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/controls_outline_dialog_empty"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:visibility="gone" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_margin="12dp"
+        tools:visibility="visible"
+        app:cardBackgroundColor="?android:attr/colorBackground"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="6dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_nav_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="false"
+            android:orientation="horizontal">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <LinearLayout
+                android:id="@+id/edit_outline_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_add"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="8dp"
+                    android:tint="@color/pt_body_text_color"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_outline_add_txt"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/ic_plus_circle" />
+
+                <TextView
+                    android:id="@+id/edit_outline_add_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/add"
+                    android:textColor="?android:attr/textColorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/edit_outline_edit_entry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toEndOf="@+id/edit_outline_add"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_edit_entry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:tint="@color/pt_body_text_color"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_outline_edit_entry_txt"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/ic_edit_black_24dp" />
+
+                <TextView
+                    android:id="@+id/edit_outline_edit_entry_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/tools_qm_edit"
+                    android:textColor="?android:attr/textColorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guideline" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/edit_outline_move"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_move"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:tint="@color/pt_body_text_color"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_outline_move_txt"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/ic_move_outline" />
+
+                <TextView
+                    android:id="@+id/edit_outline_move_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/action_move"
+                    android:textColor="?android:attr/textColorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/edit_outline_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_delete"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="8dp"
+                    android:tint="@color/pt_body_text_color"
+                    app:layout_constraintBottom_toTopOf="@+id/edit_outline_delete_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/ic_delete_black_24dp" />
+
+                <TextView
+                    android:id="@+id/edit_outline_delete_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/delete"
+                    android:textColor="?android:attr/textColorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</android.view.DispatchFairInsetsRelativeLayout>

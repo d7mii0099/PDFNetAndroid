@@ -1,0 +1,15 @@
+query GetPublicDocumentsFiltered($limit: Int!, $before: Date, $orderBy: OrderTypes, $orderDirection: OrderDirections) {
+        publicDocuments(limit: $limit, before: $before, orderBy: $orderBy, orderDirection: $orderDirection) {
+          id
+          name
+          isPublic
+          author {
+            id
+            userName
+            email
+            type
+          }
+          createdAt
+          updatedAt
+        }
+      }

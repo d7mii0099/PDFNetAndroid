@@ -1,0 +1,22 @@
+mutation InviteUsersToDocument($id: ID!, $usersInvited: [InvitedUserInput!]){
+        inviteUsersToDocument(id: $id, usersInvited: $usersInvited) {
+          id
+          name
+          isPublic
+          author {
+            id
+            userName
+            email
+            type
+          }
+          unreadCount
+          members {
+            createdAt
+            user {
+              id
+              email
+              userName
+            }
+          }
+        }
+      }

@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id("com.apollographql.apollo").version("2.5.9")
+}
+
+
+android {
+    compileSdkVersion myCompileSdkVersion
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion myTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    apollo {
+        // instruct the compiler to generate Kotlin models
+        generateKotlinModels.set(true)
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation 'androidx.core:core-ktx:1.5.0'
+
+    implementation "com.apollographql.apollo:apollo-runtime:2.5.9"
+    implementation "com.apollographql.apollo:apollo-coroutines-support:2.5.9"
+    implementation "com.apollographql.apollo:apollo-rx2-support:2.5.9"
+    implementation "com.squareup.okhttp3:okhttp:4.9.2"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.2"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.2"
+
+    implementation project(':PDFViewCtrlTools')
+    implementation project(':pdftron-collab')
+    pdfnetGroup dependencies
+    supportLibGroup dependencies
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

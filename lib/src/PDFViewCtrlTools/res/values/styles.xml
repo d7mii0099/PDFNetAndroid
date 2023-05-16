@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PDFTronThemeBase" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+    </style>
+
+    <style name="PDFTronThemeCommon" parent="PDFTronThemeBase">
+        <!-- Default -->
+        <item name="actionBarPopupTheme">@style/AppTheme.PopupOverlay</item>
+        <item name="actionModeBackground">?attr/colorPrimary</item>
+        <item name="windowActionModeOverlay">true</item>
+        <!-- Drawer -->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <!-- New UI -->
+    <style name="PDFTronAppThemeBase" parent="PDFTronThemeCommon">
+        <!-- Toolbar -->
+        <item name="pt_toolbar_style">@style/ToolbarStyle</item>
+        <item name="pt_toolbar_theme">@style/ToolbarTheme</item>
+        <item name="pt_toolbar_popup_theme">@style/ToolbarPopupTheme</item>
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarButtonNavigationStyle</item>
+
+        <!-- Document Tab Layout -->
+        <item name="pt_pdf_tab_layout_style">@style/PdfTabLayoutStyle</item>
+
+        <!-- Action bar -->
+        <item name="actionMenuTextColor">@color/toolbar_icon</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionModeCloseButtonStyle</item>
+        <item name="actionOverflowButtonStyle">@style/ActionModeOverflowButtonStyle</item>
+
+        <!-- Signature / stamp tab -->
+        <item name="pt_stamp_tab_layout_style">@style/StampTabLayoutStyle</item>
+        <!-- Bookmarks tab -->
+        <item name="custom_bookmarks_tab_layout">@style/BookmarksTabLayoutStyle</item>
+        <!-- Navigation FAB -->
+        <item name="pt_floating_nav_style">@style/DefaultFloatingButtonNavStyle</item>
+        <!--Sound dialog-->
+        <item name="pt_sound_dialog_style">@style/SoundDialogStyle</item>
+    </style>
+
+    <style name="PDFTronAppTheme" parent="PDFTronAppThemeBase">
+        <item name="colorPrimary">@color/pdftron_color_primary_day</item>
+        <item name="colorPrimaryDark">@color/pdftron_color_primary_dark_day</item>
+        <item name="colorAccent">@color/app_color_accent</item>
+        <item name="android:colorBackground">@color/pdftron_color_primary_day</item>
+    </style>
+
+    <!-- Legacy UI -->
+    <style name="CustomAppThemeBase" parent="PDFTronThemeCommon">
+        <!-- Toolbar -->
+        <item name="pt_toolbar_style">@style/ToolbarLegacyStyle</item>
+        <item name="pt_toolbar_theme">@style/ToolbarLegacyTheme</item>
+        <item name="pt_toolbar_popup_theme">@style/ToolbarPopupTheme</item>
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarButtonNavigationLegacyStyle</item>
+
+        <!-- Action bar -->
+        <item name="actionMenuTextColor">@color/app_color_icon</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionModeCloseButtonLegacyStyle</item>
+        <item name="actionOverflowButtonStyle">@style/ActionModeOverflowButtonLegacyStyle</item>
+
+        <!-- Annotation toolbar -->
+        <item name="annotation_toolbar">@style/CustomAnnotationToolbarLegacyStyle</item>
+
+        <!-- Signature / stamp tab -->
+        <item name="pt_stamp_tab_layout_style">@style/StampTabLayoutLegacyStyle</item>
+        <!-- Bookmarks tab -->
+        <item name="custom_bookmarks_tab_layout">@style/BookmarksTabLayoutLegacyStyle</item>
+        <!-- Navigation FAB -->
+        <item name="pt_floating_nav_style">@style/DefaultFloatingButtonNavStyle</item>
+        <!--Sound dialog-->
+        <item name="pt_sound_dialog_style">@style/SoundDialogLegacyStyle</item>
+    </style>
+
+    <style name="CustomAppTheme" parent="CustomAppThemeBase">
+        <item name="colorPrimary">@color/app_color_primary_day</item>
+        <item name="colorPrimaryDark">@color/app_color_primary_dark_day</item>
+        <item name="colorAccent">@color/app_color_accent_legacy</item>
+    </style>
+
+    <!--  New UI components START -->
+
+    <style name="ToolbarStyle">
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="titleTextColor">@color/toolbar_icon</item>
+        <item name="colorControlHighlight">@color/toolbar_icon_ripple</item>
+        <item name="colorControlNormal">@color/toolbar_icon</item>
+        <item name="iconTint">@color/toolbar_icon</item>
+        <!--Search-->
+        <item name="android:editTextColor">@color/toolbar_icon</item>
+        <item name="android:textColorHint">@color/toolbar_icon</item>
+    </style>
+
+    <style name="ActionModeCloseButtonStyle" parent="Widget.AppCompat.ActionButton.CloseMode">
+        <item name="android:tint">@color/toolbar_icon</item>
+    </style>
+
+    <style name="ActionModeOverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/toolbar_icon</item>
+    </style>
+
+    <style name="ToolbarButtonNavigationStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:tint">@color/toolbar_icon</item>
+    </style>
+
+    <style name="StampTabLayoutStyle" parent="BaseStampTabLayoutStyle">
+        <item name="android:background">@color/annot_toolbar_background_primary</item>
+        <item name="tabTextColor">@color/annot_toolbar_icon</item>
+        <item name="tabSelectedTextColor">@color/annot_toolbar_icon</item>
+        <item name="tabIconTint">@color/annot_toolbar_icon</item>
+    </style>
+
+    <style name="BookmarksTabLayoutStyle" parent="BaseBookmarksTabLayoutStyle">
+        <item name="tabBackgroundSheet">@color/annot_toolbar_background_primary</item>
+        <item name="tabBackgroundDialog">@color/annot_toolbar_background_primary</item>
+        <item name="tabTintColorSheet">@color/annot_toolbar_icon</item>
+        <item name="tabTintColorDialog">@color/annot_toolbar_icon</item>
+        <item name="tabTintSelectedColorDialog">?attr/colorAccent</item>
+        <item name="tabTintSelectedColorSheet">?attr/colorAccent</item>
+    </style>
+
+    <style name="DefaultFloatingButtonNavStyle">
+        <item name="iconTint">@color/pt_secondary_color</item>
+        <item name="backgroundTint">@color/pt_background_color</item>
+        <item name="dividerColor">@color/pt_subtle_utility_color</item>
+        <item name="disabledIconColor">@color/pt_disabled_state_color</item>
+    </style>
+
+    <style name="SoundDialogStyle">
+        <item name="iconTint">@color/annot_toolbar_icon</item>
+    </style>
+
+    <style name="SoundAnnotViewTheme">
+        <item name="iconColor">@color/pt_body_text_color</item>
+        <item name="disabledIconColor">@color/pt_disabled_state_color</item>
+        <item name="secondaryTextColor">@color/pt_secondary_color</item>
+    </style>
+
+    <!--  New UI components END -->
+
+    <!--  Legacy UI components START -->
+
+    <style name="ToolbarLegacyStyle">
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ToolbarLegacyTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="titleTextColor">@color/app_color_icon</item>
+        <item name="colorControlNormal">@color/app_color_icon</item>
+        <item name="iconTint">@color/app_color_icon</item>
+        <!--Search-->
+        <item name="android:editTextColor">@android:color/white</item>
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
+
+    <style name="ActionModeCloseButtonLegacyStyle" parent="Widget.AppCompat.ActionButton.CloseMode">
+        <item name="android:tint">@color/app_color_icon</item>
+    </style>
+
+    <style name="ActionModeOverflowButtonLegacyStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@color/app_color_icon</item>
+    </style>
+
+    <style name="ToolbarButtonNavigationLegacyStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:tint">@color/app_color_icon</item>
+    </style>
+
+    <style name="CustomAnnotationToolbarLegacyStyle" parent="AnnotationToolbarStyle">
+        <item name="colorToolIcon">@color/app_color_icon</item>
+        <item name="colorCloseIcon">@color/app_color_icon</item>
+    </style>
+
+    <style name="StampTabLayoutLegacyStyle" parent="BaseStampTabLayoutStyle">
+        <item name="tabTextColor">@color/app_color_icon</item>
+        <item name="tabSelectedTextColor">@color/app_color_icon</item>
+        <item name="tabIconTint">@color/app_color_icon</item>
+    </style>
+
+    <style name="BookmarksTabLayoutLegacyStyle" parent="BaseBookmarksTabLayoutStyle">
+        <item name="tabBackgroundSheet">?android:attr/colorBackground</item>
+        <item name="tabBackgroundDialog">?attr/colorPrimary</item>
+        <item name="tabTintColorSheet">@color/navigation_list_title_color</item>
+        <item name="tabTintColorDialog">@color/app_color_icon</item>
+        <item name="tabTintSelectedColorDialog">@color/app_color_icon</item>
+        <item name="tabTintSelectedColorSheet">@color/navigation_list_title_color</item>
+    </style>
+
+    <style name="SoundDialogLegacyStyle">
+        <item name="iconTint">?attr/colorPrimary</item>
+    </style>
+
+    <!--  Legacy UI components END -->
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="ToolbarPopupTheme" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="transparent_button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:minWidth">@dimen/dialog_button_min_width</item>
+        <item name="android:paddingLeft">@dimen/dialog_button_default_margin_padding</item>
+        <item name="android:paddingRight">@dimen/dialog_button_default_margin_padding</item>
+    </style>
+
+    <style name="transparent_dialog_annotation_note_button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:minWidth">@dimen/dialog_button_min_width</item>
+        <item name="android:paddingLeft">@dimen/dialog_button_default_margin_padding</item>
+        <item name="android:paddingRight">@dimen/dialog_button_default_margin_padding</item>
+        <item name="android:textColor">@color/button_dialog_annotation_note_color</item>
+    </style>
+
+    <style name="black_text_button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/button_text_color</item>
+    </style>
+
+    <style name="fabMenuLabelStyle">
+        <item name="android:background">@drawable/fab_menu_label_background</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="StatusBarView">
+        <!-- Fit system window insets by default, since the StatusBarView widget is
+             only really useful when the fitsSystemWindows flag is set. -->
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:background">?attr/colorPrimaryDark</item>
+    </style>
+
+    <style name="DispatchFairInsets">
+        <!-- Fully consume the system window insets by default. -->
+        <item name="consumeInsets">true</item>
+    </style>
+
+    <style name="DispatchFairInsetsRelativeLayout" parent="DispatchFairInsets" />
+
+    <style name="DispatchFairInsetsFrameLayout" parent="DispatchFairInsets" />
+
+    <style name="DispatchFairInsetsLinearLayout" parent="DispatchFairInsets" />
+
+    <style name="BaseDocumentSliderStyle">
+        <item name="seekbarColor">@color/document_slider_chip_tint</item>
+        <item name="colorBackground">@color/document_slider_chip_background</item>
+    </style>
+
+    <style name="DocumentSliderStyle" parent="BaseDocumentSliderStyle">
+    </style>
+
+    <style name="BaseThumbnailSliderStyle">
+        <!-- Set the description of the menu button left of the slider -->
+        <item name="leftMenuItemContentDescription">@string/pref_viewmode_thumbnails</item>
+        <!-- Set the color of the menu button right of the slider -->
+        <item name="rightMenuItemContentDescription">@string/action_outline</item>
+
+        <!-- Set the icon of the menu button left of the slider -->
+        <item name="leftMenuItemDrawable">@drawable/ic_thumbnails_grid_black_24dp</item>
+        <!-- Set the icon of the menu button right of the slider -->
+        <item name="rightMenuItemDrawable">@drawable/ic_outline_white_24dp</item>
+    </style>
+
+    <style name="ThumbnailSliderStyle" parent="BaseThumbnailSliderStyle">
+        <item name="leftMenuItemColor">?attr/colorPrimary</item>
+        <item name="rightMenuItemColor">?attr/colorPrimary</item>
+        <item name="seekbarColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ThumbnailSliderStyle.Seekbar" parent="Widget.AppCompat.SeekBar" >
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:minHeight">2dp</item>
+        <item name="android:maxHeight">2dp</item>
+    </style>
+
+    <style name="BaseThumbnailBrowserStyle">
+        <item name="showFilterMenuItem">true</item>
+        <item name="showFilterAnnotated">true</item>
+        <item name="showFilterBookmarked">true</item>
+        <item name="showAddBookmarkMenuItem">true</item>
+    </style>
+
+    <style name="ThumbnailBrowserStyle" parent="BaseThumbnailBrowserStyle">
+    </style>
+
+    <style name="BaseFloatingActionMenuStyle">
+        <item name="menu_colorNormal">?attr/colorAccent</item>
+        <item name="menu_colorPressed">?attr/colorAccent</item>
+        <item name="android:tint">@color/tools_colors_white</item>
+    </style>
+
+    <style name="FloatingActionMenuStyle" parent="BaseFloatingActionMenuStyle">
+    </style>
+
+    <style name="BaseFloatingActionButtonStyle">
+        <item name="fab_colorNormal">?attr/colorAccent</item>
+        <item name="fab_colorPressed">?attr/colorAccent</item>
+        <item name="android:tint">@color/tools_colors_white</item>
+    </style>
+
+    <style name="FloatingActionButtonStyle" parent="BaseFloatingActionButtonStyle">
+    </style>
+
+    <style name="BaseFloatingButtonNavStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="elevation">@dimen/elevation_low</item>
+        <item name="fabCustomSize">@dimen/page_jump_button_size</item>
+        <item name="backgroundTint">@color/page_number_indicator_bg</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="FloatingButtonNavStyle" parent="BaseFloatingButtonNavStyle">
+        <item name="tint">@color/document_fab_tint</item>
+    </style>
+
+    <style name="BaseRotateButtonStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="elevation">@dimen/elevation_low</item>
+        <item name="fabCustomSize">@dimen/rotate_button_size</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="backgroundTint">@color/rotation_handle_bg</item>
+    </style>
+
+    <style name="RotateButtonStyle" parent="BaseRotateButtonStyle">
+        <item name="tint">@color/tools_selection_control_point</item>
+    </style>
+
+    <style name="SelectionHandleStyle" parent="BaseRotateButtonStyle">
+        <item name="backgroundTint">@color/tools_selection_control_point</item>
+        <item name="tint">@color/rotation_handle_bg</item>
+        <item name="maxImageSize">@dimen/selection_widget_size</item>
+    </style>
+
+    <style name="BasePdfTabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabContentStart">@dimen/first_keyline</item>
+        <item name="tabPaddingEnd">0dp</item>
+        <item name="tabPaddingStart">0dp</item>
+        <item name="tabTextAppearance">@style/PdfTabTextAppearance</item>
+    </style>
+
+    <style name="PdfTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/selector_tab_color_fg</item>
+    </style>
+
+    <style name="PdfTabLayoutStyle" parent="BasePdfTabLayoutStyle">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="tabSelectedTextColor">@color/annot_toolbar_selected_icon</item>
+        <item name="tabTextColor">@color/annot_toolbar_selected_icon</item>
+    </style>
+
+    <style name="BaseBookmarksTabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabMaxWidth">0dp</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabMode">fixed</item>
+    </style>
+
+    <style name="BaseStampTabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabMaxWidth">0dp</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabSelectedTextColor">?android:attr/textColorPrimaryInverse</item>
+        <item name="tabTextColor">@android:color/primary_text_dark</item>
+    </style>
+
+    <style name="AnnotationToolbarStyle">
+        <item name="colorBackground">?attr/colorPrimary</item>
+        <item name="colorToolBackground">?attr/colorPrimaryDark</item>
+        <item name="colorToolIcon">@android:color/white</item>
+        <item name="colorCloseIcon">@android:color/white</item>
+    </style>
+
+    <style name="EditToolbarStyle">
+        <item name="colorBackground">?android:attr/colorBackground</item>
+        <item name="colorToolBackground">@color/controls_edit_toolbar_tool</item>
+        <item name="colorToolIcon">?android:attr/colorForeground</item>
+        <item name="colorCloseIcon">@color/controls_edit_toolbar_checkmark</item>
+    </style>
+
+    <style name="FormToolbarStyle" parent="AnnotationToolbarStyle">
+    </style>
+
+    <style name="BaseSearchToolbarStyle">
+        <item name="showListAll">true</item>
+        <item name="showMatchCase">true</item>
+        <item name="showWholeWord">true</item>
+        <item name="showSearchWeb">true</item>
+    </style>
+
+    <style name="SearchToolbarStyle" parent="BaseSearchToolbarStyle">
+    </style>
+
+    <style name="BaseDialogStickyNoteStyle">
+        <item name="showStyleIcon">true</item>
+        <!-- If true, then the edit text background color will follow editTextBackgroundColor. Otherwise
+             it will follow the sticky note color (light mode only). -->
+        <item name="forceEditTextBackgroundColor">false</item>
+    </style>
+
+    <style name="DialogStickyNoteStyle" parent="BaseDialogStickyNoteStyle">
+    </style>
+
+    <style name="DialogAnnotNoteStyle">
+        <item name="backgroundColor">@color/tools_dialog_annotation_popup_textbox_background</item>
+        <item name="editTextBackgroundColor">@color/tools_dialog_annotation_popup_background</item>
+        <item name="textButtonColor">@color/button_dialog_annotation_note_color</item>
+    </style>
+
+    <style name="QuickMenuButton" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="RectGroupAnnotEdit">
+        <item name="fillColor">@color/tools_annot_edit_line_shadow</item>
+        <item name="fillOpacity">0.38</item>
+        <item name="lassoColor">@color/tools_annot_edit_line_shadow</item>
+        <item name="lassoOpacity">1</item>
+        <item name="lassoThickness">2</item>
+    </style>
+
+    <style name="TabFragmentToolManager">
+        <item name="edit_ink_annots">true</item>
+        <item name="add_image_stamper_tool">true</item>
+        <item name="open_toolbar_on_pan_ink_selected">true</item>
+        <item name="build_in_page_number_indicator">false</item>
+    </style>
+
+    <style name="PresetColorGridViewStyle">
+        <item name="color_list">@array/preset_colors</item>
+        <item name="highlight_color_list">@array/preset_highlight_colors</item>
+        <item name="android:horizontalSpacing">@dimen/padding_xsmall</item>
+        <item name="android:verticalSpacing">@dimen/padding_xsmall</item>
+        <item name="android:stretchMode">columnWidth</item>
+        <item name="android:numColumns">7</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="PresetStyleGridViewStyle">
+        <item name="android:horizontalSpacing">0dp</item>
+        <item name="android:verticalSpacing">0dp</item>
+        <item name="android:stretchMode">columnWidth</item>
+        <item name="android:numColumns">5</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="ColorPickerStyle">
+        <item name="wheel_width">@dimen/quick_menu_button_size</item>
+        <item name="value_pointer_radius">@dimen/padding_large</item>
+        <item name="ring_color">@android:color/white</item>
+        <item name="ring_shadow_radius">@dimen/action_button_min_width</item>
+    </style>
+
+    <style name="AnnotStyleBottomSheetDialogStyle" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="FullScreenDialogStyle" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ToolbarSwitcherDialogStyle" parent="FullScreenDialogStyle">
+        <item name="android:backgroundDimEnabled">@bool/isPhone</item>
+    </style>
+
+    <style name="SignatureSelectionDialogStyle" parent="FullScreenDialogStyle">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="HighlightPresetStyle1">
+        <item name="annot_color">#ffff00</item>
+    </style>
+    <style name="HighlightPresetStyle2">
+        <item name="annot_color">#00ffff</item>
+    </style>
+
+    <style name="HighlightPresetStyle3">
+        <item name="annot_color">#00ff00</item>
+    </style>
+
+    <style name="HighlightPresetStyle4">
+        <item name="annot_color">#ff0000</item>
+    </style>
+
+    <style name="FreeTextPresetStyle1" parent="AnnotPresetStyle4">
+        <item name="annot_text_color">#e44234</item>
+        <item name="annot_font_size">16</item>
+        <item name="annot_color">@android:color/transparent</item>
+        <item name="annot_thickness">1</item>
+        <item name="annot_text_size_min">4</item>
+        <item name="annot_text_size_max">72</item>
+        <item name="annot_font">Roboto</item>
+    </style>
+
+    <style name="FreeTextPresetStyle2" parent="AnnotPresetStyle3">
+        <item name="annot_text_color">#00cc63</item>
+        <item name="annot_font_size">16</item>
+        <item name="annot_thickness">1</item>
+        <item name="annot_color">@android:color/transparent</item>
+        <item name="annot_text_size_min">4</item>
+        <item name="annot_text_size_max">72</item>
+        <item name="annot_font">Roboto</item>
+    </style>
+
+    <style name="FreeTextPresetStyle3" parent="AnnotPresetStyle5">
+        <item name="annot_text_color">#4e7de9</item>
+        <item name="annot_font_size">16</item>
+        <item name="annot_color">@android:color/transparent</item>
+        <item name="annot_thickness">1</item>
+        <item name="annot_font">Roboto</item>
+        <item name="annot_text_size_min">4</item>
+        <item name="annot_text_size_max">72</item>
+    </style>
+
+    <style name="FreeTextPresetStyle4" parent="AnnotPresetStyle6">
+        <item name="annot_text_color">#000000</item>
+        <item name="annot_font_size">16</item>
+        <item name="annot_color">@android:color/transparent</item>
+        <item name="annot_thickness">1</item>
+        <item name="annot_font">Roboto</item>
+        <item name="annot_text_size_min">4</item>
+        <item name="annot_text_size_max">72</item>
+    </style>
+
+    <style name="CalloutPresetStyle1" parent="FreeTextPresetStyle1">
+        <item name="annot_color">#e44234</item>
+        <item name="annot_thickness">1</item>
+    </style>
+
+    <style name="CalloutPresetStyle2" parent="FreeTextPresetStyle2">
+        <item name="annot_thickness">1</item>
+        <item name="annot_color">#00cc63</item>
+    </style>
+
+    <style name="CalloutPresetStyle3" parent="FreeTextPresetStyle3">
+        <item name="annot_color">#4e7de9</item>
+        <item name="annot_thickness">1</item>
+    </style>
+
+    <style name="CalloutPresetStyle4" parent="FreeTextPresetStyle4">
+        <item name="annot_color">#000000</item>
+        <item name="annot_thickness">1</item>
+    </style>
+
+    <style name="FreeTextDatePresetStyle1" parent="FreeTextPresetStyle1">
+        <item name="annot_text_color">#000000</item>
+        <item name="annot_date_format">@string/style_picker_date_format1</item>
+    </style>
+
+    <style name="FreeTextDatePresetStyle2" parent="FreeTextPresetStyle2">
+        <item name="annot_date_format">@string/style_picker_date_format2</item>
+    </style>
+
+    <style name="FreeTextDatePresetStyle3" parent="FreeTextPresetStyle3">
+        <item name="annot_date_format">@string/style_picker_date_format3</item>
+    </style>
+
+    <style name="FreeTextDatePresetStyle4" parent="FreeTextPresetStyle4">
+        <item name="annot_text_color">#e44234</item>
+        <item name="annot_date_format">@string/style_picker_date_format1</item>
+    </style>
+
+    <style name="SignaturePresetStyle1" parent="AnnotPresetStyle6" >
+        <item name="annot_color">#1c1c1c</item>
+        <item name="annot_thickness">8.0</item>
+        <item name="annot_thickness_max">24</item>
+        <item name="annot_thickness_min">2</item>
+        <item name="annot_font">DancingScript</item>
+    </style>
+
+    <style name="SignaturePresetStyle2" parent="AnnotPresetStyle5" >
+        <item name="annot_color">#4355db</item>
+        <item name="annot_thickness">8.0</item>
+        <item name="annot_font">DancingScript</item>
+    </style>
+
+    <style name="SignaturePresetStyle3" parent="AnnotPresetStyle3" >
+        <item name="annot_color">#2E8442</item>
+        <item name="annot_thickness">8.0</item>
+        <item name="annot_font">DancingScript</item>
+    </style>
+
+    <style name="SignaturePresetStyle4" parent="AnnotPresetStyle4" >
+        <item name="annot_thickness">8.0</item>
+        <item name="annot_font">DancingScript</item>
+    </style>
+
+    <style name="AnnotPresetStyle1">
+        <item name="annot_color">#ffcd45</item>
+        <item name="annot_icon">Comment</item>
+        <item name="annot_thickness">5</item>
+    </style>
+    <style name="AnnotPresetStyle2">
+        <item name="annot_color">#25d2d1</item>
+        <item name="annot_icon">Star</item>
+        <item name="annot_thickness">5</item>
+    </style>
+    <style name="AnnotPresetStyle3">
+        <item name="annot_color">#00cc63</item>
+        <item name="annot_fill_color">@android:color/transparent</item>
+        <item name="annot_icon">CheckMark</item>
+        <item name="annot_thickness">5</item>
+    </style>
+    <style name="AnnotPresetStyle4">
+        <item name="annot_color">#e44234</item>
+        <item name="annot_fill_color">@android:color/transparent</item>
+        <item name="annot_icon">CrossMark</item>
+        <item name="annot_thickness">5</item>
+        <item name="annot_thickness_min">1</item>
+        <item name="annot_thickness_max">40</item>
+    </style>
+    <style name="AnnotPresetStyle5">
+        <item name="annot_color">#4e7de9</item>
+        <item name="annot_fill_color">@android:color/transparent</item>
+        <item name="annot_thickness">5</item>
+    </style>
+    <style name="AnnotPresetStyle6">
+        <item name="annot_color">#000000</item>
+        <item name="annot_thickness">5</item>
+    </style>
+    <style name="AnnotPresetStyle7">
+        <item name="annot_color">@android:color/transparent</item>
+        <item name="annot_fill_color">#ffcd45</item>
+        <item name="annot_opacity">0.5</item>
+    </style>
+
+    <style name="EraserStyle1">
+        <item name="annot_thickness">5</item>
+        <item name="annot_thickness_min">1</item>
+        <item name="annot_thickness_max">40</item>
+    </style>
+
+    <style name="EraserStyle2">
+        <item name="annot_thickness">10</item>
+        <item name="annot_thickness_min">1</item>
+        <item name="annot_thickness_max">40</item>
+    </style>
+
+    <style name="EraserStyle3">
+        <item name="annot_thickness">20</item>
+        <item name="annot_thickness_min">1</item>
+        <item name="annot_thickness_max">40</item>
+    </style>
+
+    <style name="EraserStyle4">
+        <item name="annot_thickness">40</item>
+        <item name="annot_thickness_min">1</item>
+        <item name="annot_thickness_max">40</item>
+    </style>
+
+    <style name="TextMarkupStyle1" parent="AnnotPresetStyle4">
+        <item name="annot_thickness">1.5</item>
+    </style>
+
+    <style name="TextMarkupStyle2" parent="AnnotPresetStyle3">
+        <item name="annot_thickness">1.5</item>
+    </style>
+
+    <style name="TextMarkupStyle3" parent="AnnotPresetStyle5">
+        <item name="annot_thickness">1.5</item>
+    </style>
+
+    <style name="TextMarkupStyle4" parent="AnnotPresetStyle6">
+        <item name="annot_thickness">1.5</item>
+    </style>
+
+    <style name="FreeHighlighterStyle3" parent="AnnotPresetStyle3">
+        <item name="annot_color">#00ffff</item>
+        <item name="annot_thickness">20</item>
+        <item name="annot_thickness_min">5</item>
+        <item name="annot_thickness_max">60</item>
+    </style>
+
+    <style name="FreeHighlighterStyle4" parent="AnnotPresetStyle4">
+        <item name="annot_color">#ffff00</item>
+        <item name="annot_thickness">20</item>
+        <item name="annot_thickness_min">5</item>
+        <item name="annot_thickness_max">60</item>
+    </style>
+
+    <style name="FreeHighlighterStyle5" parent="AnnotPresetStyle5">
+        <item name="annot_color">#00ff00</item>
+        <item name="annot_thickness">20</item>
+        <item name="annot_thickness_min">5</item>
+        <item name="annot_thickness_max">60</item>
+    </style>
+
+    <style name="FreeHighlighterStyle6" parent="AnnotPresetStyle6">
+        <item name="annot_color">#ff0000</item>
+        <item name="annot_thickness">20</item>
+        <item name="annot_thickness_min">5</item>
+        <item name="annot_thickness_max">60</item>
+    </style>
+
+    <style name="ArrowStyle1" parent="AnnotPresetStyle4">
+        <item name="annot_line_start_style">NONE</item>
+        <item name="annot_line_end_style">OPEN_ARROW</item>
+    </style>
+
+    <style name="ArrowStyle2" parent="AnnotPresetStyle3">
+        <item name="annot_line_start_style">NONE</item>
+        <item name="annot_line_end_style">OPEN_ARROW</item>
+    </style>
+
+    <style name="ArrowStyle3" parent="AnnotPresetStyle5">
+        <item name="annot_line_start_style">NONE</item>
+        <item name="annot_line_end_style">OPEN_ARROW</item>
+    </style>
+
+    <style name="ArrowStyle4" parent="AnnotPresetStyle6">
+        <item name="annot_line_start_style">NONE</item>
+        <item name="annot_line_end_style">OPEN_ARROW</item>
+    </style>
+
+    <style name="CloudStyle1" parent="AnnotPresetStyle4">
+        <item name="annot_border_style">CLOUDY</item>
+    </style>
+
+    <style name="CloudStyle2" parent="AnnotPresetStyle3">
+        <item name="annot_border_style">CLOUDY</item>
+    </style>
+
+    <style name="CloudStyle3" parent="AnnotPresetStyle5">
+        <item name="annot_border_style">CLOUDY</item>
+    </style>
+
+    <style name="CloudStyle4" parent="AnnotPresetStyle7">
+        <item name="annot_border_style">CLOUDY</item>
+    </style>
+
+    <style name="RulerStyle1" parent="AnnotPresetStyle4">
+        <item name="annot_thickness">2</item>
+        <item name="annot_thickness_max">10</item>
+        <item name="ruler_base_value">1</item>
+        <item name="ruler_base_unit">in</item>
+        <item name="ruler_translate_value">1</item>
+        <item name="ruler_translate_unit">in</item>
+        <item name="ruler_precision">100</item>
+        <item name="annot_line_start_style">BUTT</item>
+        <item name="annot_line_end_style">BUTT</item>
+    </style>
+    <style name="RulerStyle2" parent="AnnotPresetStyle3">
+        <item name="annot_thickness">2</item>
+        <item name="annot_thickness_max">10</item>
+        <item name="ruler_base_value">1</item>
+        <item name="ruler_base_unit">in</item>
+        <item name="ruler_translate_value">1</item>
+        <item name="ruler_translate_unit">in</item>
+        <item name="ruler_precision">100</item>
+        <item name="annot_line_start_style">BUTT</item>
+        <item name="annot_line_end_style">BUTT</item>
+    </style>
+    <style name="RulerStyle3" parent="AnnotPresetStyle5">
+        <item name="annot_thickness">2</item>
+        <item name="annot_thickness_max">10</item>
+        <item name="ruler_base_value">1</item>
+        <item name="ruler_base_unit">in</item>
+        <item name="ruler_translate_value">1</item>
+        <item name="ruler_translate_unit">in</item>
+        <item name="ruler_precision">100</item>
+        <item name="annot_line_start_style">BUTT</item>
+        <item name="annot_line_end_style">BUTT</item>
+    </style>
+    <style name="RulerStyle4" parent="AnnotPresetStyle6">
+        <item name="annot_thickness">2</item>
+        <item name="annot_thickness_max">10</item>
+        <item name="ruler_base_value">1</item>
+        <item name="ruler_base_unit">in</item>
+        <item name="ruler_translate_value">1</item>
+        <item name="ruler_translate_unit">in</item>
+        <item name="ruler_precision">100</item>
+        <item name="annot_line_start_style">BUTT</item>
+        <item name="annot_line_end_style">BUTT</item>
+    </style>
+
+    <style name="WidgetPresetDefault" parent="FreeTextPresetStyle1">
+        <item name="annot_thickness">5</item>
+        <item name="annot_color">#e44234</item>
+    </style>
+
+    <style name="WidgetPreset1" parent="WidgetPresetDefault">
+        <item name="annot_text_color">#000000</item>
+    </style>
+
+    <style name="WidgetPreset2" parent="WidgetPresetDefault">
+        <item name="annot_text_color">#e44234</item>
+    </style>
+
+    <style name="WidgetPreset3" parent="WidgetPresetDefault">
+        <item name="annot_text_color">#00cc63</item>
+    </style>
+
+    <style name="WidgetPreset4" parent="WidgetPresetDefault">
+        <item name="annot_text_color">#4e7de9</item>
+    </style>
+
+    <style name="MaterialProgressBarStyle" parent="Widget.AppCompat.ProgressBar.Horizontal" >
+        <item name="android:indeterminate">true</item>
+        <item name="android:minHeight">24dp</item>
+        <item name="android:maxHeight">24dp</item>
+        <item name="android:layout_marginTop">-7dp</item>
+        <item name="android:layout_marginBottom">-8dp</item>
+    </style>
+
+    <style name="DigitalSignatureTextViewStyle" parent="TextAppearance.MaterialComponents.Subtitle1" >
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="SignatureInfoViewDefault">
+        <item name="info_label">@string/tools_digitalsignature_signature_info</item>
+    </style>
+
+   <!--  Toolbar Related Styles  -->
+
+    <style name="PTAnnotationToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Annotation toolbar background color-->
+        <item name="colorBackground">@color/annot_toolbar_background_primary</item>
+        <!-- Background color of a selected button -->
+        <item name="selectedBackgroundColor">@color/annot_toolbar_selected_background</item>
+        <!-- Icon color for the icon of a selected button -->
+        <item name="selectedIconColor">@color/annot_toolbar_selected_icon</item>
+        <!-- Icon color for an accented button, if style accenting is disabled-->
+        <item name="highlightedIconColor">@color/annot_toolbar_accent_icon</item>
+        <!-- Icon color for a disabled button -->
+        <item name="disabledIconColor">@color/annot_toolbar_disabled_icon</item>
+        <!-- Default icon color for a button -->
+        <item name="iconColor">@color/annot_toolbar_icon</item>
+        <!-- Color of text in the annotation toolbar -->
+        <item name="textColor">@color/annot_toolbar_text</item>
+        <!-- Color of text in the preset section of the annotation toolbar for tablets-->
+        <item name="presetTextColor">@color/annot_toolbar_preset_text</item>
+        <!-- Background color of empty presets section in tablet annotation toolbar-->
+        <item name="colorBackgroundSecondary">@color/annot_toolbar_background_secondary</item>
+        <item name="colorControlNormal">@color/annot_toolbar_icon</item>
+        <!-- Background color of tool region in compact mode -->
+        <item name="backgroundColorCompact">@color/annot_toolbar_background_compact</item>
+    </style>
+
+    <style name="PTPresetBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Background color of the preset bar -->
+        <item name="colorBackground">@color/presetbar_background</item>
+        <!-- Background color of a selected button -->
+        <item name="selectedBackgroundColor">@color/presetbar_selected_background</item>
+        <!-- Secondary background color of a selected button. Used for tablet layouts.-->
+        <item name="selectedBackgroundColorSecondary">@color/presetbar_selected_background_secondary</item>
+        <!-- Icon color for the icon of a selected button -->
+        <item name="selectedIconColor">@color/presetbar_selected_icon</item>
+        <!-- Icon color for a disabled button -->
+        <item name="disabledIconColor">@color/presetbar_disabled_icon</item>
+        <!-- Default icon color for a button -->
+        <item name="iconColor">@color/presetbar_icon</item>
+        <!-- Accent color used in preset bar-->
+        <item name="accentColor">@color/presetbar_accent_color</item>
+    </style>
+
+    <style name="PTBottomBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Background color of the bottom bar -->
+        <item name="colorBackground">@color/bottombar_background</item>
+        <!-- Background color of a selected button -->
+        <item name="selectedBackgroundColor">@color/bottombar_selected_background</item>
+        <!-- Icon color for the icon of a selected button -->
+        <item name="selectedIconColor">@color/bottombar_selected_icon</item>
+        <!-- Icon color for a disabled button -->
+        <item name="disabledIconColor">@color/bottombar_disabled_icon</item>
+        <!-- Default icon color for a button -->
+        <item name="iconColor">@color/bottombar_icon</item>
+        <item name="colorControlNormal">@color/bottombar_icon</item>
+    </style>
+
+    <style name="PTToolbarSwitcherButtonTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Text color for toolbar switcher button -->
+        <item name="textColor">@color/toolbar_switcher_button_text</item>
+        <!-- Icon color for toolbar switcher button -->
+        <item name="iconColor">@color/toolbar_switcher_button_icon</item>
+        <!-- Background color in compact mode -->
+        <item name="backgroundColorCompact">@color/toolbar_switcher_background_compact</item>
+    </style>
+
+    <style name="PTToolbarTabActionButtonTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Text color for tab action button -->
+        <item name="textColor">@color/toolbar_switcher_button_text</item>
+        <!-- Icon color for tab action button -->
+        <item name="iconColor">@color/toolbar_switcher_button_icon</item>
+    </style>
+
+    <style name="PTToolbarSwitcherDialogTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Text color of items in the toolbar switcher dialog -->
+        <item name="textColor">@color/toolbar_switcher_button_text</item>
+        <!-- Icon color of items in the toolbar switcher dialog -->
+        <item name="iconColor">@color/toolbar_switcher_button_icon</item>
+        <!-- Background color of the toolbar switcher dialog -->
+        <item name="backgroundColor">@color/toolbar_switcher_dialog_background</item>
+        <!-- Background color of selected item in the toolbar switcher dialog -->
+        <item name="selectedItemBackgroundColor">@color/toolbar_switcher_item_dialog_selected_background</item>
+        <!-- Color of icon of selected item -->
+        <item name="selectedIconColor">@color/toolbar_switcher_item_selected_icon</item>
+    </style>
+
+    <style name="PTPageIndicatorTheme">
+        <!-- Background color for page indicator layout -->
+        <item name="backgroundColor">@color/toolbar_switcher_dialog_background</item>
+        <!-- Outline color for page indicator layout -->
+        <item name="outlineColor">@color/toolbar_switcher_dialog_background</item>
+        <!-- Text color for page indicator layout -->
+        <item name="textColor">@color/toolbar_switcher_button_text</item>
+    </style>
+
+    <style name="PTSavedSignaturePickerDialogTheme">
+        <!-- Color used for add image signature button -->
+        <item name="iconColor">@color/pt_utility_variant_color</item>
+    </style>
+
+    <style name="PTCreateSignatureDialogTheme">
+        <!-- Color used for add image signature button -->
+        <item name="iconColor">@color/tools_dialog_floating_sig_add_image_color</item>
+        <!-- Background color of a selected button -->
+        <item name="selectedBackgroundColor">@color/annot_toolbar_selected_background</item>
+        <!-- Icon color for the icon of a selected button -->
+        <item name="selectedIconColor">@color/annot_toolbar_selected_icon</item>
+    </style>
+
+    <style name="PTMenuEditorDialogTheme">
+        <!-- Background Color -->
+        <item name="backgroundColor">@color/menu_editor_background_color</item>
+        <!-- Header Text Color -->
+        <item name="headerColor">@color/menu_editor_icon_tint_dark</item>
+        <!-- Icon Color -->
+        <item name="iconColor">@color/menu_editor_icon_tint_dark</item>
+        <!-- Text Color -->
+        <item name="textColor">@color/menu_editor_icon_tint_dark</item>
+        <!-- Highlighted Background Color -->
+        <item name="pinnedBackgroundColor">@color/menu_editor_pinned_background_color</item>
+        <!-- Dotted line color-->
+        <item name="dottedLineColor">@color/menu_editor_icon_tint_light</item>
+        <!-- Dotted line active color-->
+        <item name="dottedLineActiveColor">@color/menu_editor_icon_tint</item>
+    </style>
+
+    <style name="AnnotStyleDialogTheme">
+        <!-- Background Color -->
+        <item name="backgroundColor">?android:attr/colorBackground</item>
+        <!-- Background Color of Annotation Preview-->
+        <item name="annotPreviewBackgroundColor">@color/controls_annot_style_preview_bg</item>
+        <!-- Text Color -->
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <!-- Icon Color -->
+        <item name="iconColor">?android:attr/colorForeground</item>
+    </style>
+
+    <style name="PTCountPresetDialogTheme">
+        <!-- Background Color -->
+        <item name="backgroundColor">?android:attr/colorBackground</item>
+        <!-- Text Color -->
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <!-- Icon Color -->
+        <item name="iconColor">?android:attr/colorForeground</item>
+    </style>
+
+    <style name="PTCountToolDialogTheme">
+        <!-- Background Color -->
+        <item name="backgroundColor">?android:attr/colorBackground</item>
+        <!-- Text Color -->
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <!-- Icon Color -->
+        <item name="iconColor">?android:attr/colorForeground</item>
+    </style>
+
+    <style name="PTAnnotationFilterDialogTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Background color -->
+        <item name="colorBackground">?android:attr/colorBackground</item>
+        <!-- Secondary background color -->
+        <item name="secondaryBackgroundColor">@color/annotation_filter_item_background</item>
+        <!-- Default icon color for a button -->
+        <item name="iconColor">@color/annot_toolbar_icon</item>
+        <!-- Color of text in the annotation filter dialog -->
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <!-- Color of header text in the annotation filter dialog -->
+        <item name="headerTextColor">@color/menu_editor_icon_tint</item>
+    </style>
+
+    <style name="PTThumbnailsViewTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Text color in the thumbnails view-->
+        <item name="textColor">@color/controls_thumbnails_view_page_label_text</item>
+        <!-- Background color in the thumbnails view-->
+        <item name="backgroundColor">@color/controls_thumbnails_view_page_label_background</item>
+        <!-- Active page text color in the thumbnails view-->
+        <item name="activeTextColor">@color/controls_thumbnails_view_active_page_label_text</item>
+        <!-- Active page background color in the thumbnails view-->
+        <item name="activeBackgroundColor">
+            @color/controls_thumbnails_view_active_page_label_background
+        </item>
+    </style>
+
+    <style name="PTSettingsTheme">
+        <!-- Icon color in the settings-->
+        <item name="iconColor">@color/controls_settings_icon</item>
+    </style>
+
+    <style name="PTCreateStampDialogTheme">
+        <item name="iconColor">@color/annot_toolbar_icon</item>
+        <item name="selectedBackgroundColor">@color/annot_toolbar_selected_background</item>
+    </style>
+
+    <style name="AddPageDialogTheme">
+        <!-- Color of selected dot -->
+        <item name="selectedDotColor">?attr/colorAccent</item>
+        <!-- Color of unselected dot -->
+        <item name="dotColor">@color/add_page_dialog_dot</item>
+    </style>
+
+    <style name="TabSwitcherDialogTheme">
+        <!-- Tab switcher card background color-->
+        <item name="backgroundColor">?android:attr/colorBackground</item>
+        <!-- Icon Color -->
+        <item name="iconColor">@color/tab_switcher_dialog_icon</item>
+        <!-- Text Color -->
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <!-- Selected card border color-->
+        <item name="selectedBorderColor">?attr/colorAccent</item>
+    </style>
+
+    <style name="PTCropDialogTheme">
+        <!-- Page number chip background -->
+        <item name="chipBackgroundColor">@color/pt_subtle_utility_color</item>
+        <!-- Chevron icon color -->
+        <item name="iconColor">@color/pt_secondary_color</item>
+        <!-- Text Color -->
+        <item name="textColor">@color/pt_body_text_color</item>
+    </style>
+
+    <style name="PTOutlineDialogTheme">
+        <!-- Header text color -->
+        <item name="headerTextColor">@color/pt_heading_color</item>
+        <!-- Background Color of header -->
+        <item name="headerBackgroundColor">@color/pt_utility_variant_color</item>
+        <!-- Text Color -->
+        <item name="textColor">?android:attr/textColorPrimary</item>
+        <!-- Icon Color -->
+        <item name="iconColor">@color/pt_body_text_color</item>
+        <!-- Disabled Icon Color -->
+        <item name="disabledIconColor">@color/pt_disabled_state_color</item>
+        <!-- Secondary Text Color -->
+        <item name="secondaryTextColor">@color/pt_secondary_color</item>
+        <!-- Selected Background Color -->
+        <item name="selectedBackgroundColor">@color/pt_utility_variant_color</item>
+        <!-- Background Color -->
+        <item name="backgroundColor">@color/pt_background_color</item>
+    </style>
+
+    <style name="PTPdfLayerDialogTheme">
+        <!-- Text Color -->
+        <item name="textColor">@color/pt_body_text_color</item>
+        <!-- Disabled Text Color -->
+        <item name="disabledTextColor">@color/pt_disabled_state_color</item>
+        <!-- Secondary Text Color -->
+        <item name="secondaryTextColor">@color/pt_secondary_color</item>
+        <!-- CheckBox Color -->
+        <item name="checkBoxColor">@color/pt_accent_color</item>
+        <!-- Disabled CheckBox Color -->
+        <item name="disabledCheckBoxColor">@color/pt_disabled_state_color</item>
+    </style>
+
+    <style name="PTSearchResultTheme">
+        <!-- Page number text color -->
+        <item name="pageNumTextColor">@color/pt_secondary_color</item>
+        <!-- selected text foreground color-->
+        <item name="selectedTextForegroundColor">@color/pt_utility_variant_color</item>
+        <!-- selected text background color-->
+        <item name="selectedTextBackgroundColor">@color/pt_accent_color</item>
+    </style>
+
+    <style name="TextFontWeight500">
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="PTPasswordDialogTheme">
+        <!-- Positive and negative disabled button color -->
+        <item name="disabledButtonColor">@color/pt_disabled_state_color</item>
+        <!-- Edit text color-->
+        <item name="inputTextColor">@color/pt_secondary_color</item>
+        <!-- Hint text color-->
+        <item name="hintTextColor">@color/pt_accent_color</item>
+        <!-- Title text color -->
+        <item name="titleColor">@color/pt_body_text_color</item>
+        <!-- Message text color -->
+        <item name="messageColor">@color/pt_body_text_color</item>
+        <!-- End icon color -->
+        <item name="endIconColor">@color/pt_secondary_color</item>
+    </style>
+
+</resources>
